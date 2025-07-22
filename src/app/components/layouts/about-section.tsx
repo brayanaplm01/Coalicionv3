@@ -1,9 +1,38 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { IconEye, IconTarget, IconUsers, IconShield } from "@tabler/icons-react";
+
+// Custom hook para animar contadores
+const useCounter = (target: number, duration: number = 2000, startDelay: number = 0) => {
+  const [count, setCount] = useState(0);
+  const nodeRef = useRef(null);
+  const inView = useInView(nodeRef, { once: true });
+
+  useEffect(() => {
+    if (inView) {
+      const timer = setTimeout(() => {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= target) {
+            setCount(target);
+            clearInterval(timer);
+          } else {
+            setCount(Math.ceil(start));
+          }
+        }, 16);
+        return () => clearInterval(timer);
+      }, startDelay);
+      return () => clearTimeout(timer);
+    }
+  }, [inView, target, duration, startDelay]);
+
+  return { count, ref: nodeRef };
+};
 
 const features = [
   {
@@ -29,11 +58,35 @@ const features = [
 ];
 
 const stats = [
-  { number: "17", label: "Organizaciones Aliadas" },
-  { number: "+10", label: "Años de Experiencia" },
-  { number: "100%", label: "Compromiso Democrático" },
-  { number: "2025", label: "Elecciones Generales" }
+  { number: 17, label: "Organizaciones Aliadas", suffix: "" },
+  { number: 10, label: "Años de Experiencia", prefix: "+" },
+  { number: 100, label: "Compromiso Democrático", suffix: "%" },
+  { number: 2025, label: "Elecciones Generales", suffix: "" }
 ];
+
+// Componente para cada stat con animación
+const StatCard = ({ stat, index }: { stat: typeof stats[0], index: number }) => {
+  const { count, ref } = useCounter(stat.number, 2000, index * 200);
+  
+  return (
+    <div ref={ref} className="text-center">
+      <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:scale-105">
+        <motion.div 
+          className="text-3xl sm:text-4xl font-bold text-green-600 mb-2"
+          initial={{ scale: 0.5, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+        >
+          {stat.prefix || ""}{count}{stat.suffix || ""}
+        </motion.div>
+        <div className="text-sm sm:text-base text-gray-600 font-medium">
+          {stat.label}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export function AboutSection() {
   return (
@@ -165,16 +218,7 @@ export function AboutSection() {
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
         >
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="text-3xl sm:text-4xl font-bold text-green-600 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm sm:text-base text-gray-600 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            </div>
+            <StatCard key={index} stat={stat} index={index} />
           ))}
         </motion.div>
 

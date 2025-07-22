@@ -46,7 +46,7 @@ export function HeroSection() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-300 mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
               Desinformación Electoral
             </h1>
-            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white/90 mb-3 sm:mb-4">
+            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-white/90 mb-3 sm:mb-4">
               Coalición Nacional que reúne a {" "}
               <LinkPreview 
                 url="https://www.undp.org/"
