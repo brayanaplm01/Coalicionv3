@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Aplicar fuente sans globalmente */
+* {
+  font-family: var(--font-mono), ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
