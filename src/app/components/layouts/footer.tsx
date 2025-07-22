@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { IconMail, IconPhone, IconMapPin, IconBrandTwitter, IconBrandFacebook, IconBrandLinkedin, IconBrandYoutube, IconChevronUp } from "@tabler/icons-react";
+import { IconMail, IconPhone, IconMapPin, IconChevronUp } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,15 +20,9 @@ const footerLinks = {
     { name: "Materiales Educativos", href: "#education" }
   ],
   contacto: [
-    { icon: <IconMail className="h-4 w-4" />, text: "info@coalicionbolivia.org", href: "mailto:info@coalicionbolivia.org" },
-    { icon: <IconPhone className="h-4 w-4" />, text: "+591 2 123-4567", href: "tel:+59121234567" },
-    { icon: <IconMapPin className="h-4 w-4" />, text: "La Paz, Bolivia", href: "#" }
-  ],
-  social: [
-    { icon: <IconBrandTwitter className="h-5 w-5" />, href: "#", name: "Twitter" },
-    { icon: <IconBrandFacebook className="h-5 w-5" />, href: "#", name: "Facebook" },
-    { icon: <IconBrandLinkedin className="h-5 w-5" />, href: "#", name: "LinkedIn" },
-    { icon: <IconBrandYoutube className="h-5 w-5" />, href: "#", name: "YouTube" }
+    { icon: <IconMail className="h-4 w-4" />, text: "info@coalicionbolivia.bo", href: "mailto:info@coalicionbolivia.bo" },
+    { icon: <IconPhone className="h-4 w-4" />, text: "+591 77433 312", href: "tel:+59177433312" },
+    { icon: <IconMapPin className="h-4 w-4" />, text: "Bolivia", href: "#" }
   ]
 };
 
@@ -67,34 +61,30 @@ export function Footer() {
               viewport={{ once: true }}
               className="lg:col-span-1"
             >
-              <Link href="/" className="flex items-center mb-6">
-                <Image
-                  src="/logo.webp"
-                  alt="Coalición Logo"
-                  width={240}
-                  height={150}
-                  className="h-30 w-auto object-contain"
-                />
+              <Link href="/" className="flex items-center mb-6 group">
+                <div className="relative">
+                  {/* Fondo iluminado */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-emerald-500/15 to-teal-500/20 rounded-2xl blur-xl transform scale-110 group-hover:scale-125 transition-transform duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-400/10 via-white/5 to-emerald-400/10 rounded-2xl"></div>
+                  
+                  {/* Container del logo con fondo */}
+                  <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-green-400/30 transition-all duration-300 group-hover:bg-white/15">
+                    <Image
+                      src="/logo.webp"
+                      alt="Coalición Logo"
+                      width={320}
+                      height={200}
+                      className="h-32 w-auto object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-300"
+                    />
+                  </div>
+                  
+                  {/* Efecto de brillo adicional */}
+                  <div className="absolute top-2 left-2 right-2 h-8 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </Link>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
                 Coalición Nacional comprometida con la integridad electoral y la lucha contra la desinformación en Bolivia.
               </p>
-              
-              {/* Social Media */}
-              <div className="flex space-x-4">
-                {footerLinks.social.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:bg-green-600/20 transition-all duration-300"
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
             </motion.div>
 
             {/* Coalición Links */}

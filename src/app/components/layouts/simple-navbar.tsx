@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const navigationItems = [
   { name: "Inicio", link: "#home", isContacto: false, isScroll: true },
-  { name: "Acerca de", link: "#about", isContacto: false, isScroll: true },
+  { name: "Quienes Somos", link: "#about", isContacto: false, isScroll: true },
   { name: "Miembros", link: "#members", isContacto: false, isScroll: true },
   { name: "Actividades", link: "#activities", isContacto: false, isScroll: true },
   { name: "Contacto", link: "#", isContacto: true, isScroll: false },
@@ -113,11 +113,11 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center transform hover:scale-105 transition-transform duration-200">
               <Image
-                src="/logo.webp"
-                alt="Coalición Logo"
-                width={80}
-                height={48}
-                className="h-8 sm:h-15 lg:h-20 w-auto object-contain"
+                src="/inicial/logo-fotter.png"
+                alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
+                width={160}
+                height={80}
+                className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
               />
             </Link>
           </div>
@@ -132,9 +132,13 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 key={index}
                 href={item.link}
                 onClick={(e) => handleNavClick(e, item)}
-                className="text-sm lg:text-sm font-medium lg:font-bold transition-all duration-200 px-2 lg:px-3 py-2 rounded-lg relative text-white hover:text-blue-200 hover:bg-white/20 backdrop-blur-sm"
+                className="group relative text-sm lg:text-base font-medium lg:font-semibold transition-all duration-300 px-2 py-2 text-white hover:text-emerald-300 transform hover:scale-105"
               >
-                {item.name}
+                <span className="relative z-10">{item.name}</span>
+                {/* Línea animada debajo */}
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-full"></div>
+                {/* Efecto de brillo sutil */}
+                <div className="absolute inset-0 rounded-lg opacity-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 transition-opacity duration-300 group-hover:opacity-100"></div>
               </Link>
             ))}
           </div>
@@ -172,13 +176,13 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
         />
         
         {/* Contenido del menú */}
-        <div className="relative px-4 pt-4 pb-6 space-y-2 shadow-lg z-10">
+        <div className="relative px-4 pt-4 pb-6 space-y-3 shadow-lg z-10">
           {navigationItems.map((item, index) => (
             <Link
               key={index}
               href={item.link}
               onClick={(e) => handleNavClick(e, item)}
-              className={`flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-blue-200 hover:bg-white/10 rounded-lg transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-emerald-300 transition-all duration-300 transform hover:scale-105 ${
                 isMobileMenuOpen 
                   ? `animate-slideIn animation-delay-${index * 100}` 
                   : ''
@@ -187,7 +191,13 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 animationDelay: `${index * 100}ms`
               }}
             >
-              {item.name}
+              <span className="relative z-10">{item.name}</span>
+              {/* Línea animada lateral */}
+              <div className="absolute left-4 top-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
+              {/* Línea animada derecha */}
+              <div className="absolute right-4 top-1/2 w-0 h-0.5 bg-gradient-to-l from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
+              {/* Efecto de brillo sutil */}
+              <div className="absolute inset-0 rounded-lg opacity-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 transition-opacity duration-300 group-hover:opacity-100"></div>
             </Link>
           ))}
         </div>

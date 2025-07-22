@@ -12,7 +12,7 @@ interface Logo {
 const logos: Logo[] = [
   { src: '/logos/ONU-mujeres.avif', alt: 'ONU Mujeres', name: 'ONU Mujeres' },
   { src: '/logos/OEP.png', alt: 'OEP', name: 'OEP' },
-  
+  { src: '/logos/pnud.webp', alt: 'pnud', name: 'pnud' },
   { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas' },
   { src: '/logos/LOGO-MUY-WASO.webp', alt: 'Muy Waso', name: 'Muy Waso' },
   { src: '/logos/logo-ipicom.webp', alt: 'IPICOM', name: 'IPICOM' },
@@ -27,6 +27,7 @@ const logos: Logo[] = [
   { src: '/logos/DW-Academie.jpg', alt: 'DW Academie', name: 'DW Academie' },
   { src: '/logos/aru.webp', alt: 'ARU', name: 'ARU' },
   { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC' }
+  
 ];
 
 export function SliderLogos() {
