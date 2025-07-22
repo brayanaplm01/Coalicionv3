@@ -167,34 +167,35 @@ const CronologiaModal: React.FC<CronologiaModalProps> = ({ open, onClose }) => {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-sm p-2 sm:p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative border border-white/20"
+            className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative border border-white/20"
             initial={{ scale: 0.9, y: 50, opacity: 0 }}
             animate={{ scale: 1, y: 0, opacity: 1 }}
             exit={{ scale: 0.9, y: 50, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
             {/* Background decorations */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-br from-blue-400/10 to-teal-400/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 sm:w-64 sm:h-64 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-48 sm:h-48 bg-gradient-to-br from-blue-400/10 to-teal-400/10 rounded-full blur-3xl"></div>
             
             {/* Header */}
-            <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200/50 p-8 pb-6">
+            <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200/50 p-4 sm:p-6 lg:p-8 pb-4 sm:pb-6">
               <button 
                 onClick={onClose} 
-                className="absolute right-6 top-6 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-all duration-200 hover:scale-110"
+                className="absolute right-3 top-3 sm:right-6 sm:top-6 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-all duration-200 hover:scale-110"
               >
-                <IconX size={20} />
+                <IconX size={16} className="sm:hidden" />
+                <IconX size={20} className="hidden sm:block" />
               </button>
               
               <div className="text-center">
                 <motion.h2 
-                  className="text-4xl sm:text-5xl font-bold mb-4"
+                  className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
@@ -206,14 +207,14 @@ const CronologiaModal: React.FC<CronologiaModalProps> = ({ open, onClose }) => {
                 </motion.h2>
                 
                 <motion.div 
-                  className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mb-3"
+                  className="w-16 sm:w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mb-2 sm:mb-3"
                   initial={{ width: 0 }}
                   animate={{ width: 96 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 />
                 
                 <motion.p 
-                  className="text-lg text-gray-600 max-w-2xl mx-auto"
+                  className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
@@ -226,19 +227,19 @@ const CronologiaModal: React.FC<CronologiaModalProps> = ({ open, onClose }) => {
             {/* Timeline Content */}
             <div 
               ref={containerRef} 
-              className="overflow-y-auto px-8 py-6 relative"
-              style={{ height: 'calc(90vh - 200px)', scrollBehavior: 'smooth' }}
+              className="overflow-y-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative"
+              style={{ height: 'calc(90vh - 160px)', scrollBehavior: 'smooth' }}
             >
               {/* Animated timeline line */}
               <motion.div
                 ref={lineRef}
-                className="absolute left-12 top-0 w-1 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full z-0"
+                className="absolute left-6 sm:left-8 lg:left-12 top-0 w-0.5 sm:w-1 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full z-0"
                 initial={{ height: 0 }}
                 animate={controls}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               />
               
-              <div className="space-y-8 relative z-10">
+              <div className="space-y-6 sm:space-y-8 relative z-10">
                 {timeline.map((bloque, idx) => (
                   <motion.div
                     key={bloque.mes}
@@ -246,25 +247,26 @@ const CronologiaModal: React.FC<CronologiaModalProps> = ({ open, onClose }) => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 * idx }}
                     viewport={{ once: true, amount: 0.3 }}
-                    className={`timeline-block bg-gradient-to-br ${bloque.bgGradient} rounded-2xl p-6 ml-8 shadow-lg border border-white/30 relative`}
+                    className={`timeline-block bg-gradient-to-br ${bloque.bgGradient} rounded-xl sm:rounded-2xl p-4 sm:p-6 ml-6 sm:ml-8 lg:ml-12 shadow-lg border border-white/30 relative`}
                   >
                     {/* Timeline dot */}
                     <div 
-                      className={`absolute -left-12 top-6 w-8 h-8 bg-gradient-to-br ${bloque.gradient} rounded-full flex items-center justify-center shadow-lg border-4 border-white`}
+                      className={`absolute -left-10 sm:-left-12 lg:-left-16 top-4 sm:top-6 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br ${bloque.gradient} rounded-full flex items-center justify-center shadow-lg border-2 sm:border-4 border-white`}
                     >
-                      <IconCalendar size={16} className="text-white" />
+                      <IconCalendar size={12} className="sm:hidden text-white" />
+                      <IconCalendar size={16} className="hidden sm:block text-white" />
                     </div>
                     
                     {/* Month header */}
-                    <div className="flex items-center gap-3 mb-6">
-                      <h3 className={`text-2xl font-bold bg-gradient-to-r ${bloque.gradient} bg-clip-text text-transparent`}>
+                    <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                      <h3 className={`text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r ${bloque.gradient} bg-clip-text text-transparent`}>
                         {bloque.mes}
                       </h3>
-                      <div className={`h-1 flex-1 bg-gradient-to-r ${bloque.gradient} rounded-full`}></div>
+                      <div className={`h-0.5 sm:h-1 flex-1 bg-gradient-to-r ${bloque.gradient} rounded-full`}></div>
                     </div>
 
                     {/* Timeline items */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       {bloque.items.map((item, i) => (
                         <motion.div
                           key={i}
@@ -272,23 +274,23 @@ const CronologiaModal: React.FC<CronologiaModalProps> = ({ open, onClose }) => {
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 0.1 * i }}
                           viewport={{ once: true, amount: 0.3 }}
-                          className="group bg-white/60 backdrop-blur-sm rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-white/40"
+                          className="group bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-white/40"
                         >
-                          <div className="flex items-start gap-4">
+                          <div className="flex items-start gap-3 sm:gap-4">
                             <div 
-                              className={`bg-gradient-to-br ${bloque.gradient} text-white font-bold text-lg w-12 h-12 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}
+                              className={`bg-gradient-to-br ${bloque.gradient} text-white font-bold text-sm sm:text-lg w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
                             >
                               {item.dia}
                             </div>
-                            <div className="flex-1">
-                              <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors duration-300">
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2 group-hover:text-green-700 transition-colors duration-300">
                                 {item.titulo}
                               </h4>
-                              <p className="text-gray-700 leading-relaxed">
+                              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                                 {item.desc}
                               </p>
                             </div>
-                            <IconArrowRight className="text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300 mt-2" size={20} />
+                            <IconArrowRight className="text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300 mt-1 sm:mt-2 flex-shrink-0" size={16} />
                           </div>
                         </motion.div>
                       ))}
@@ -302,23 +304,24 @@ const CronologiaModal: React.FC<CronologiaModalProps> = ({ open, onClose }) => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 * (timeline.length + 1) }}
                   viewport={{ once: true, amount: 0.3 }}
-                  className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 ml-8 shadow-lg border border-orange-200 relative"
+                  className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 ml-6 sm:ml-8 lg:ml-12 shadow-lg border border-orange-200 relative"
                 >
                   {/* Timeline dot */}
-                  <div className="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                    <IconTarget size={16} className="text-white" />
+                  <div className="absolute -left-10 sm:-left-12 lg:-left-16 top-4 sm:top-6 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg border-2 sm:border-4 border-white">
+                    <IconTarget size={12} className="sm:hidden text-white" />
+                    <IconTarget size={16} className="hidden sm:block text-white" />
                   </div>
                   
                   {/* Header */}
-                  <div className="flex items-center gap-3 mb-6">
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
                       Próximas Actividades
                     </h3>
-                    <div className="h-1 flex-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
+                    <div className="h-0.5 sm:h-1 flex-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
                   </div>
 
                   {/* Future items */}
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     {proximas.map((item, i) => (
                       <motion.div
                         key={i}
@@ -326,14 +329,14 @@ const CronologiaModal: React.FC<CronologiaModalProps> = ({ open, onClose }) => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 * i }}
                         viewport={{ once: true, amount: 0.3 }}
-                        className="group bg-white/60 backdrop-blur-sm rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-white/40"
+                        className="group bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-white/40"
                       >
-                        <div className="flex items-center gap-4">
-                          <div className="w-3 h-3 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                          <p className="text-gray-900 font-semibold group-hover:text-orange-700 transition-colors duration-300">
+                        <div className="flex items-center gap-3 sm:gap-4">
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full group-hover:scale-125 transition-transform duration-300 flex-shrink-0"></div>
+                          <p className="text-sm sm:text-base text-gray-900 font-semibold group-hover:text-orange-700 transition-colors duration-300 flex-1">
                             {item}
                           </p>
-                          <IconArrowRight className="text-gray-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all duration-300 ml-auto" size={16} />
+                          <IconArrowRight className="text-gray-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" size={14} />
                         </div>
                       </motion.div>
                     ))}
