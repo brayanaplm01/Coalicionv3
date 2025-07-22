@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { motion, useInView } from "motion/react";
-import { IconEye, IconTarget, IconUsers, IconShield } from "@tabler/icons-react";
+import { IconEye, IconTarget, IconUsers, IconShield, IconBuilding, IconNews, IconWorld } from "@tabler/icons-react";
 
 // Custom hook para animar contadores
 const useCounter = (target: number, duration: number = 2000, startDelay: number = 0) => {
@@ -90,7 +89,27 @@ const StatCard = ({ stat, index }: { stat: typeof stats[0], index: number }) => 
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
+    <>
+      <style jsx>{`
+        @keyframes gradient-x {
+          0%, 100% {
+            background-size: 200% 200%;
+            background-position: 0% 50%;
+          }
+          50% {
+            background-size: 200% 200%;
+            background-position: 100% 50%;
+          }
+        }
+        .animate-gradient-x {
+          animation: gradient-x 3s ease infinite;
+        }
+        .bg-size-200 {
+          background-size: 200% 200%;
+        }
+      `}</style>
+      
+      <section id="about" className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20"></div>
@@ -113,100 +132,189 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            ¿Quiénes <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Somos</span>?
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-600 mx-auto mb-12"></div>
-          
-          {/* Imagen Quienes Somos */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+          <motion.h2 
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mb-12 flex justify-center"
           >
-            <div className="relative w-full max-w-4xl mx-auto">
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
-                <Image
-                  src="/inicial/coalicion.png"
-                  alt="Quiénes Somos - Coalición Nacional"
-                  width={900}
-                  height={600}
-                  className="w-full h-auto rounded-2xl"
-                />
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-green-600/5 via-transparent to-transparent pointer-events-none"></div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-green-400/15 rounded-full blur-2xl"></div>
-            </div>
-          </motion.div>
+            ¿Quiénes{" "}
+            <motion.span 
+              className="bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 bg-clip-text text-transparent bg-size-200 animate-gradient-x"
+              initial={{ backgroundPosition: "0% 50%" }}
+              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
+              Somos
+            </motion.span>
+            ?
+          </motion.h2>
           
+          <motion.div 
+            className="w-32 h-1.5 bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 mx-auto mb-8 rounded-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          />
+          
+          {/* Hero Text con efectos dinámicos */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
-            className="max-w-5xl mx-auto"
+            className="max-w-5xl mx-auto relative"
           >
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8">
-              Somos una <span className="font-semibold text-green-700 bg-green-50 px-2 py-1 rounded-lg">Coalición Nacional</span> formada por organizaciones 
-              de la sociedad civil, medios de comunicación, instituciones académicas y organismos internacionales, 
-              unidos en la lucha contra la desinformación electoral en Bolivia.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Sociedad Civil</h3>
-                <p className="text-sm text-gray-600">Organizaciones comprometidas con la democracia</p>
-              </motion.div>
+            <div className="relative bg-gradient-to-br from-white/90 via-green-50/50 to-emerald-50/50 backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] group">
+              {/* Efectos de fondo dinámicos */}
+              <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gradient-to-r from-green-600/5 via-transparent to-emerald-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-green-400/30 to-emerald-400/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-emerald-400/20 to-green-400/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
               
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Medios</h3>
-                <p className="text-sm text-gray-600">Comunicación responsable y verificación</p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Internacional</h3>
-                <p className="text-sm text-gray-600">Organismos y cooperación global</p>
-              </motion.div>
+              <div className="relative z-10">
+                <motion.p 
+                  className="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-sans-serif"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  Somos una{" "}
+                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-700 via-emerald-600 to-green-700 relative inline-block ">
+                    Coalición Nacional
+                  </span>{" "}
+                  formada por organizaciones de la sociedad civil, medios de comunicación, 
+                  instituciones académicas y organismos internacionales, unidos en la lucha 
+                  contra la desinformación electoral en Bolivia.
+                </motion.p>
+                
+                {/* Destacado de "Coalición Nacional" separado */}
+                <motion.div
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 0.1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-64 h-16 bg-gradient-to-r from-green-200/30 to-emerald-200/30 rounded-full blur-xl" />
+                </motion.div>
+                
+                {/* Línea decorativa animada */}
+                <motion.div
+                  className="mt-8 h-px bg-gradient-to-r from-transparent via-green-400 to-transparent"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.9 }}
+                  viewport={{ once: true }}
+                />
+              </div>
             </div>
           </motion.div>
+        </motion.div>
+
+        {/* Tipos de Organizaciones - Sección Dinámica */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4">
+            Nuestra <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Red</span> de Aliados
+          </h3>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+            Diversos sectores unidos por un objetivo común: elecciones transparentes y democráticas
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {[
+              {
+                icon: <IconBuilding className="h-12 w-12" />,
+                title: "Sociedad Civil",
+                description: "Organizaciones comprometidas con la democracia y participación ciudadana",
+                gradient: "from-blue-500 to-purple-600",
+                bgGradient: "from-blue-50 to-purple-50",
+                shadowColor: "blue"
+              },
+              {
+                icon: <IconNews className="h-12 w-12" />,
+                title: "Medios de Comunicación",
+                description: "Comunicación responsable, verificación de hechos y periodismo de calidad",
+                gradient: "from-green-500 to-emerald-600",
+                bgGradient: "from-green-50 to-emerald-50",
+                shadowColor: "green"
+              },
+              {
+                icon: <IconWorld className="h-12 w-12" />,
+                title: "Organismos Internacionales",
+                description: "Cooperación global y estándares internacionales en procesos electorales",
+                gradient: "from-orange-500 to-red-600",
+                bgGradient: "from-orange-50 to-red-50",
+                shadowColor: "orange"
+              }
+            ].map((org, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ y: -10, scale: 1.05 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.2,
+                  type: "spring",
+                  stiffness: 200
+                }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className={`relative bg-gradient-to-br ${org.bgGradient} rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500 h-full overflow-hidden flex flex-col justify-between min-h-[320px]`}>
+                  {/* Efectos de fondo */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-2xl transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-xl transform -translate-x-4 translate-y-4 group-hover:scale-125 transition-transform duration-700"></div>
+                  
+                  <div className="relative z-10 flex flex-col items-center flex-1">
+                    <motion.div 
+                      className={`w-20 h-20 bg-gradient-to-br ${org.gradient} rounded-3xl flex items-center justify-center text-white shadow-2xl mb-6 group-hover:shadow-${org.shadowColor}-500/25`}
+                      whileHover={{ 
+                        scale: 1.15,
+                        rotate: [0, -5, 5, 0],
+                        boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.4)"
+                      }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {org.icon}
+                      </motion.div>
+                    </motion.div>
+                    
+                    <div className="flex-1 flex flex-col justify-center text-center">
+                      <h4 className={`text-2xl font-bold mb-4 bg-gradient-to-r ${org.gradient} bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300 min-h-[64px] flex items-center justify-center`}>
+                        {org.title}
+                      </h4>
+                      <p className="text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300 flex-1 flex items-center justify-center">
+                        {org.description}
+                      </p>
+                    </div>
+                    
+                    {/* Indicador de hover */}
+                    <motion.div
+                      className={`mt-6 w-0 h-1 bg-gradient-to-r ${org.gradient} rounded-full group-hover:w-full transition-all duration-500`}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "100%" }}
+                      transition={{ duration: 0.8, delay: index * 0.3 + 0.5 }}
+                      viewport={{ once: true }}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Statistics */}
@@ -222,41 +330,134 @@ export function AboutSection() {
           ))}
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-20">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] h-full relative overflow-hidden">
-                {/* Background decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full blur-2xl transform translate-x-8 -translate-y-8"></div>
-                
-                <div className="relative">
-                  <div className="flex items-start mb-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg mr-6">
-                      {feature.icon}
+        {/* Features Grid - Mejorada */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4">
+            Nuestros <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Valores</span> y Compromiso
+          </h3>
+          <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto text-lg">
+            Los pilares fundamentales que guían nuestro trabajo hacia una democracia más transparente
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50, rotateX: -15 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                whileHover={{ 
+                  y: -15, 
+                  rotateX: 5,
+                  transition: { type: "spring", stiffness: 200 }
+                }}
+                transition={{ 
+                  duration: 0.7, 
+                  delay: index * 0.15,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                viewport={{ once: true }}
+                className="group perspective-1000"
+              >
+                <div className="relative bg-gradient-to-br from-white/90 via-white/70 to-green-50/30 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/40 hover:shadow-3xl transition-all duration-700 h-full overflow-hidden transform-gpu">
+                  {/* Efectos de fondo animados */}
+                  <motion.div 
+                    className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full blur-3xl"
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      rotate: [0, 180, 360]
+                    }}
+                    transition={{ 
+                      duration: 8, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    style={{ transform: "translate(25%, -25%)" }}
+                  />
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-emerald-400/15 to-green-400/15 rounded-full blur-2xl transform -translate-x-4 translate-y-4 group-hover:scale-150 transition-transform duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-start mb-8">
+                      <motion.div 
+                        className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-green-600 via-emerald-500 to-green-600 rounded-3xl flex items-center justify-center text-white shadow-2xl mr-6 group-hover:shadow-green-500/25"
+                        whileHover={{ 
+                          scale: 1.15,
+                          rotate: [0, -5, 5, 0],
+                          boxShadow: "0 25px 50px -12px rgba(34, 197, 94, 0.4)"
+                        }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                      >
+                        <motion.div
+                          whileHover={{ scale: 1.2 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          {feature.icon}
+                        </motion.div>
+                      </motion.div>
+                      <div className="flex-1">
+                        <motion.h3 
+                          className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ type: "spring", stiffness: 200 }}
+                        >
+                          {feature.title}
+                        </motion.h3>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
-                        {feature.title}
-                      </h3>
+                    
+                    <motion.p 
+                      className="text-gray-600 leading-relaxed text-base sm:text-lg mb-6"
+                      initial={{ opacity: 0.8 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {feature.description}
+                    </motion.p>
+                    
+                    {/* Barra de progreso animada */}
+                    <div className="relative">
+                      <div className="w-full h-2 bg-gray-200/50 rounded-full overflow-hidden">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
+                          initial={{ width: "0%" }}
+                          whileInView={{ width: "100%" }}
+                          transition={{ 
+                            duration: 1.2, 
+                            delay: index * 0.2 + 0.5,
+                            ease: "easeOut"
+                          }}
+                          viewport={{ once: true }}
+                        />
+                      </div>
+                      <motion.div
+                        className="absolute -right-2 -top-1 w-4 h-4 bg-white rounded-full shadow-lg border-2 border-green-500"
+                        initial={{ x: -300 }}
+                        whileInView={{ x: 0 }}
+                        transition={{ 
+                          duration: 1.2, 
+                          delay: index * 0.2 + 0.5,
+                          ease: "easeOut"
+                        }}
+                        viewport={{ once: true }}
+                      />
                     </div>
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
-                    {feature.description}
-                  </p>
+                  
+                  {/* Brillo hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
