@@ -41,7 +41,10 @@ export function HeroSection() {
         <div className="flex items-center justify-center max-w-4xl mx-auto w-full">
           <div className="hero-content-card p-6 sm:p-8 rounded-xl text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
-              Juntos Contra la Desinformación Electoral
+              Juntos Contra la
+            </h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-300 mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
+              Desinformación Electoral
             </h1>
             <div className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white/90 mb-3 sm:mb-4">
               Coalición Nacional que reúne a {" "}
