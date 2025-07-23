@@ -71,7 +71,7 @@ const StatCard = ({ stat, index }: { stat: typeof stats[0], index: number }) => 
     <div ref={ref} className="text-center">
       <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:scale-105">
         <motion.div 
-          className="text-3xl sm:text-4xl font-bold text-green-600 mb-2"
+          className="text-3xl sm:text-4xl font-bold text-red-800 mb-2"
           initial={{ scale: 0.5, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -112,7 +112,7 @@ export function AboutSection() {
       <section id="about" className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-red-800/20 to-rose-800/20"></div>
         <svg className="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -141,7 +141,7 @@ export function AboutSection() {
           >
             ¿Quiénes{" "}
             <motion.span 
-              className="bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 bg-clip-text text-transparent bg-size-200 animate-gradient-x"
+              className="bg-gradient-to-r text-cyan-700 animate-gradient-x"
               initial={{ backgroundPosition: "0% 50%" }}
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -152,7 +152,7 @@ export function AboutSection() {
           </motion.h2>
           
           <motion.div 
-            className="w-32 h-1.5 bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 mx-auto mb-8 rounded-full"
+            className="w-32 h-1.5 bg-gradient-to-r from-red-800 via-rose-700 to-red-800 mx-auto mb-8 rounded-full"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -167,11 +167,11 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="max-w-5xl mx-auto relative"
           >
-            <div className="relative bg-gradient-to-br from-white/90 via-green-50/50 to-emerald-50/50 backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] group">
+            <div className="relative bg-gradient-to-br from-white/90 via-red-50/50 to-rose-50/50 backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] group">
               {/* Efectos de fondo dinámicos */}
-              <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gradient-to-r from-green-600/5 via-transparent to-emerald-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-green-400/30 to-emerald-400/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-emerald-400/20 to-green-400/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gradient-to-r from-red-800/5 via-transparent to-rose-800/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-red-400/30 to-rose-400/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-rose-400/20 to-red-400/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
               
               <div className="relative z-10">
                 <motion.p 
@@ -182,7 +182,7 @@ export function AboutSection() {
                   viewport={{ once: true }}
                 >
                   Somos una{" "}
-                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-700 via-emerald-600 to-green-700 relative inline-block ">
+                  <span className="font-bold text-cyan-700 relative inline-block ">
                     Coalición Nacional
                   </span>{" "}
                   formada por organizaciones de la sociedad civil, medios de comunicación, 
@@ -198,12 +198,12 @@ export function AboutSection() {
                   transition={{ duration: 0.5, delay: 0.8 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-64 h-16 bg-gradient-to-r from-green-200/30 to-emerald-200/30 rounded-full blur-xl" />
+                  <div className="w-64 h-16 bg-gradient-to-r from-red-200/30 to-rose-200/30 rounded-full blur-xl" />
                 </motion.div>
                 
                 {/* Línea decorativa animada */}
                 <motion.div
-                  className="mt-8 h-px bg-gradient-to-r from-transparent via-green-400 to-transparent"
+                  className="mt-8 h-px bg-gradient-to-r from-transparent via-red-400 to-transparent"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 1, delay: 0.9 }}
@@ -223,7 +223,7 @@ export function AboutSection() {
           className="mb-24"
         >
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4">
-            Nuestra <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Red</span> de Aliados
+            Nuestra <span className="bg-gradient-to-r text-cyan-700">Red</span> de Aliados
           </h3>
           <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
             Diversos sectores unidos por un objetivo común: elecciones transparentes y democráticas
@@ -350,7 +350,7 @@ export function AboutSection() {
               <h3 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6 relative z-10">
                 Nuestros{" "}
                 <motion.span 
-                  className="bg-gradient-to-r from-green-500 via-emerald-400 to-green-600 bg-clip-text text-transparent relative"
+                  className="bg-gradient-to-r text-cyan-700 relative"
                   animate={{ 
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                   }}
@@ -367,7 +367,7 @@ export function AboutSection() {
               
               {/* Efectos de fondo del título */}
               <motion.div
-                className="absolute -inset-4 bg-gradient-to-r from-green-500/10 via-emerald-500/20 to-green-500/10 rounded-3xl blur-xl"
+                className="absolute -inset-4 bg-gradient-to-r from-red-800/10 via-rose-800/20 to-red-800/10 rounded-3xl blur-xl"
                 animate={{ 
                   scale: [1, 1.05, 1],
                   opacity: [0.3, 0.6, 0.3]
@@ -381,7 +381,7 @@ export function AboutSection() {
             </motion.div>
             
             <motion.div 
-              className="w-40 h-1.5 bg-gradient-to-r from-green-500 via-emerald-400 to-green-600 mx-auto mb-8 rounded-full"
+              className="w-40 h-1.5 bg-gradient-to-r from-red-800 via-rose-700 to-red-800 mx-auto mb-8 rounded-full"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
@@ -395,7 +395,7 @@ export function AboutSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              Los <span className="font-semibold text-green-700">pilares fundamentales</span> que definen nuestra identidad y 
+              Los <span className="font-semibold text-red-800">pilares fundamentales</span> que definen nuestra identidad y 
               guían cada una de nuestras acciones hacia una democracia más transparente y participativa
             </motion.p>
           </div>
@@ -492,7 +492,7 @@ export function AboutSection() {
                         className="relative flex-shrink-0"
                         whileHover={{ 
                           scale: 1.1,
-                          rotate: [0, -5, 5, 0]
+                          rotate: 5
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >

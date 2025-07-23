@@ -11,37 +11,37 @@ const contactOptions = [
     icon: IconShield,
     title: "Adhesiones a la Coalición",
     description: "Si tu organización está interesada en formar parte de nuestra coalición, contáctanos para conocer los requisitos y procesos de adhesión.",
-    bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
-    iconBg: "bg-green-100",
-    iconColor: "text-green-600",
-    borderColor: "border-green-200"
+    bgColor: "bg-gradient-to-br from-red-50 to-rose-50",
+    iconBg: "bg-red-100",
+    iconColor: "text-red-700",
+    borderColor: "border-red-200"
   },
   {
     icon: IconWorld,
     title: "Organizaciones Internacionales",
     description: "Intercambio de experiencias y buenas prácticas en la lucha contra la desinformación electoral.",
-    bgColor: "bg-gradient-to-br from-blue-50 to-indigo-50",
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-600",
-    borderColor: "border-blue-200"
+    bgColor: "bg-gradient-to-br from-red-50 to-red-100",
+    iconBg: "bg-red-100",
+    iconColor: "text-red-800",
+    borderColor: "border-red-300"
   },
   {
     icon: IconNews,
     title: "Medios de Comunicación",
     description: "Consultas sobre nuestras actividades, declaraciones o solicitudes de entrevistas.",
-    bgColor: "bg-gradient-to-br from-purple-50 to-violet-50",
-    iconBg: "bg-purple-100",
-    iconColor: "text-purple-600",
-    borderColor: "border-purple-200"
+    bgColor: "bg-gradient-to-br from-rose-50 to-red-50",
+    iconBg: "bg-rose-100",
+    iconColor: "text-rose-700",
+    borderColor: "border-rose-200"
   },
   {
     icon: IconUser,
     title: "Ciudadanía",
     description: "Información sobre nuestras actividades, recursos educativos y herramientas disponibles.",
-    bgColor: "bg-gradient-to-br from-orange-50 to-amber-50",
-    iconBg: "bg-orange-100",
-    iconColor: "text-orange-600",
-    borderColor: "border-orange-200"
+    bgColor: "bg-gradient-to-br from-red-100 to-rose-100",
+    iconBg: "bg-red-200",
+    iconColor: "text-red-900",
+    borderColor: "border-red-300"
   }
 ];
 
@@ -65,8 +65,8 @@ export default function ContactoModal({ open, onClose }: ContactoModalProps) {
             onClick={e => e.stopPropagation()}
           >
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-32 h-32 sm:w-64 sm:h-64 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-48 sm:h-48 bg-gradient-to-br from-blue-400/10 to-teal-400/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 sm:w-64 sm:h-64 bg-gradient-to-br from-red-400/10 to-rose-400/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-48 sm:h-48 bg-gradient-to-br from-red-600/10 to-red-800/10 rounded-full blur-3xl"></div>
             
             <div className="relative p-4 sm:p-6 lg:p-8">
               {/* Header */}
@@ -86,14 +86,14 @@ export default function ContactoModal({ open, onClose }: ContactoModalProps) {
                   transition={{ duration: 0.6 }}
                 >
                   <span className="text-gray-900">¿Cómo </span>
-                  <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
                     Contactarnos
                   </span>
                   <span className="text-gray-900">?</span>
                 </motion.h2>
                 
                 <motion.div 
-                  className="w-16 sm:w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mb-3 sm:mb-4"
+                  className="w-16 sm:w-24 h-1 bg-gradient-to-r from-red-600 to-red-700 rounded-full mx-auto mb-3 sm:mb-4"
                   initial={{ width: 0 }}
                   animate={{ width: 96 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -130,11 +130,11 @@ export default function ContactoModal({ open, onClose }: ContactoModalProps) {
                             <option.icon size={24} className="hidden sm:block" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors duration-300">
+                            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-red-700 transition-colors duration-300">
                               {option.title}
                             </h3>
                           </div>
-                          <IconArrowRight className="text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300" size={18} />
+                          <IconArrowRight className="text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all duration-300" size={18} />
                         </div>
                         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                           {option.description}
@@ -147,7 +147,7 @@ export default function ContactoModal({ open, onClose }: ContactoModalProps) {
 
               {/* Contact CTA Section */}
               <motion.div 
-                className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center text-white relative overflow-hidden"
+                className="bg-gradient-to-r from-red-700 to-red-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center text-white relative overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -161,13 +161,13 @@ export default function ContactoModal({ open, onClose }: ContactoModalProps) {
                     ¡Conectemos y Trabajemos Juntos!
                   </h3>
                   
-                  <p className="text-green-100 mb-4 sm:mb-6 text-base sm:text-lg max-w-2xl mx-auto">
+                  <p className="text-red-100 mb-4 sm:mb-6 text-base sm:text-lg max-w-2xl mx-auto">
                     Tu participación es fundamental para fortalecer la democracia boliviana
                   </p>
                   
                   <motion.a
                     href="mailto:contacto@facto.bo"
-                    className="inline-flex items-center gap-2 sm:gap-3 bg-white text-green-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105 group"
+                    className="inline-flex items-center gap-2 sm:gap-3 bg-white text-red-800 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105 group"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  { name: "Inicio", link: "#home", isContacto: false, isScroll: true },
   { name: "Quienes Somos", link: "#about", isContacto: false, isScroll: true },
   { name: "Miembros", link: "#members", isContacto: false, isScroll: true },
   { name: "Actividades", link: "#activities", isContacto: false, isScroll: true },
@@ -98,8 +97,8 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-500 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-[#063740]/80 backdrop-blur-md shadow-lg border-b border-white/10"
-          : "bg-[#063740]/60 backdrop-blur-sm border-b border-white/5"
+          ? "bg-red-900/80 backdrop-blur-md shadow-lg border-b border-white/10"
+          : "bg-red-900/60 backdrop-blur-sm border-b border-white/5"
       }`}
       style={{ 
         WebkitTapHighlightColor: 'transparent',
@@ -132,11 +131,12 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 key={index}
                 href={item.link}
                 onClick={(e) => handleNavClick(e, item)}
-                className="group relative text-sm lg:text-base font-medium lg:font-semibold transition-all duration-300 px-2 py-2 text-white hover:text-emerald-300 transform hover:scale-105"
+                className="group relative text-sm lg:text-base font-medium lg:font-light
+                transition-all duration-300 px-2 py-2 text-white hover:text-red-300 transform hover:scale-105"
               >
                 <span className="relative z-10">{item.name}</span>
                 {/* Línea animada debajo */}
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-full"></div>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-400 to-rose-400 transition-all duration-300 group-hover:w-full"></div>
                 {/* Efecto de brillo sutil */}
                 
               </Link>
@@ -171,7 +171,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
         {/* Fondo blur inmediato */}
         <div 
           className={`absolute inset-0 backdrop-blur-lg transition-opacity duration-200 ${
-            isMobileMenuOpen ? "opacity-100 bg-[#063740]" : "opacity-0 bg-transparent"
+            isMobileMenuOpen ? "opacity-100 bg-red-900" : "opacity-0 bg-transparent"
           }`}
         />
         
@@ -182,7 +182,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
               key={index}
               href={item.link}
               onClick={(e) => handleNavClick(e, item)}
-              className={`group relative flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-emerald-300 transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
                 isMobileMenuOpen 
                   ? `animate-slideIn animation-delay-${index * 100}` 
                   : ''
@@ -193,11 +193,11 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
             >
               <span className="relative z-10">{item.name}</span>
               {/* Línea animada lateral */}
-              <div className="absolute left-4 top-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
+              <div className="absolute left-4 top-1/2 w-0 h-0.5 bg-gradient-to-r from-red-400 to-rose-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
               {/* Línea animada derecha */}
-              <div className="absolute right-4 top-1/2 w-0 h-0.5 bg-gradient-to-l from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
+              <div className="absolute right-4 top-1/2 w-0 h-0.5 bg-gradient-to-l from-red-400 to-rose-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
               {/* Efecto de brillo sutil */}
-              <div className="absolute inset-0 rounded-lg opacity-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div className="absolute inset-0 rounded-lg opacity-0 bg-gradient-to-r from-red-800/10 to-rose-800/10 transition-opacity duration-300 group-hover:opacity-100"></div>
             </Link>
           ))}
         </div>
