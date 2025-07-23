@@ -330,127 +330,320 @@ export function AboutSection() {
           ))}
         </motion.div>
 
-        {/* Features Grid - Mejorada */}
+        {/* Features Grid - Rediseñada Completamente */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4">
-            Nuestros <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Valores</span> y Compromiso
-          </h3>
-          <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto text-lg">
-            Los pilares fundamentales que guían nuestro trabajo hacia una democracia más transparente
-          </p>
+          {/* Header Mejorado */}
+          <div className="text-center mb-20">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="relative inline-block"
+            >
+              <h3 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6 relative z-10">
+                Nuestros{" "}
+                <motion.span 
+                  className="bg-gradient-to-r from-green-500 via-emerald-400 to-green-600 bg-clip-text text-transparent relative"
+                  animate={{ 
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  style={{ backgroundSize: "200% 200%" }}
+                >
+                  Valores
+                </motion.span>
+              </h3>
+              
+              {/* Efectos de fondo del título */}
+              <motion.div
+                className="absolute -inset-4 bg-gradient-to-r from-green-500/10 via-emerald-500/20 to-green-500/10 rounded-3xl blur-xl"
+                animate={{ 
+                  scale: [1, 1.05, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
+            
+            <motion.div 
+              className="w-40 h-1.5 bg-gradient-to-r from-green-500 via-emerald-400 to-green-600 mx-auto mb-8 rounded-full"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+              viewport={{ once: true }}
+            />
+            
+            <motion.p 
+              className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Los <span className="font-semibold text-green-700">pilares fundamentales</span> que definen nuestra identidad y 
+              guían cada una de nuestras acciones hacia una democracia más transparente y participativa
+            </motion.p>
+          </div>
           
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          {/* Grid Mejorado con Diseño Asimétrico */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50, rotateX: -15 }}
+                initial={{ opacity: 0, y: 60, rotateX: -20 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 whileHover={{ 
-                  y: -15, 
-                  rotateX: 5,
-                  transition: { type: "spring", stiffness: 200 }
+                  y: -20,
+                  scale: 1.02,
+                  rotateX: 8,
+                  transition: { 
+                    type: "spring", 
+                    stiffness: 300,
+                    damping: 20
+                  }
                 }}
                 transition={{ 
-                  duration: 0.7, 
-                  delay: index * 0.15,
+                  duration: 0.8, 
+                  delay: index * 0.2,
                   type: "spring",
-                  stiffness: 100
+                  stiffness: 120
                 }}
                 viewport={{ once: true }}
                 className="group perspective-1000"
               >
-                <div className="relative bg-gradient-to-br from-white/90 via-white/70 to-green-50/30 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/40 hover:shadow-3xl transition-all duration-700 h-full overflow-hidden transform-gpu">
-                  {/* Efectos de fondo animados */}
+                <div className={`relative bg-gradient-to-br ${
+                  index % 2 === 0 
+                    ? 'from-white via-green-50/30 to-emerald-50/50' 
+                    : 'from-emerald-50/30 via-white to-green-50/50'
+                } backdrop-blur-2xl rounded-3xl lg:rounded-[2rem] p-8 lg:p-10 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-700 h-full overflow-hidden transform-gpu ${
+                  index % 2 === 0 ? 'lg:mt-8' : 'lg:mb-8'
+                }`}>
+                  
+                  {/* Efectos de fondo múltiples */}
                   <motion.div 
-                    className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full blur-3xl"
+                    className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-green-400/30 to-emerald-400/30 rounded-full blur-2xl"
                     animate={{ 
-                      scale: [1, 1.2, 1],
-                      rotate: [0, 180, 360]
+                      scale: [1, 1.3, 1],
+                      rotate: [0, 90, 180, 270, 360],
+                      opacity: [0.3, 0.6, 0.3]
                     }}
                     transition={{ 
-                      duration: 8, 
+                      duration: 8 + index,
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                    style={{ transform: "translate(25%, -25%)" }}
                   />
-                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-emerald-400/15 to-green-400/15 rounded-full blur-2xl transform -translate-x-4 translate-y-4 group-hover:scale-150 transition-transform duration-700"></div>
+                  
+                  <motion.div 
+                    className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tr from-emerald-400/20 to-green-400/20 rounded-full blur-xl"
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      x: [0, 10, 0],
+                      y: [0, -10, 0]
+                    }}
+                    transition={{ 
+                      duration: 6 + index * 0.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  {/* Patrón de puntos dinámico */}
+                  <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                    <div className="grid grid-cols-3 gap-2">
+                      {[...Array(9)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          className="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
+                          animate={{ 
+                            scale: [1, 1.5, 1],
+                            opacity: [0.5, 1, 0.5]
+                          }}
+                          transition={{ 
+                            duration: 2,
+                            delay: i * 0.1,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
                   
                   <div className="relative z-10">
-                    <div className="flex items-start mb-8">
+                    {/* Header de la tarjeta rediseñado */}
+                    <div className="flex items-start gap-6 mb-8">
                       <motion.div 
-                        className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-green-600 via-emerald-500 to-green-600 rounded-3xl flex items-center justify-center text-white shadow-2xl mr-6 group-hover:shadow-green-500/25"
+                        className="relative flex-shrink-0"
                         whileHover={{ 
-                          scale: 1.15,
-                          rotate: 5,
-                          boxShadow: "0 25px 50px -12px rgba(34, 197, 94, 0.4)"
+                          scale: 1.1,
+                          rotate: [0, -5, 5, 0]
                         }}
-                        transition={{ type: "spring", stiffness: 200 }}
+                        transition={{ type: "spring", stiffness: 300 }}
                       >
+                        <div className="w-24 h-24 bg-gradient-to-br from-green-600 via-emerald-500 to-green-700 rounded-3xl flex items-center justify-center text-white shadow-2xl group-hover:shadow-green-500/40 relative overflow-hidden">
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            animate={{ 
+                              x: ['-100%', '100%']
+                            }}
+                            transition={{ 
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                          />
+                          <motion.div
+                            whileHover={{ scale: 1.2, rotate: 360 }}
+                            transition={{ duration: 0.6, type: "spring" }}
+                            className="relative z-10 text-2xl"
+                          >
+                            {feature.icon}
+                          </motion.div>
+                        </div>
+                        
+                        {/* Anillo pulsante */}
                         <motion.div
-                          whileHover={{ scale: 1.2 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          {feature.icon}
-                        </motion.div>
+                          className="absolute inset-0 rounded-3xl border-2 border-green-500/30"
+                          animate={{ 
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 0, 0.5]
+                          }}
+                          transition={{ 
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeOut"
+                          }}
+                        />
                       </motion.div>
-                      <div className="flex-1">
-                        <motion.h3 
-                          className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ type: "spring", stiffness: 200 }}
+                      
+                      <div className="flex-1 pt-2">
+                        <motion.h4 
+                          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 group-hover:text-green-700 transition-all duration-300 leading-tight"
+                          whileHover={{ 
+                            scale: 1.03,
+                            x: 5
+                          }}
+                          transition={{ type: "spring", stiffness: 400 }}
                         >
                           {feature.title}
-                        </motion.h3>
+                        </motion.h4>
+                        
+                        {/* Línea decorativa bajo el título */}
+                        <motion.div
+                          className="w-0 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full group-hover:w-full transition-all duration-700 ease-out mb-4"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "60%" }}
+                          transition={{ duration: 1, delay: index * 0.3 + 0.8 }}
+                          viewport={{ once: true }}
+                        />
                       </div>
                     </div>
                     
-                    <motion.p 
-                      className="text-gray-600 leading-relaxed text-base sm:text-lg mb-6"
+                    {/* Descripción mejorada */}
+                    <motion.div
                       initial={{ opacity: 0.8 }}
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {feature.description}
-                    </motion.p>
+                      <p className="text-gray-600 leading-relaxed text-lg sm:text-xl mb-8 relative">
+                        {feature.description}
+                      </p>
+                    </motion.div>
                     
-                    {/* Barra de progreso animada */}
+                    {/* Barra de progreso circular */}
                     <div className="relative">
-                      <div className="w-full h-2 bg-gray-200/50 rounded-full overflow-hidden">
+                      <div className="flex items-center justify-between">
                         <motion.div
-                          className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
-                          initial={{ width: "0%" }}
-                          whileInView={{ width: "100%" }}
-                          transition={{ 
-                            duration: 1.2, 
-                            delay: index * 0.2 + 0.5,
-                            ease: "easeOut"
-                          }}
+                          className="relative w-16 h-16"
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 64 64">
+                            <circle
+                              cx="32" cy="32" r="28"
+                              fill="none"
+                              stroke="rgb(229 231 235)"
+                              strokeWidth="4"
+                            />
+                            <motion.circle
+                              cx="32" cy="32" r="28"
+                              fill="none"
+                              stroke="url(#gradient-progress)"
+                              strokeWidth="4"
+                              strokeLinecap="round"
+                              strokeDasharray={`${2 * Math.PI * 28}`}
+                              initial={{ strokeDashoffset: 2 * Math.PI * 28 }}
+                              whileInView={{ strokeDashoffset: 0 }}
+                              transition={{ 
+                                duration: 2, 
+                                delay: index * 0.3 + 1,
+                                ease: "easeOut"
+                              }}
+                              viewport={{ once: true }}
+                            />
+                            <defs>
+                              <linearGradient id="gradient-progress" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="rgb(34 197 94)" />
+                                <stop offset="100%" stopColor="rgb(16 185 129)" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <motion.span 
+                              className="text-sm font-bold text-green-600"
+                              initial={{ opacity: 0, scale: 0 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.5, delay: index * 0.3 + 1.5 }}
+                              viewport={{ once: true }}
+                            >
+                              100%
+                            </motion.span>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div
+                          className="text-right"
+                          initial={{ opacity: 0, x: 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.6, delay: index * 0.2 + 1 }}
                           viewport={{ once: true }}
-                        />
+                        >
+                          <p className="text-sm text-gray-500 mb-1">Compromiso</p>
+                          <p className="text-lg font-semibold text-green-600">Garantizado</p>
+                        </motion.div>
                       </div>
-                      <motion.div
-                        className="absolute -right-2 -top-1 w-4 h-4 bg-white rounded-full shadow-lg border-2 border-green-500"
-                        initial={{ x: -300 }}
-                        whileInView={{ x: 0 }}
-                        transition={{ 
-                          duration: 1.2, 
-                          delay: index * 0.2 + 0.5,
-                          ease: "easeOut"
-                        }}
-                        viewport={{ once: true }}
-                      />
                     </div>
                   </div>
                   
-                  {/* Brillo hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                  {/* Efecto de brillo mejorado */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
+                    animate={{ 
+                      x: ['-100%', '100%']
+                    }}
+                    transition={{ 
+                      duration: 1.5,
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </div>
               </motion.div>
             ))}

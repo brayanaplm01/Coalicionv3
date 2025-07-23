@@ -115,9 +115,9 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
               <Image
                 src="/inicial/logo-fotter.png"
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
-                width={160}
-                height={80}
-                className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
+                width={140}
+                height={40}
+                className="h-12 sm:h-16 lg:h-14 w-auto object-contain"
               />
             </Link>
           </div>
@@ -138,7 +138,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 {/* Línea animada debajo */}
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-full"></div>
                 {/* Efecto de brillo sutil */}
-                <div className="absolute inset-0 rounded-lg opacity-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 transition-opacity duration-300 group-hover:opacity-100"></div>
+                
               </Link>
             ))}
           </div>
