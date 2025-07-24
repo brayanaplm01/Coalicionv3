@@ -172,11 +172,11 @@ body {
 .hero-green-mask {
   background: linear-gradient(
     135deg,
-    rgba(185, 28, 28, 0.6) 0%,
-    rgba(153, 27, 27, 0.4) 25%,
-    rgba(127, 29, 29, 0.5) 50%,
-    rgba(115, 26, 26, 0.6) 75%,
-    rgba(69, 10, 10, 0.7) 100%
+    #b91c1c99 0%,
+    #991b1b66 25%,
+    #7f1d1d80 50%,
+    #731a1a99 75%,
+    #450a0ab3 100%
   );
   backdrop-filter: blur(1px);
 }
