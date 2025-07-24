@@ -40,8 +40,8 @@ export default function MembersSection({ onMoreInfoClick }: MembersSectionProps)
             className="flex-1 lg:pr-8"
           >
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Nuestros <span className="bg-gradient-to-r from-red-800 to-rose-800 bg-clip-text text-transparent">Miembros</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-regular text-gray-900 mb-6">
+                Nuestros <span className="bg-gradient-to-r text-amber-300 bg-clip-text">Miembros</span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-red-800 to-rose-800 mx-auto lg:mx-0 mb-8"></div>
             </div>
