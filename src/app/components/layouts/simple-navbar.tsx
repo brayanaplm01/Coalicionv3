@@ -113,7 +113,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center transform hover:scale-105 transition-transform duration-200">
               <Image
-                src="/inicial/LN3.png"
+                src="/logo.webp"
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
                 width={240}
                 height={70}
@@ -132,11 +132,11 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 key={index}
                 href={item.link}
                 onClick={(e) => handleNavClick(e, item)}
-                className="group relative text-sm lg:text-base font-medium lg:font-semibold transition-all duration-300 px-2 py-2 text-white hover:text-emerald-300 transform hover:scale-105"
+                className="group relative text-sm lg:text-base font-regular lg:font-regular transition-all duration-300 px-2 py-2 text-white hover:text-amber-300 transform hover:scale-105"
               >
                 <span className="relative z-10">{item.name}</span>
                 {/* Línea animada debajo */}
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-400 to-rose-400 transition-all duration-300 group-hover:w-full"></div>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-300 transition-all duration-300 group-hover:w-full"></div>
                 {/* Efecto de brillo sutil */}
                 
               </Link>
