@@ -107,16 +107,16 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
       }}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-28 py-1 sm:py-2">
+        <div className="flex items-center justify-between h-14 sm:h-20 lg:h-24 py-1 sm:py-2">
           {/* Logo izquierdo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center transform hover:scale-105 transition-transform duration-200">
               <Image
-                src="/inicial/logo-fotter.png"
+                src="/inicial/LN3.png"
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
-                width={140}
-                height={40}
-                className="h-12 sm:h-16 lg:h-14 w-auto object-contain"
+                width={240}
+                height={70}
+                className="h-12 sm:h-20 lg:h-18 w-auto object-contain"
               />
             </Link>
           </div>
