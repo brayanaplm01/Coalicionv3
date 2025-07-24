@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  { name: "Inicio", link: "#home", isContacto: false, isScroll: true },
+ 
   { name: "Quienes Somos", link: "#about", isContacto: false, isScroll: true },
   { name: "Miembros", link: "#members", isContacto: false, isScroll: true },
   { name: "Actividades", link: "#activities", isContacto: false, isScroll: true },
@@ -132,7 +132,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 key={index}
                 href={item.link}
                 onClick={(e) => handleNavClick(e, item)}
-                className="group relative text-sm lg:text-base font-medium lg:font-semibold transition-all duration-300 px-2 py-2 text-white hover:text-emerald-300 transform hover:scale-105"
+                className="group relative   text-sm lg:text-base  lg:font-light  transition-all duration-300 px-2 py-2 text-white hover:text-emerald-300 transform hover:scale-105"
               >
                 <span className="relative z-10">{item.name}</span>
                 {/* Línea animada debajo */}
