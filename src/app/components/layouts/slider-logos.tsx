@@ -35,8 +35,8 @@ export function SliderLogos() {
     <div id="organizations" className="w-full py-16 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-regular text-gray-900 mb-4">
-            Organizaciones <span className='text-amber-300'>Aliadas</span> 
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Organizaciones Aliadas
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Trabajamos junto a 17 organizaciones comprometidas con la integridad electoral en Bolivia

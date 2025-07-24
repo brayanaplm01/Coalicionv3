@@ -39,7 +39,7 @@ export default function ActivitiesSection({ onTimelineClick }: ActivitiesSection
       viewport={{ once: true, amount: 0.3 }}
     >
       {/* Background decorations */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-red-400/10 to-rose-400/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-teal-400/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -53,7 +53,7 @@ export default function ActivitiesSection({ onTimelineClick }: ActivitiesSection
             viewport={{ once: true }}
           >
             <span className="text-gray-900">Nuestras </span>
-            <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-800 via-rose-800 to-red-900 bg-clip-text text-transparent">
               Actividades
             </span>
           </motion.h2>
@@ -93,7 +93,7 @@ export default function ActivitiesSection({ onTimelineClick }: ActivitiesSection
               </div>
               
               {/* Floating decorative elements */}
-              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full opacity-60 animate-pulse"></div>
+              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-red-500 to-rose-500 rounded-full opacity-60 animate-pulse"></div>
               <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full opacity-40 animate-pulse delay-300"></div>
             </div>
           </motion.div>
@@ -108,20 +108,20 @@ export default function ActivitiesSection({ onTimelineClick }: ActivitiesSection
           >
             <div className="space-y-4 sm:space-y-6">
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                Desarrollamos iniciativas integrales que incluyen <strong className="text-green-700">talleres de capacitación</strong>, 
-                implementación de <strong className="text-green-700">herramientas tecnológicas avanzadas</strong>, análisis exhaustivos 
+                Desarrollamos iniciativas integrales que incluyen <strong className="text-red-800">talleres de capacitación</strong>, 
+                implementación de <strong className="text-red-800">herramientas tecnológicas avanzadas</strong>, análisis exhaustivos 
                 de procesos electorales y creación de lineamientos comunicacionales estratégicos.
               </p>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                Destacamos la exitosa aplicación del <strong className="text-emerald-700">eMonitor+</strong> durante las 
+                Destacamos la exitosa aplicación del <strong className="text-rose-800">eMonitor+</strong> durante las 
                 elecciones judiciales, talleres especializados sobre mitos electorales y estrategias colaborativas 
-                contra la desinformación de cara a las <strong className="text-emerald-700">elecciones generales 2025</strong>.
+                contra la desinformación de cara a las <strong className="text-rose-800">elecciones generales 2025</strong>.
               </p>
             </div>
 
             <motion.button
               onClick={onTimelineClick}
-              className="group inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm sm:text-base lg:text-lg"
+              className="group inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-red-800 to-rose-800 hover:from-red-900 hover:to-rose-900 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm sm:text-base lg:text-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -152,7 +152,7 @@ export default function ActivitiesSection({ onTimelineClick }: ActivitiesSection
             >
               <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white/30 hover:shadow-xl transition-all duration-500 hover:scale-105 h-full relative overflow-hidden">
                 {/* Background decoration */}
-                <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full blur-xl transform translate-x-4 sm:translate-x-6 -translate-y-4 sm:-translate-y-6"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-500/10 to-rose-500/10 rounded-full blur-xl transform translate-x-4 sm:translate-x-6 -translate-y-4 sm:-translate-y-6"></div>
                 
                 <div className="relative">
                   <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">

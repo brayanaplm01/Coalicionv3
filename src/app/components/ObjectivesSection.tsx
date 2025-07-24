@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { IconUsers, IconBulb, IconShield, IconTarget, IconGlobe, IconHeart } from "@tabler/icons-react";
+import { IconUsers, IconBulb, IconShield } from "@tabler/icons-react";
 
 export default function ObjectivesSection() {
   const objectives = [
@@ -32,27 +32,6 @@ export default function ObjectivesSection() {
     }
   ];
 
-  const globalImpact = [
-    {
-      icon: IconGlobe,
-      title: "Impacto Regional",
-      stat: "17+",
-      description: "Organizaciones comprometidas con la democracia boliviana"
-    },
-    {
-      icon: IconTarget,
-      title: "Alcance Nacional",
-      stat: "100%",
-      description: "Cobertura en procesos electorales nacionales"
-    },
-    {
-      icon: IconHeart,
-      title: "Compromiso Social",
-      stat: "2025",
-      description: "Año de las elecciones que protegeremos juntos"
-    }
-  ];
-
   return (
     <motion.section
       id="objectives"
@@ -77,7 +56,7 @@ export default function ObjectivesSection() {
             viewport={{ once: true }}
           >
             <span className="text-gray-900">Objetivos de la </span>
-            <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-800 via-rose-800 to-red-900 bg-clip-text text-transparent">
               Coalición
             </span>
           </motion.h2>
@@ -93,7 +72,7 @@ export default function ObjectivesSection() {
           </motion.p>
           
           <motion.div 
-            className="w-24 sm:w-32 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto"
+            className="w-24 sm:w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 128 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -124,7 +103,7 @@ export default function ObjectivesSection() {
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-green-700 transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-red-800 transition-colors duration-300">
                     {objective.title}
                   </h3>
                   
@@ -140,59 +119,6 @@ export default function ObjectivesSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Global Impact Stats */}
-        <motion.div 
-          className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white relative overflow-hidden"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          {/* Background decoration */}
-          <div className="absolute top-0 left-0 w-32 h-32 sm:w-64 sm:h-64 bg-white/10 rounded-full blur-3xl transform -translate-x-10 sm:-translate-x-20 -translate-y-10 sm:-translate-y-20"></div>
-          <div className="absolute bottom-0 right-0 w-24 h-24 sm:w-48 sm:h-48 bg-white/10 rounded-full blur-2xl transform translate-x-6 sm:translate-x-12 translate-y-6 sm:translate-y-12"></div>
-          
-          <div className="relative">
-            <div className="text-center mb-8 sm:mb-12">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
-                Nuestro Compromiso Global
-              </h3>
-              <p className="text-green-100 text-base sm:text-lg max-w-2xl mx-auto">
-                Trabajamos juntos para proteger la integridad electoral y fortalecer la democracia
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-              {globalImpact.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                  viewport={{ once: true }}
-                  className="text-center group"
-                >
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:bg-white/30 transition-all duration-300 hover:scale-105">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <item.icon size={24} className="sm:hidden text-white" />
-                      <item.icon size={32} className="hidden sm:block text-white" />
-                    </div>
-                    <div className="text-3xl sm:text-4xl font-bold mb-2 text-white">
-                      {item.stat}
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-white">
-                      {item.title}
-                    </h4>
-                    <p className="text-green-100 text-xs sm:text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
     </motion.section>
   );

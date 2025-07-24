@@ -17,7 +17,7 @@ export default function MembersSection({ onMoreInfoClick }: MembersSectionProps)
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-red-800/20 to-rose-800/20"></div>
         <svg className="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="members-grid" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -41,14 +41,14 @@ export default function MembersSection({ onMoreInfoClick }: MembersSectionProps)
           >
             <div className="text-center lg:text-left">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Nuestros <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Miembros</span>
+                Nuestros <span className="bg-gradient-to-r from-red-800 to-rose-800 bg-clip-text text-transparent">Miembros</span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-600 mx-auto lg:mx-0 mb-8"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-red-800 to-rose-800 mx-auto lg:mx-0 mb-8"></div>
             </div>
             
             <div className="space-y-6 text-center lg:text-left">
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                Somos una coalición de <span className="font-semibold text-green-700">17 organizaciones</span> comprometidas con la integridad electoral, articuladas bajo dos ejes principales: organizaciones que trabajan en democracia y tecnología, y organizaciones especializadas en combatir la desinformación.
+                Somos una coalición de <span className="font-semibold text-red-800">17 organizaciones</span> comprometidas con la integridad electoral, articuladas bajo dos ejes principales: organizaciones que trabajan en democracia y tecnología, y organizaciones especializadas en combatir la desinformación.
               </p>
               
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -65,7 +65,7 @@ export default function MembersSection({ onMoreInfoClick }: MembersSectionProps)
             >
               <button
                 onClick={onMoreInfoClick}
-                className="inline-flex items-center bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group"
+                className="inline-flex items-center bg-gradient-to-r from-red-800 to-rose-800 hover:from-red-900 hover:to-rose-900 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group"
               >
                 <span>Más Información</span>
                 <svg className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ export default function MembersSection({ onMoreInfoClick }: MembersSectionProps)
             <div className="relative">
               <div className="relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20 hover:shadow-3xl transition-all duration-500 hover:scale-105">
                 <Image 
-                  src="/inicial/miembros.png" 
+                  src="/inicial/sello.jpeg" 
                   alt="Gráfico Miembros - Coalición Nacional" 
                   width={600} 
                   height={600} 

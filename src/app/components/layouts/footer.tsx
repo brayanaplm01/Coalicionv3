@@ -45,8 +45,8 @@ export function Footer() {
         </svg>
       </div>
 
-      {/* Green accent overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green-900/20 via-transparent to-emerald-900/20"></div>
+      {/* Wine-red accent overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-900/20 via-transparent to-rose-900/20"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
@@ -64,17 +64,17 @@ export function Footer() {
               <Link href="/" className="flex items-center mb-6 group">
                 <div className="relative">
                   {/* Fondo iluminado */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-emerald-500/15 to-teal-500/20 rounded-2xl blur-xl transform scale-110 group-hover:scale-125 transition-transform duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-400/10 via-white/5 to-emerald-400/10 rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-800/20 via-rose-800/15 to-red-900/20 rounded-2xl blur-xl transform scale-110 group-hover:scale-125 transition-transform duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-700/10 via-white/5 to-rose-700/10 rounded-2xl"></div>
                   
                   {/* Container del logo con fondo */}
-                  <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-green-400/30 transition-all duration-300 group-hover:bg-white/15">
+                  <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-red-400/30 transition-all duration-300 group-hover:bg-white/15">
                     <Image
                       src="/logo.webp"
                       alt="Coalición Logo"
-                      width={320}
-                      height={200}
-                      className="h-32 w-auto object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-300"
+                      width={380}
+                      height={240}
+                      className="h-36 w-auto object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-300"
                     />
                   </div>
                   
@@ -100,7 +100,7 @@ export function Footer() {
                   <li key={index}>
                     <Link 
                       href={link.href}
-                      className="text-gray-300 hover:text-green-400 transition-colors duration-300 text-sm hover:translate-x-1 transform"
+                      className="text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm hover:translate-x-1 transform"
                     >
                       {link.name}
                     </Link>
@@ -122,7 +122,7 @@ export function Footer() {
                   <li key={index}>
                     <Link 
                       href={link.href}
-                      className="text-gray-300 hover:text-green-400 transition-colors duration-300 text-sm hover:translate-x-1 transform"
+                      className="text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm hover:translate-x-1 transform"
                     >
                       {link.name}
                     </Link>
@@ -144,9 +144,9 @@ export function Footer() {
                   <li key={index}>
                     <a 
                       href={contact.href}
-                      className="flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300 text-sm group"
+                      className="flex items-center text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm group"
                     >
-                      <span className="mr-3 text-green-500 group-hover:scale-110 transition-transform">
+                      <span className="mr-3 text-red-500 group-hover:scale-110 transition-transform">
                         {contact.icon}
                       </span>
                       {contact.text}
@@ -168,10 +168,10 @@ export function Footer() {
             </div>
             
             <div className="flex items-center space-x-6">
-              <Link href="#privacy" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
+              <Link href="#privacy" className="text-gray-400 hover:text-red-400 text-sm transition-colors">
                 Privacidad
               </Link>
-              <Link href="#terms" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
+              <Link href="#terms" className="text-gray-400 hover:text-red-400 text-sm transition-colors">
                 Términos
               </Link>
               
@@ -180,7 +180,7 @@ export function Footer() {
                 onClick={scrollToTop}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-8 h-8 bg-green-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-green-400 hover:text-white hover:bg-green-600 transition-all duration-300"
+                className="w-8 h-8 bg-red-800/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-red-400 hover:text-white hover:bg-red-800 transition-all duration-300"
                 aria-label="Volver arriba"
               >
                 <IconChevronUp className="h-4 w-4" />
