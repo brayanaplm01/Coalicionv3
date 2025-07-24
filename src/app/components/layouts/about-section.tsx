@@ -494,7 +494,7 @@ export function AboutSection() {
                           scale: 1.1,
                           rotate: 5
                         }}
-                        transition={{ type: "spring", stiffness: 300 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       >
                         <div className="w-24 h-24 bg-gradient-to-br from-green-600 via-emerald-500 to-green-700 rounded-3xl flex items-center justify-center text-white shadow-2xl group-hover:shadow-green-500/40 relative overflow-hidden">
                           <motion.div
@@ -510,7 +510,7 @@ export function AboutSection() {
                           />
                           <motion.div
                             whileHover={{ scale: 1.2, rotate: 360 }}
-                            transition={{ duration: 0.6, type: "spring" }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
                             className="relative z-10 text-2xl"
                           >
                             {feature.icon}
