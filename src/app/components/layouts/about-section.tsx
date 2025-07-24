@@ -112,7 +112,7 @@ export function AboutSection() {
       <section id="about" className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-800/20 to-rose-800/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-red-800/20 to-amber-600/20"></div>
         <svg className="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -141,7 +141,7 @@ export function AboutSection() {
           >
             ¿Quiénes{" "}
             <motion.span 
-              className="bg-gradient-to-r text-cyan-700 animate-gradient-x"
+              className="bg-gradient-to-r from-red-800 via-amber-600 to-red-800 bg-clip-text text-transparent animate-gradient-x"
               initial={{ backgroundPosition: "0% 50%" }}
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -152,7 +152,7 @@ export function AboutSection() {
           </motion.h2>
           
           <motion.div 
-            className="w-32 h-1.5 bg-gradient-to-r from-red-800 via-rose-700 to-red-800 mx-auto mb-8 rounded-full"
+            className="w-32 h-1.5 bg-gradient-to-r from-red-800 via-amber-600 to-red-800 mx-auto mb-8 rounded-full"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -167,11 +167,11 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="max-w-5xl mx-auto relative"
           >
-            <div className="relative bg-gradient-to-br from-white/90 via-red-50/50 to-rose-50/50 backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] group">
+            <div className="relative bg-gradient-to-br from-white/90 via-amber-50/50 to-red-50/50 backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] group">
               {/* Efectos de fondo dinámicos */}
-              <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gradient-to-r from-red-800/5 via-transparent to-rose-800/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-red-400/30 to-rose-400/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-rose-400/20 to-red-400/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gradient-to-r from-red-800/5 via-transparent to-amber-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-red-400/30 to-amber-400/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-red-400/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
               
               <div className="relative z-10">
                 <motion.p 
@@ -182,7 +182,7 @@ export function AboutSection() {
                   viewport={{ once: true }}
                 >
                   Somos una{" "}
-                  <span className="font-bold text-cyan-700 relative inline-block ">
+                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-800 via-amber-600 to-red-800 relative inline-block ">
                     Coalición Nacional
                   </span>{" "}
                   formada por organizaciones de la sociedad civil, medios de comunicación, 
@@ -198,12 +198,12 @@ export function AboutSection() {
                   transition={{ duration: 0.5, delay: 0.8 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-64 h-16 bg-gradient-to-r from-red-200/30 to-rose-200/30 rounded-full blur-xl" />
+                  <div className="w-64 h-16 bg-gradient-to-r from-red-200/30 to-amber-200/30 rounded-full blur-xl" />
                 </motion.div>
                 
                 {/* Línea decorativa animada */}
                 <motion.div
-                  className="mt-8 h-px bg-gradient-to-r from-transparent via-red-400 to-transparent"
+                  className="mt-8 h-px bg-gradient-to-r from-transparent via-red-600 to-transparent"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 1, delay: 0.9 }}
@@ -223,7 +223,7 @@ export function AboutSection() {
           className="mb-24"
         >
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4">
-            Nuestra <span className="bg-gradient-to-r text-cyan-700">Red</span> de Aliados
+            Nuestra <span className="bg-gradient-to-r from-red-800 via-amber-600 to-red-800 bg-clip-text text-transparent">Red</span> de Aliados
           </h3>
           <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
             Diversos sectores unidos por un objetivo común: elecciones transparentes y democráticas
@@ -235,25 +235,25 @@ export function AboutSection() {
                 icon: <IconBuilding className="h-12 w-12" />,
                 title: "Sociedad Civil",
                 description: "Organizaciones comprometidas con la democracia y participación ciudadana",
-                gradient: "from-blue-500 to-purple-600",
-                bgGradient: "from-blue-50 to-purple-50",
-                shadowColor: "blue"
+                gradient: "from-red-700 to-red-800",
+                bgGradient: "from-red-50 to-red-100",
+                shadowColor: "red"
               },
               {
                 icon: <IconNews className="h-12 w-12" />,
                 title: "Medios de Comunicación",
                 description: "Comunicación responsable, verificación de hechos y periodismo de calidad",
-                gradient: "from-green-500 to-emerald-600",
-                bgGradient: "from-green-50 to-emerald-50",
-                shadowColor: "green"
+                gradient: "from-amber-600 to-amber-700",
+                bgGradient: "from-amber-50 to-amber-100",
+                shadowColor: "amber"
               },
               {
                 icon: <IconWorld className="h-12 w-12" />,
                 title: "Organismos Internacionales",
                 description: "Cooperación global y estándares internacionales en procesos electorales",
-                gradient: "from-orange-500 to-red-600",
-                bgGradient: "from-orange-50 to-red-50",
-                shadowColor: "orange"
+                gradient: "from-red-800 to-amber-700",
+                bgGradient: "from-red-50 to-amber-50",
+                shadowColor: "red"
               }
             ].map((org, index) => (
               <motion.div
@@ -350,7 +350,7 @@ export function AboutSection() {
               <h3 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6 relative z-10">
                 Nuestros{" "}
                 <motion.span 
-                  className="bg-gradient-to-r text-cyan-700 relative"
+                  className="bg-gradient-to-r from-red-800 via-amber-600 to-red-800 bg-clip-text text-transparent relative"
                   animate={{ 
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                   }}
@@ -381,7 +381,7 @@ export function AboutSection() {
             </motion.div>
             
             <motion.div 
-              className="w-40 h-1.5 bg-gradient-to-r from-red-800 via-rose-700 to-red-800 mx-auto mb-8 rounded-full"
+              className="w-40 h-1.5 bg-gradient-to-r from-red-800 via-amber-600 to-red-800 mx-auto mb-8 rounded-full"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
@@ -428,15 +428,15 @@ export function AboutSection() {
               >
                 <div className={`relative bg-gradient-to-br ${
                   index % 2 === 0 
-                    ? 'from-white via-green-50/30 to-emerald-50/50' 
-                    : 'from-emerald-50/30 via-white to-green-50/50'
+                    ? 'from-white via-red-50/30 to-amber-50/50' 
+                    : 'from-amber-50/30 via-white to-red-50/50'
                 } backdrop-blur-2xl rounded-3xl lg:rounded-[2rem] p-8 lg:p-10 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-700 h-full overflow-hidden transform-gpu ${
                   index % 2 === 0 ? 'lg:mt-8' : 'lg:mb-8'
                 }`}>
                   
                   {/* Efectos de fondo múltiples */}
                   <motion.div 
-                    className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-green-400/30 to-emerald-400/30 rounded-full blur-2xl"
+                    className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-red-400/30 to-amber-400/30 rounded-full blur-2xl"
                     animate={{ 
                       scale: [1, 1.3, 1],
                       rotate: [0, 90, 180, 270, 360],
@@ -450,7 +450,7 @@ export function AboutSection() {
                   />
                   
                   <motion.div 
-                    className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tr from-emerald-400/20 to-green-400/20 rounded-full blur-xl"
+                    className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tr from-amber-400/20 to-red-400/20 rounded-full blur-xl"
                     animate={{ 
                       scale: [1, 1.2, 1],
                       x: [0, 10, 0],
@@ -469,7 +469,7 @@ export function AboutSection() {
                       {[...Array(9)].map((_, i) => (
                         <motion.div
                           key={i}
-                          className="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
+                          className="w-2 h-2 bg-gradient-to-r from-red-500 to-amber-500 rounded-full"
                           animate={{ 
                             scale: [1, 1.5, 1],
                             opacity: [0.5, 1, 0.5]
@@ -496,7 +496,7 @@ export function AboutSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       >
-                        <div className="w-24 h-24 bg-gradient-to-br from-green-600 via-emerald-500 to-green-700 rounded-3xl flex items-center justify-center text-white shadow-2xl group-hover:shadow-green-500/40 relative overflow-hidden">
+                        <div className="w-24 h-24 bg-gradient-to-br from-red-600 via-amber-500 to-red-700 rounded-3xl flex items-center justify-center text-white shadow-2xl group-hover:shadow-red-500/40 relative overflow-hidden">
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                             animate={{ 
@@ -519,7 +519,7 @@ export function AboutSection() {
                         
                         {/* Anillo pulsante */}
                         <motion.div
-                          className="absolute inset-0 rounded-3xl border-2 border-green-500/30"
+                          className="absolute inset-0 rounded-3xl border-2 border-red-500/30"
                           animate={{ 
                             scale: [1, 1.2, 1],
                             opacity: [0.5, 0, 0.5]
@@ -534,7 +534,7 @@ export function AboutSection() {
                       
                       <div className="flex-1 pt-2">
                         <motion.h4 
-                          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 group-hover:text-green-700 transition-all duration-300 leading-tight"
+                          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 group-hover:text-red-700 transition-all duration-300 leading-tight"
                           whileHover={{ 
                             scale: 1.03,
                             x: 5
@@ -546,7 +546,7 @@ export function AboutSection() {
                         
                         {/* Línea decorativa bajo el título */}
                         <motion.div
-                          className="w-0 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full group-hover:w-full transition-all duration-700 ease-out mb-4"
+                          className="w-0 h-1 bg-gradient-to-r from-red-500 to-amber-500 rounded-full group-hover:w-full transition-all duration-700 ease-out mb-4"
                           initial={{ width: 0 }}
                           whileInView={{ width: "60%" }}
                           transition={{ duration: 1, delay: index * 0.3 + 0.8 }}
@@ -606,7 +606,7 @@ export function AboutSection() {
                           </svg>
                           <div className="absolute inset-0 flex items-center justify-center">
                             <motion.span 
-                              className="text-sm font-bold text-green-600"
+                              className="text-sm font-bold text-red-600"
                               initial={{ opacity: 0, scale: 0 }}
                               whileInView={{ opacity: 1, scale: 1 }}
                               transition={{ duration: 0.5, delay: index * 0.3 + 1.5 }}
@@ -625,7 +625,7 @@ export function AboutSection() {
                           viewport={{ once: true }}
                         >
                           <p className="text-sm text-gray-500 mb-1">Compromiso</p>
-                          <p className="text-lg font-semibold text-green-600">Garantizado</p>
+                          <p className="text-lg font-semibold text-red-600">Garantizado</p>
                         </motion.div>
                       </div>
                     </div>
