@@ -169,9 +169,7 @@ export function AboutSection() {
           >
             <div className="relative bg-gradient-to-br from-white/90 via-amber-50/50 to-red-50/50 backdrop-blur-xl rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] group">
               {/* Efectos de fondo dinámicos */}
-              <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gradient-to-r from-red-800/5 via-transparent to-amber-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-red-400/30 to-amber-400/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-red-400/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              
               
               <div className="relative z-10">
                 <motion.p 
@@ -365,19 +363,7 @@ export function AboutSection() {
                 </motion.span>
               </h3>
               
-              {/* Efectos de fondo del título */}
-              <motion.div
-                className="absolute -inset-4 bg-gradient-to-r from-red-800/10 via-rose-800/20 to-red-800/10 rounded-3xl blur-xl"
-                animate={{ 
-                  scale: [1, 1.05, 1],
-                  opacity: [0.3, 0.6, 0.3]
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+              
             </motion.div>
             
             <motion.div 
