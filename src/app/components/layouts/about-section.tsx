@@ -182,7 +182,7 @@ export function AboutSection() {
                   viewport={{ once: true }}
                 >
                   Somos una{" "}
-                  <span className="font-bold text-cyan-700 relative inline-block ">
+                  <span className="font-bold text-amber-300 relative inline-block ">
                     Coalición Nacional
                   </span>{" "}
                   formada por organizaciones de la sociedad civil, medios de comunicación, 
