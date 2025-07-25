@@ -169,18 +169,7 @@ body {
 }
 
 
-/* Hero Section Wine-Red Mask Styles */
-.hero-green-mask {
-  background: linear-gradient(
-    135deg,
-    rgba(185, 28, 28, 0.6) 0%,
-    rgba(153, 27, 27, 0.4) 25%,
-    rgba(127, 29, 29, 0.5) 50%,
-    rgba(115, 26, 26, 0.6) 75%,
-    rgba(69, 10, 10, 0.7) 100%
-  );
-  backdrop-filter: blur(1px);
-}
+
 
 .hero-content-overlay {
   background: radial-gradient(

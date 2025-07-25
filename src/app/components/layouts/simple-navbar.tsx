@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  { name: "Inicio", link: "#home", isContacto: false, isScroll: true },
+  
   { name: "Quienes Somos", link: "#about", isContacto: false, isScroll: true },
   { name: "Miembros", link: "#members", isContacto: false, isScroll: true },
   { name: "Actividades", link: "#activities", isContacto: false, isScroll: true },
@@ -99,7 +99,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
       className={`fixed top-0 left-0 right-0 z-500 transition-all duration-500 ease-in-out ${
         isScrolled
           ? "bg-red-900/80 backdrop-blur-md shadow-lg border-b border-white/10"
-          : "bg-red-900/60 backdrop-blur-sm border-b border-white/5"
+          : "bg-red-600/60 backdrop-blur-sm border-b border-white/5"
       }`}
       style={{ 
         WebkitTapHighlightColor: 'transparent',

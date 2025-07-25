@@ -24,13 +24,13 @@ export function HeroSection() {
   };
  
   return (
-    <div className="w-full overflow-hidden h-screen relative flex items-center justify-center">
+    <div className="w-full overflow-hidden  h-screen relative flex items-center justify-center">
       {/* ThreeDMarqueeDemo como fondo */}
-      <div className="absolute inset-0 w-full h-full ">
+      <div className="absolute  inset-0 w-full h-full ">
         <ThreeDMarqueeDemo className="h-full w-full !m-0 " />
         
         {/* Máscara verde sobre el fondo */}
-        <div className="absolute inset-0 hero-green-mask hero-mask-layer"></div>
+        <div className="absolute inset-0  bg-black/50 backdrop-blur-[0.5px] hero-green-mask hero-mask-layer"></div>
         
         {/* Overlay adicional para mejor contraste */}
         <div className="absolute inset-0 hero-content-overlay hero-overlay-layer"></div>
@@ -46,7 +46,7 @@ export function HeroSection() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-regular text-amber-300 mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
               Desinformación Electoral
             </h1>
-            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-white/90 mb-3 sm:mb-4">
+            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-white/90 mb-3 sm:mb-4">
               Coalición Nacional que reúne a {" "}
               <LinkPreview 
                 url="https://www.undp.org/"
@@ -56,7 +56,7 @@ export function HeroSection() {
               comprometidas con la integridad de la información electoral en
               Bolivia
             </div>
-            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white/90">
+            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-white/90">
               Trabajamos juntos para fortalecer la confianza ciudadana en los
               procesos electorales, combatiendo la desinformación y
               promoviendo una participación democrática informada de cara a
@@ -79,10 +79,10 @@ export function HeroSection() {
             className="flex flex-col items-center animate-scrollBounce hover:scale-110 transition-transform duration-300 cursor-pointer group"
             aria-label="Hacer scroll hacia abajo"
           >
-            <span className="text-white/70 text-sm mb-2 font-medium animate-scrollPulse group-hover:text-white transition-colors duration-300">
+            <span className="text-white text-sm mb-2 font-bold animate-scrollPulse group-hover:text-white transition-colors duration-300">
               Desliza
             </span>
-            <IconChevronDown className="h-6 w-6 text-white/70 animate-scrollPulse group-hover:text-white transition-colors duration-300" />
+            <IconChevronDown className="h-6 w-6 font-bold text-white animate-scrollPulse group-hover:text-white transition-colors duration-300" />
           </button>
         </div>
       </div>
