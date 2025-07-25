@@ -98,8 +98,8 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-500 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-red-900/80 backdrop-blur-md shadow-lg border-b border-white/10"
-          : "bg-red-600/60 backdrop-blur-sm border-b border-white/5"
+          ? "bg-[#7b1e3c]/80 backdrop-blur-md shadow-lg border-b border-white/10"
+          : "bg-[#7b1e3c]/60 backdrop-blur-sm border-b border-white/5"
       }`}
       style={{ 
         WebkitTapHighlightColor: 'transparent',
@@ -132,11 +132,11 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 key={index}
                 href={item.link}
                 onClick={(e) => handleNavClick(e, item)}
-                className="group relative text-sm lg:text-base font-regular lg:font-regular transition-all duration-300 px-2 py-2 text-white hover:text-amber-300 transform hover:scale-105"
+                className="group relative text-sm lg:text-base font-regular lg:font-regular transition-all duration-300 px-2 py-2 text-white hover:text-[#cba135] transform hover:scale-105"
               >
                 <span className="relative z-10">{item.name}</span>
                 {/* Línea animada debajo */}
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-300 transition-all duration-300 group-hover:w-full"></div>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#cba135] transition-all duration-300 group-hover:w-full"></div>
                 {/* Efecto de brillo sutil */}
                 
               </Link>
