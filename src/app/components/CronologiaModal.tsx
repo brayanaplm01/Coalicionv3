@@ -195,7 +195,7 @@ const CronologiaModal: React.FC<CronologiaModalProps> = ({ open, onClose }) => {
               
               <div className="text-center">
                 <motion.h2 
-                  className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4"
+                  className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-regular mb-3 sm:mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}

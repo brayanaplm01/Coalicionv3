@@ -46,14 +46,14 @@ export default function ActivitiesSection({ onTimelineClick }: ActivitiesSection
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-regular mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <span className="text-gray-900">Nuestras </span>
-            <span className="bg-gradient-to-r from-red-800 via-rose-800 to-red-900 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r bg-clip-text text-amber-300">
               Actividades
             </span>
           </motion.h2>

@@ -133,7 +133,7 @@ export function AboutSection() {
           className="text-center mb-20"
         >
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6"
+            className="text-3xl sm:text-4xl lg:text-6xl font-regular text-gray-900 mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -141,7 +141,7 @@ export function AboutSection() {
           >
             ¿Quiénes{" "}
             <motion.span 
-              className="bg-gradient-to-r from-red-800 via-amber-600 to-red-800 bg-clip-text text-transparent animate-gradient-x"
+              className="bg-gradient-to-r font-regular  text-amber-300 animate-gradient-x"
               initial={{ backgroundPosition: "0% 50%" }}
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -175,14 +175,14 @@ export function AboutSection() {
               
               <div className="relative z-10">
                 <motion.p 
-                  className="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-sans-serif"
+                  className="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-regular"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
                   Somos una{" "}
-                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-800 via-amber-600 to-red-800 relative inline-block ">
+                  <span className="font-bold text-cyan-700 relative inline-block ">
                     Coalición Nacional
                   </span>{" "}
                   formada por organizaciones de la sociedad civil, medios de comunicación, 
@@ -222,8 +222,8 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4">
-            Nuestra <span className="bg-gradient-to-r from-red-800 via-amber-600 to-red-800 bg-clip-text text-transparent">Red</span> de Aliados
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-regular text-center text-gray-900 mb-4">
+            Nuestra <span className="bg-gradient-to-r text-amber-300">Red</span> de Aliados
           </h3>
           <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
             Diversos sectores unidos por un objetivo común: elecciones transparentes y democráticas
@@ -347,10 +347,10 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="relative inline-block"
             >
-              <h3 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6 relative z-10">
+              <h3 className="text-3xl sm:text-4xl lg:text-6xl font-regular text-gray-900 mb-6 relative z-10">
                 Nuestros{" "}
                 <motion.span 
-                  className="bg-gradient-to-r from-red-800 via-amber-600 to-red-800 bg-clip-text text-transparent relative"
+                  className="bg-gradient-to-r text-amber-300 relative"
                   animate={{ 
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                   }}
