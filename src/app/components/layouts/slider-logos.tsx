@@ -36,7 +36,7 @@ export function SliderLogos() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-regular text-gray-900 mb-4">
-            Organizaciones <span className="bg-gradient-to-r text-amber-300 bg-clip-text">Aliadas</span>
+            Organizaciones <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text">Aliadas</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Trabajamos junto a 17 organizaciones comprometidas con la integridad electoral en Bolivia
