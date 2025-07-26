@@ -177,7 +177,7 @@ export default function ActivitiesSection({ onTimelineClick }: ActivitiesSection
                   <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-green-700 transition-colors duration-300">
                     {activity.title}
                   </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-gray-600 text-ms sm:text-sm leading-relaxed">
                     {activity.description}
                   </p>
                 </div>
