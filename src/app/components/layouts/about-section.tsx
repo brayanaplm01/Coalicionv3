@@ -420,34 +420,7 @@ export function AboutSection() {
                   index % 2 === 0 ? 'lg:mt-8' : 'lg:mb-8'
                 }`}>
                   
-                  {/* Efectos de fondo múltiples */}
-                  <motion.div 
-                    className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-red-400/30 to-amber-400/30 rounded-full blur-2xl"
-                    animate={{ 
-                      scale: [1, 1.3, 1],
-                      rotate: [0, 90, 180, 270, 360],
-                      opacity: [0.3, 0.6, 0.3]
-                    }}
-                    transition={{ 
-                      duration: 8 + index,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  
-                  <motion.div 
-                    className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tr from-amber-400/20 to-red-400/20 rounded-full blur-xl"
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      x: [0, 10, 0],
-                      y: [0, -10, 0]
-                    }}
-                    transition={{ 
-                      duration: 6 + index * 0.5,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
+                 
                   
                   {/* Patrón de puntos dinámico */}
                   <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
