@@ -171,18 +171,18 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
         {/* Fondo blur inmediato */}
         <div 
           className={`absolute inset-0 backdrop-blur-lg transition-opacity duration-200 ${
-            isMobileMenuOpen ? "opacity-100 bg-red-900" : "opacity-0 bg-transparent"
+            isMobileMenuOpen ? "opacity-100 bg-[#7b1e3c]" : "opacity-60bg-transparent"
           }`}
         />
         
         {/* Contenido del menú */}
-        <div className="relative px-4 pt-4 pb-6 space-y-3 shadow-lg z-10">
+        <div className="relative px-4  pt-4 pb-6 space-y-3 shadow-lg z-10">
           {navigationItems.map((item, index) => (
             <Link
               key={index}
               href={item.link}
               onClick={(e) => handleNavClick(e, item)}
-              className={`group relative flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative  flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
                 isMobileMenuOpen 
                   ? `animate-slideIn animation-delay-${index * 100}` 
                   : ''
