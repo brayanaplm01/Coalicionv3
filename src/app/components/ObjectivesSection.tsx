@@ -55,14 +55,14 @@ export default function ObjectivesSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <span className="text-gray-900">Objetivos de la </span>
-            <span className="bg-gradient-to-r bg-clip-text text-amber-300">
+            <span className="text-[#222426]">Objetivos de la </span>
+            <span className="bg-gradient-to-r bg-clip-text text-[#CBA135]">
               Coalición
             </span>
           </motion.h2>
           
           <motion.p 
-            className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-3 sm:mb-4"
+            className="text-lg sm:text-xl text-[#222426] max-w-4xl mx-auto leading-relaxed mb-3 sm:mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -108,7 +108,7 @@ export default function ObjectivesSection() {
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                  <p className="text-gray-700 leading-relaxed text-ms sm:text-sm">
                     {objective.description}
                   </p>
                   

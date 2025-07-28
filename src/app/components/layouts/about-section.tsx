@@ -71,7 +71,7 @@ const StatCard = ({ stat, index }: { stat: typeof stats[0], index: number }) => 
     <div ref={ref} className="text-center">
       <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:scale-105">
         <motion.div 
-          className="text-3xl sm:text-4xl font-bold text-red-800 mb-2"
+          className="text-3xl sm:text-4xl font-bold text-[#00797B] mb-2"
           initial={{ scale: 0.5, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -133,7 +133,7 @@ export function AboutSection() {
           className="text-center mb-20"
         >
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-6xl font-regular text-gray-900 mb-6"
+            className="text-3xl sm:text-4xl lg:text-6xl font-regular text-[#222426] mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -141,7 +141,7 @@ export function AboutSection() {
           >
             ¿Quiénes{" "}
             <motion.span 
-              className="bg-gradient-to-r font-regular  text-amber-300 animate-gradient-x"
+              className="bg-gradient-to-r font-regular  text-[#CBA135] animate-gradient-x"
               initial={{ backgroundPosition: "0% 50%" }}
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -173,14 +173,14 @@ export function AboutSection() {
               
               <div className="relative z-10">
                 <motion.p 
-                  className="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-regular"
+                  className="text-xl sm:text-2xl lg:text-3xl text-[#222426] leading-relaxed font-regular"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
                   Somos una{" "}
-                  <span className="font-bold text-amber-300 relative inline-block ">
+                  <span className="font-bold text-red-900 relative inline-block ">
                     Coalición Nacional
                   </span>{" "}
                   formada por organizaciones de la sociedad civil, medios de comunicación, 
@@ -220,10 +220,10 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-regular text-center text-gray-900 mb-4">
-            Nuestra <span className="bg-gradient-to-r text-amber-300">Red</span> de Aliados
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-regular text-center text-[#222426] mb-4">
+            Nuestra <span className="bg-gradient-to-r text-[#CBA135]">Red</span> de Aliados
           </h3>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+          <p className="text-center text-[#222426] mb-12 max-w-3xl mx-auto text-lg">
             Diversos sectores unidos por un objetivo común: elecciones transparentes y democráticas
           </p>
           
@@ -345,10 +345,10 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="relative inline-block"
             >
-              <h3 className="text-3xl sm:text-4xl lg:text-6xl font-regular text-gray-900 mb-6 relative z-10">
+              <h3 className="text-3xl sm:text-4xl lg:text-6xl font-regular text-[#222426] mb-6 relative z-10">
                 Nuestros{" "}
                 <motion.span 
-                  className="bg-gradient-to-r text-amber-300 relative"
+                  className="bg-gradient-to-r text-[#CBA135] relative"
                   animate={{ 
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                   }}
@@ -375,7 +375,7 @@ export function AboutSection() {
             />
             
             <motion.p 
-              className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+              className="text-xl sm:text-2xl text-[#222426] max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -420,34 +420,7 @@ export function AboutSection() {
                   index % 2 === 0 ? 'lg:mt-8' : 'lg:mb-8'
                 }`}>
                   
-                  {/* Efectos de fondo múltiples */}
-                  <motion.div 
-                    className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-red-400/30 to-amber-400/30 rounded-full blur-2xl"
-                    animate={{ 
-                      scale: [1, 1.3, 1],
-                      rotate: [0, 90, 180, 270, 360],
-                      opacity: [0.3, 0.6, 0.3]
-                    }}
-                    transition={{ 
-                      duration: 8 + index,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  
-                  <motion.div 
-                    className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tr from-amber-400/20 to-red-400/20 rounded-full blur-xl"
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      x: [0, 10, 0],
-                      y: [0, -10, 0]
-                    }}
-                    transition={{ 
-                      duration: 6 + index * 0.5,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
+                 
                   
                   {/* Patrón de puntos dinámico */}
                   <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
@@ -482,7 +455,7 @@ export function AboutSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       >
-                        <div className="w-24 h-24 bg-gradient-to-br from-red-600 via-amber-500 to-red-700 rounded-3xl flex items-center justify-center text-white shadow-2xl group-hover:shadow-red-500/40 relative overflow-hidden">
+                        <div className="w-24 h-24 bg-[#00797B] rounded-3xl flex items-center justify-center text-white shadow-2xl group-hover:shadow-teal-500/40 relative overflow-hidden">
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                             animate={{ 
@@ -505,7 +478,7 @@ export function AboutSection() {
                         
                         {/* Anillo pulsante */}
                         <motion.div
-                          className="absolute inset-0 rounded-3xl border-2 border-red-500/30"
+                          className="absolute inset-0 rounded-3xl border-2 border-[#00797B]/30"
                           animate={{ 
                             scale: [1, 1.2, 1],
                             opacity: [0.5, 0, 0.5]
@@ -532,7 +505,7 @@ export function AboutSection() {
                         
                         {/* Línea decorativa bajo el título */}
                         <motion.div
-                          className="w-0 h-1 bg-gradient-to-r from-red-500 to-amber-500 rounded-full group-hover:w-full transition-all duration-700 ease-out mb-4"
+                          className="w-0 h-1 bg-[#00797B] rounded-full group-hover:w-full transition-all duration-700 ease-out mb-4"
                           initial={{ width: 0 }}
                           whileInView={{ width: "60%" }}
                           transition={{ duration: 1, delay: index * 0.3 + 0.8 }}
@@ -592,7 +565,7 @@ export function AboutSection() {
                           </svg>
                           <div className="absolute inset-0 flex items-center justify-center">
                             <motion.span 
-                              className="text-sm font-bold text-red-600"
+                              className="text-sm font-bold text-[#00797B]"
                               initial={{ opacity: 0, scale: 0 }}
                               whileInView={{ opacity: 1, scale: 1 }}
                               transition={{ duration: 0.5, delay: index * 0.3 + 1.5 }}
@@ -611,7 +584,7 @@ export function AboutSection() {
                           viewport={{ once: true }}
                         >
                           <p className="text-sm text-gray-500 mb-1">Compromiso</p>
-                          <p className="text-lg font-semibold text-red-600">Garantizado</p>
+                          <p className="text-lg font-semibold text-[#00797B]">Garantizado</p>
                         </motion.div>
                       </div>
                     </div>

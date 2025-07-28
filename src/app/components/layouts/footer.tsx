@@ -45,8 +45,7 @@ export function Footer() {
         </svg>
       </div>
 
-      {/* Wine-red accent overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-red-900/20 via-transparent to-rose-900/20"></div>
+    
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
@@ -63,9 +62,7 @@ export function Footer() {
             >
               <Link href="/" className="flex items-center mb-6 group">
                 <div className="relative">
-                  {/* Fondo iluminado */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-800/20 via-rose-800/15 to-red-900/20 rounded-2xl blur-xl transform scale-110 group-hover:scale-125 transition-transform duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-700/10 via-white/5 to-rose-700/10 rounded-2xl"></div>
+                  
                   
                   {/* Container del logo con fondo */}
                   <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-red-400/30 transition-all duration-300 group-hover:bg-white/15">
@@ -78,8 +75,7 @@ export function Footer() {
                     />
                   </div>
                   
-                  {/* Efecto de brillo adicional */}
-                  <div className="absolute top-2 left-2 right-2 h-8 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
                 </div>
               </Link>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">

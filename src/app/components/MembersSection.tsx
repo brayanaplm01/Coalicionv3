@@ -40,18 +40,18 @@ export default function MembersSection({ onMoreInfoClick }: MembersSectionProps)
             className="flex-1 lg:pr-8"
           >
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-regular text-gray-900 mb-6">
-                Nuestros <span className="bg-gradient-to-r text-amber-300 bg-clip-text">Miembros</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-regular text-[#222426] mb-6">
+                Nuestros <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text">Miembros</span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-red-800 to-rose-800 mx-auto lg:mx-0 mb-8"></div>
             </div>
             
             <div className="space-y-6 text-center lg:text-left">
-              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg sm:text-xl text-[#222426] leading-relaxed">
                 Somos una coalición de <span className="font-semibold text-red-800">17 organizaciones</span> comprometidas con la integridad electoral, articuladas bajo dos ejes principales: organizaciones que trabajan en democracia y tecnología, y organizaciones especializadas en combatir la desinformación.
               </p>
-              
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+
+              <p className="text-base sm:text-lg text-[#222426] leading-relaxed">
                 Nuestra coalición incluye verificadoras de noticias, medios de investigación, organizaciones feministas, fundaciones tecnológicas, el Órgano Electoral Plurinacional y agencias del Sistema de Naciones Unidas, trabajando de manera colaborativa hacia un objetivo común.
               </p>
             </div>

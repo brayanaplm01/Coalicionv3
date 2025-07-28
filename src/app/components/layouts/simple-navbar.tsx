@@ -117,7 +117,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
                 width={240}
                 height={70}
-                className="h-12 sm:h-20 lg:h-18 w-auto object-contain"
+                className="h-10 sm:h-20 lg:h-18 w-auto object-contain"
               />
             </Link>
           </div>
@@ -164,14 +164,14 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
       <div
         className={`lg:hidden relative transition-all duration-500 ease-in-out overflow-hidden ${
           isMobileMenuOpen
-            ? "max-h-80 opacity-100 translate-y-0"
-            : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+            ? "max-h-80 opacity-60  translate-y-0"
+            : "max-h-0 opacity-0  -translate-y-2 pointer-events-none"
         }`}
       >
         {/* Fondo blur inmediato */}
         <div 
           className={`absolute inset-0 backdrop-blur-lg transition-opacity duration-200 ${
-            isMobileMenuOpen ? "opacity-100 bg-[#7b1e3c]" : "opacity-60bg-transparent"
+            isMobileMenuOpen ? "opacity-100 bg-red-900" : "opacity-0 bg-transparent"
           }`}
         />
         
