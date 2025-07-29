@@ -117,7 +117,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
                 width={240}
                 height={70}
-                className="h-12 sm:h-20 lg:h-18 w-auto object-contain"
+                className="h-10 sm:h-20 lg:h-18 w-auto object-contain"
               />
             </Link>
           </div>
@@ -164,8 +164,8 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
       <div
         className={`lg:hidden relative transition-all duration-500 ease-in-out overflow-hidden ${
           isMobileMenuOpen
-            ? "max-h-80 opacity-100 translate-y-0"
-            : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+            ? "max-h-80 opacity-60  translate-y-0"
+            : "max-h-0 opacity-0  -translate-y-2 pointer-events-none"
         }`}
       >
         {/* Fondo blur inmediato */}
@@ -176,13 +176,13 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
         />
         
         {/* Contenido del menú */}
-        <div className="relative px-4 pt-4 pb-6 space-y-3 shadow-lg z-10">
+        <div className="relative px-4  pt-4 pb-6 space-y-3 shadow-lg z-10">
           {navigationItems.map((item, index) => (
             <Link
               key={index}
               href={item.link}
               onClick={(e) => handleNavClick(e, item)}
-              className={`group relative flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative  flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
                 isMobileMenuOpen 
                   ? `animate-slideIn animation-delay-${index * 100}` 
                   : ''

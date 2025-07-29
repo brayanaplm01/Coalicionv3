@@ -108,7 +108,7 @@ export default function ObjectivesSection() {
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base font-opensans">
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                     {objective.description}
                   </p>
                   

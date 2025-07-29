@@ -210,16 +210,21 @@ export default function ActivitiesSection() {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 hover:scale-105 h-full">
-                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {activity.icon}
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white/30 hover:shadow-xl transition-all duration-500 hover:scale-105 h-full relative overflow-hidden">
+                {/* Background decoration */}
+                <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-500/10 to-rose-500/10 rounded-full blur-xl transform translate-x-4 sm:translate-x-6 -translate-y-4 sm:-translate-y-6"></div>
+                
+                <div className="relative">
+                  <div className="mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {activity.icon}
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-green-700 transition-colors duration-300">
+                    {activity.title}
+                  </h3>
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                    {activity.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-[#222426] mb-3 group-hover:text-red-700 transition-colors duration-300 font-montserrat">
-                  {activity.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed font-opensans">
-                  {activity.description}
-                </p>
               </div>
             </motion.div>
           ))}
