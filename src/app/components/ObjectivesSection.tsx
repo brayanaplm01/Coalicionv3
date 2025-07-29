@@ -49,7 +49,7 @@ export default function ObjectivesSection() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-regular   mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-montserrat font-regular   mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -62,7 +62,7 @@ export default function ObjectivesSection() {
           </motion.h2>
           
           <motion.p 
-            className="text-lg sm:text-xl text-[#222426] max-w-4xl mx-auto leading-relaxed mb-3 sm:mb-4"
+            className="text-lg sm:text-xl text-[#222426] max-w-4xl mx-auto leading-relaxed mb-3 sm:mb-4 font-opensans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -103,12 +103,12 @@ export default function ObjectivesSection() {
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-red-800 transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-montserrat font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-red-800 transition-colors duration-300">
                     {objective.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base font-opensans">
                     {objective.description}
                   </p>
                   

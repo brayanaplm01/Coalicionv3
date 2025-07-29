@@ -244,8 +244,21 @@ export default function ActivitiesSection() {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 via-rose-600 to-red-800 rounded-full"></div>
+            {/* Timeline line - Base line (faded) */}
+            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gray-200 rounded-full"></div>
+            
+            {/* Timeline line - Animated line */}
+            <motion.div 
+              className="absolute left-8 top-0 w-1 bg-gradient-to-b from-red-600 via-rose-600 to-red-800 rounded-full origin-top"
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              transition={{ 
+                duration: 2,
+                ease: "easeOut",
+                delay: 0.3
+              }}
+              viewport={{ once: true, amount: 0.1 }}
+            />
             
             <div className="space-y-8">
               {timeline.map((periodo, index) => (
@@ -253,12 +266,24 @@ export default function ActivitiesSection() {
                   key={periodo.mes}
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: 0.5 + (index * 0.2) }}
                   viewport={{ once: true, amount: 0.3 }}
                   className="relative"
                 >
-                  {/* Timeline dot */}
-                  <div className={`absolute left-6 w-4 h-4 bg-gradient-to-br ${periodo.gradient} rounded-full border-4 border-white shadow-lg`}></div>
+                  {/* Timeline dot - Animated */}
+                  <motion.div 
+                    className={`absolute left-6 w-4 h-4 bg-gradient-to-br ${periodo.gradient} rounded-full border-4 border-white shadow-lg`}
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ 
+                      duration: 0.4, 
+                      delay: 0.8 + (index * 0.2),
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 20
+                    }}
+                    viewport={{ once: true }}
+                  />
                   
                   {/* Content */}
                   <div className="ml-20">

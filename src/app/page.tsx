@@ -4,18 +4,14 @@ import { useState } from "react";
 import { HeroSection } from "./components/layouts/hero-section";
 import { SliderLogos } from "./components/layouts/slider-logos";
 import { AboutSection } from "./components/layouts/about-section";
+import MissionVisionSection from "./components/layouts/mission-vision-section";
 import { Footer } from "./components/layouts/footer";
 import SimpleNavbar from "./components/layouts/simple-navbar";
-import ObjectivesSection from "./components/ObjectivesSection";
 import MembersSection from "./components/MembersSection";
 import ActivitiesSection from "./components/ActivitiesSection";
-import MiembrosModal from "./components/MiembrosModal";
-import CronologiaModal from "./components/CronologiaModal";
 import ContactoModal from "./components/ContactoModal";
 
 export default function Home() {
-  const [showMiembrosModal, setShowMiembrosModal] = useState(false);
-  const [showCronologiaModal, setShowCronologiaModal] = useState(false);
   const [showContactoModal, setShowContactoModal] = useState(false);
 
   return (
@@ -36,30 +32,20 @@ export default function Home() {
         {/* About Section */}
         <AboutSection />
         
+        {/* Mission, Vision & Objectives Section */}
+        <MissionVisionSection />
+        
         {/* Members Section */}
-        <MembersSection onMoreInfoClick={() => setShowMiembrosModal(true)} />
+        <MembersSection />
         
         {/* Activities Section */}
-        <ActivitiesSection onTimelineClick={() => setShowCronologiaModal(true)} />
-
-        {/* Objectives Section - Moved to the end */}
-        <ObjectivesSection />
+        <ActivitiesSection />
 
         {/* Footer */}
         <Footer />
       </main>
 
       {/* Modals */}
-      <MiembrosModal 
-        open={showMiembrosModal} 
-        onClose={() => setShowMiembrosModal(false)} 
-      />
-      
-      <CronologiaModal 
-        open={showCronologiaModal} 
-        onClose={() => setShowCronologiaModal(false)} 
-      />
-      
       <ContactoModal 
         open={showContactoModal} 
         onClose={() => setShowContactoModal(false)} 

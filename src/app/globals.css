@@ -2,7 +2,7 @@
 
 /* Aplicar fuente sans globalmente */
 * {
-  font-family: var(--font-quicksand), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-opensans), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -13,7 +13,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-quicksand);
+  --font-sans: var(--font-opensans);
+  --font-montserrat: var(--font-montserrat);
+  --font-opensans: var(--font-opensans);
   --font-geist-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-first: moveVertical 30s ease infinite;
@@ -117,7 +119,25 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-quicksand), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-opensans), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Clases de fuentes para Tailwind */
+.font-montserrat {
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-opensans {
+  font-family: var(--font-opensans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Aplicar fuentes automáticamente a elementos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+p, span, div:not(.font-montserrat), a, button:not(.font-montserrat) {
+  font-family: var(--font-opensans), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Mejoras para móviles */
@@ -209,7 +229,7 @@ body {
 .logos-slider-infinite {
   display: flex;
   width: calc(300% + 60px); /* Ancho triplicado para seamless loop perfecto */
-  animation: slide-infinite-seamless 35s linear infinite;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .logo-item {
@@ -263,11 +283,6 @@ body {
   100% {
     transform: translateX(-33.333%); /* Mueve exactamente 1/3 para seamless loop */
   }
-}
-
-/* Pause animation on hover */
-.logos-track:hover .logos-slider-infinite {
-  animation-play-state: paused;
 }
 
 /* Responsive adjustments */

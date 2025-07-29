@@ -82,7 +82,7 @@ export function Footer() {
                   <div className="absolute top-2 left-2 right-2 h-8 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </Link>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              <p className="text-gray-300 text-sm leading-relaxed mb-6 font-opensans">
                 Coalición Nacional comprometida con la integridad electoral y la lucha contra la desinformación en Bolivia.
               </p>
             </motion.div>
@@ -94,7 +94,7 @@ export function Footer() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-semibold text-white mb-6">Coalición</h3>
+              <h3 className="text-lg font-montserrat font-semibold text-white mb-6">Coalición</h3>
               <ul className="space-y-3">
                 {footerLinks.coalicion.map((link, index) => (
                   <li key={index}>
@@ -116,7 +116,7 @@ export function Footer() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-semibold text-white mb-6">Recursos</h3>
+              <h3 className="text-lg font-montserrat font-semibold text-white mb-6">Recursos</h3>
               <ul className="space-y-3">
                 {footerLinks.recursos.map((link, index) => (
                   <li key={index}>
@@ -138,7 +138,7 @@ export function Footer() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-semibold text-white mb-6">Contacto</h3>
+              <h3 className="text-lg font-montserrat font-semibold text-white mb-6">Contacto</h3>
               <ul className="space-y-4">
                 {footerLinks.contacto.map((contact, index) => (
                   <li key={index}>
