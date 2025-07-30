@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { motion } from 'motion/react';
 
 interface Logo {
   src: string;
@@ -14,20 +15,20 @@ const logos: Logo[] = [
   { src: '/logos/ONU-mujeres.avif', alt: 'ONU Mujeres', name: 'ONU Mujeres', url: 'https://www.unwomen.org/es' },
   { src: '/logos/OEP.png', alt: 'OEP', name: 'OEP', url: 'https://www.oep.org.bo/' },
   { src: '/logos/pnud.webp', alt: 'PNUD', name: 'PNUD', url: 'https://www.undp.org/es/bolivia' },
-  { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas', url: 'https://anpb.org.bo/' },
+  { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas', url: 'https://anp-bolivia.com/' },
   { src: '/logos/LOGO-MUY-WASO.webp', alt: 'Muy Waso', name: 'Muy Waso', url: 'https://muywaso.com/' },
-  { src: '/logos/logo-ipicom.webp', alt: 'IPICOM', name: 'IPICOM', url: 'https://ipicom.org.bo/' },
-  { src: '/logos/logo-guardiana.webp', alt: 'Guardiana', name: 'Guardiana', url: 'https://guardiana.org/' },
+  { src: '/logos/logo-ipicom.webp', alt: 'IPICOM', name: 'IPICOM', url: 'https://ipicom.umsa.bo/' },
+  { src: '/logos/logo-guardiana.webp', alt: 'Guardiana', name: 'Guardiana', url: 'https://guardiana.com.bo/' },
   { src: '/logos/Logo-fespng.webp', alt: 'FES', name: 'FES', url: 'https://www.fes.de/' },
   { src: '/logos/logo-coordinadora-de-la-mujer.jpg', alt: 'Coordinadora de la Mujer', name: 'Coordinadora de la Mujer', url: 'https://coordinadoradelamujer.org.bo/' },
   { src: '/logos/logo-cibeEr.webp', alt: 'CiberEr', name: 'CiberEr', url: 'https://ciberwarmis.org/' },
-  { src: '/logos/logo-chequea.webp', alt: 'Chequea', name: 'Chequea', url: 'https://chequeabolivia.org/' },
+  { src: '/logos/logo-chequea.webp', alt: 'Chequea', name: 'Chequea', url: 'https://chequeabolivia.bo/' },
   { src: '/logos/LOGO-bolivia.png', alt: 'Bolivia Verifica', name: 'Bolivia Verifica', url: 'https://boliviaverifica.bo/' },
   { src: '/logos/ibf.webp', alt: 'IBF', name: 'IBF', url: 'https://www.internetbolivia.org/' },
   { src: '/logos/fundacion-construir.webp', alt: 'Fundación Construir', name: 'Fundación Construir', url: 'https://fundacionconstruir.org/' },
-  { src: '/logos/DW-Academie.jpg', alt: 'DW Academie', name: 'DW Academie', url: 'https://www.dw.com/es/dw-akademie/s-12120' },
+  { src: '/logos/DW-Academie.jpg', alt: 'DW Academie', name: 'DW Academie', url: 'https://www.dw.com/es/actualidad/s-30684' },
   { src: '/logos/aru.webp', alt: 'ARU', name: 'ARU', url: 'https://www.aru.org.bo/' },
-  { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC', url: 'https://aboic.org.bo/' }
+  { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC', url: 'https://aboic.org/' }
 ];
 
 export function SliderLogos() {
@@ -70,52 +71,102 @@ export function SliderLogos() {
   };
 
   return (
-    <div id="organizations" className="w-full py-16 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+    <motion.div 
+      id="organizations" 
+      className="w-full py-16 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-regular text-gray-900 mb-4">
-            Organizaciones <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text">Aliadas</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <motion.h2 
+            className="text-3xl sm:text-4xl lg:text-5xl font-regular text-gray-900 mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Nuestra red de <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text">Aliados</span>
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             17 organizaciones comprometidas con la integridad electoral en Bolivia
-          </p>
+          </motion.p>
         </div>
 
-        <div className="relative">
+        <motion.div 
+          className="relative"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           {/* Gradientes laterales para fade effect */}
           <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
           <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
           
           {/* Botón Izquierdo */}
-          <button
+          <motion.button
             onClick={moveLeft}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
             aria-label="Mover slider a la izquierda"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             <svg className="w-5 h-5 text-gray-600 group-hover:text-[#CBA135] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-          </button>
+          </motion.button>
           
           {/* Botón Derecho */}
-          <button
+          <motion.button
             onClick={moveRight}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
             aria-label="Mover slider a la derecha"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             <svg className="w-5 h-5 text-gray-600 group-hover:text-[#CBA135] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </button>
+          </motion.button>
           
-          <div className="logos-track">
+          <motion.div 
+            className="logos-track"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             <div 
               className="logos-slider-infinite"
               style={{ transform: `translateX(${translateX}px)` }}
             >
               {/* Triplicamos los logos para un efecto seamless perfecto */}
               {[...logos, ...logos, ...logos].map((logo, index) => (
-                <div key={`${logo.name}-${index}`} className="logo-item">
+                <motion.div 
+                  key={`${logo.name}-${index}`} 
+                  className="logo-item"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: (index % logos.length) * 0.05 }}
+                  viewport={{ once: true }}
+                >
                   <div 
                     className="logo-container group cursor-pointer"
                     onClick={() => handleLogoClick(logo.url)}
@@ -131,12 +182,12 @@ export function SliderLogos() {
                       />
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

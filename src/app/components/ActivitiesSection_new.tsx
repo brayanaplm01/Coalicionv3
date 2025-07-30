@@ -189,7 +189,8 @@ export default function ActivitiesSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Implementamos estrategias integrales que combinan tecnología, educación y análisis para fortalecer la democracia boliviana
+            Desarrollamos iniciativas integrales que incluyen talleres de capacitación, implementacion de herramientas
+            tecnológicas avanzadas, análisis exhaustivo de procesos electorales y creación de lineamientos comunicacionales estratégicos
           </motion.p>
         </div>
 

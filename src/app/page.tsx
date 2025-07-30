@@ -7,7 +7,7 @@ import { AboutSection } from "./components/layouts/about-section";
 import MissionVisionSection from "./components/layouts/mission-vision-section";
 import { Footer } from "./components/layouts/footer";
 import SimpleNavbar from "./components/layouts/simple-navbar";
-import MembersSection from "./components/MembersSection";
+// import MembersSection from "./components/MembersSection";
 import ActivitiesSection from "./components/ActivitiesSection";
 import ContactoModal from "./components/ContactoModal";
 
@@ -26,17 +26,17 @@ export default function Home() {
           <HeroSection />
         </div>
         
-        {/* Slider Logos Section */}
-        <SliderLogos />
-        
-        {/* About Section */}
-        <AboutSection />
-        
-        {/* Mission, Vision & Objectives Section */}
+        {/* Mission, Vision & Objectives Section - Nuestra Propuesta */}
         <MissionVisionSection />
         
+        {/* About Section - Quiénes Somos */}
+        <AboutSection />
+        
+        {/* Slider Logos Section - Organizaciones Aliadas */}
+        <SliderLogos />
+        
         {/* Members Section */}
-        <MembersSection />
+        {/* <MembersSection /> */}
         
         {/* Activities Section */}
         <ActivitiesSection />

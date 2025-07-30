@@ -1,4 +1,6 @@
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+import Image from "next/image";
 
 const activities = [
   {
@@ -146,6 +148,14 @@ const timeline = [
 ];
 
 export default function ActivitiesSection() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 0.8", "end 0.2"]
+  });
+  
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <motion.section
       id="activities"
@@ -153,7 +163,7 @@ export default function ActivitiesSection() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50/30 via-transparent to-slate-50/30"></div>
@@ -175,22 +185,66 @@ export default function ActivitiesSection() {
           </motion.h2>
           
           <motion.div 
-            className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-8"
+            className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-12"
             initial={{ width: 0 }}
             whileInView={{ width: 128 }}
             transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
           />
-          
-          <motion.p 
-            className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-opensans"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        </div>
+
+        {/* Image and Text Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 lg:mb-20 items-center">
+          {/* Image - Left Column */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/inicial/actividades.png"
+                alt="Nuestras Actividades"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+              />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-red-900/20 via-transparent to-transparent"></div>
+            </div>
+          </motion.div>
+
+          {/* Text - Right Column */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Implementamos estrategias integrales que combinan tecnología, educación y análisis para fortalecer la democracia boliviana
-          </motion.p>
+            <p className="text-xl text-gray-600 leading-relaxed font-opensans">
+              Desarrollamos iniciativas integrales que incluyen talleres de capacitación, implementación de herramientas
+              tecnológicas avanzadas, análisis exhaustivo de procesos electorales y creación de lineamientos comunicacionales estratégicos.
+            </p>
+            
+            {/* Additional descriptive text */}
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-red-600 rounded-full mt-3 flex-shrink-0"></div>
+                <p className="text-gray-600 font-opensans">
+                  Fortalecemos la democracia a través de la educación ciudadana y el combate efectivo contra la desinformación.
+                </p>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-red-600 rounded-full mt-3 flex-shrink-0"></div>
+                <p className="text-gray-600 font-opensans">
+                  Implementamos tecnologías de monitoreo en tiempo real para garantizar procesos electorales transparentes.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Activities Overview */}
@@ -198,16 +252,16 @@ export default function ActivitiesSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {activities.map((activity, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="group"
             >
               <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white/30 hover:shadow-xl transition-all duration-500 hover:scale-105 h-full relative overflow-hidden">
@@ -236,7 +290,7 @@ export default function ActivitiesSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center mb-12"
           >
             <h3 className="text-3xl lg:text-4xl font-montserrat font-bold text-[#222426] mb-4">
@@ -248,9 +302,15 @@ export default function ActivitiesSection() {
           </motion.div>
 
           {/* Timeline */}
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 via-rose-600 to-red-800 rounded-full"></div>
+          <div ref={timelineRef} className="relative">
+            {/* Timeline line background */}
+            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gray-200 rounded-full"></div>
+            
+            {/* Animated timeline line */}
+            <motion.div 
+              className="absolute left-8 top-0 w-1 bg-gradient-to-b from-red-600 via-rose-600 to-red-800 rounded-full origin-top"
+              style={{ height: lineHeight }}
+            ></motion.div>
             
             <div className="space-y-8">
               {timeline.map((periodo, index) => (
@@ -310,8 +370,8 @@ export default function ActivitiesSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="bg-gradient-to-br from-[#CBA135]/10 to-red-800/10 rounded-3xl p-8 border border-[#CBA135]/20"
         >
           <div className="text-center mb-8">
