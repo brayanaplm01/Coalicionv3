@@ -205,7 +205,7 @@ export default function ActivitiesSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/inicial/sello.jpeg"
+                src="/inicial/actividades.png"
                 alt="Nuestras Actividades"
                 width={600}
                 height={400}
