@@ -6,10 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  { name: "Nuestras Propuestas", link: "#mission-vision", isContacto: false, isScroll: true },
-  { name: "Quienes Somos", link: "#about", isContacto: false, isScroll: true },
-  // { name: "Miembros", link: "#members", isContacto: false, isScroll: true },
-  { name: "Actividades", link: "#activities", isContacto: false, isScroll: true },
+  { name: "Verificacion de Hechos", link: "", isContacto: false, isScroll: true },
+  { name: "Guias Electorales", link: "", isContacto: false, isScroll: true },
+  { name: "Reportes", link: "", isContacto: false, isScroll: true },
+  { name: "Materiales Educativos", link: "", isContacto: false, isScroll: true },
   //{ name: "Contacto", link: "#", isContacto: true, isScroll: false },
 ];
 
