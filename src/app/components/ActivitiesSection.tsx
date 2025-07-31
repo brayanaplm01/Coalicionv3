@@ -98,9 +98,9 @@ const timeline = [
   },
   {
     mes: "Febrero 2025",
-    color: "#a21caf",
-    gradient: "from-fuchsia-700 to-rose-700",
-    bgColor: "bg-fuchsia-50",
+    color: "#be123c",
+    gradient: "from-rose-700 to-red-700",
+    bgColor: "bg-red-50",
     items: [
       {
         dia: "11",
@@ -205,7 +205,7 @@ export default function ActivitiesSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/inicial/actividades.png"
+                src="/inicial/sello.jpeg"
                 alt="Nuestras Actividades"
                 width={600}
                 height={400}
@@ -367,7 +367,7 @@ export default function ActivitiesSection() {
         </div>
 
         {/* Próximas Actividades */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -409,7 +409,7 @@ export default function ActivitiesSection() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.section>
   );

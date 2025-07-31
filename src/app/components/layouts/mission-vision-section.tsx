@@ -24,8 +24,8 @@ export default function MissionVisionSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#222426]">Nuestra </span>
-            <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent">
+            <span className="text-[#222426] font-montserrat">Nuestra </span>
+            <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat">
               Propuesta
             </span>
           </motion.h2>
@@ -39,155 +39,128 @@ export default function MissionVisionSection() {
           />
         </div>
 
-        {/* Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-          
-          {/* Left Column - Mission & Vision */}
-          <div className="space-y-30">
-            {/* Mission */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-800 to-rose-700 rounded-2xl flex items-center justify-center shadow-lg">
-                    <IconTarget className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl lg:text-3xl font-montserrat font-bold text-[#222426] mb-4">
-                    Misión
-                  </h3>
-                  <p className="text-lg text-gray-700 leading-relaxed font-opensans">
-                    Combatir la desinformación electoral mediante el trabajo colaborativo de organizaciones comprometidas con la integridad de los procesos democráticos en Bolivia.
-                  </p>
-                </div>
+        {/* Content Grid - Mission & Vision Cards */}
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
+          {/* Mission Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-red-800 to-rose-700 rounded-lg flex items-center justify-center">
+                <IconTarget className="h-6 w-6 text-white" />
               </div>
-            </motion.div>
-
-            {/* Vision */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#00797B] to-[#005F61] rounded-2xl flex items-center justify-center shadow-lg">
-                    <IconEye className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl lg:text-3xl font-montserrat font-bold text-[#222426] mb-4">
-                    Visión
-                  </h3>
-                  <p className="text-lg text-gray-700 leading-relaxed font-opensans">
-                    Una Bolivia con elecciones transparentes, donde la información veraz fortalezca la democracia y la participación ciudadana informada sea la base de nuestro sistema electoral.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Column - Objectives */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="mb-8"
-            >
-              <h3 className="text-2xl lg:text-3xl font-montserrat font-bold text-[#222426] mb-2">
-                Objetivos Estratégicos
+              <h3 className="text-2xl font-montserrat font-bold text-[#222426]">
+                Misión
               </h3>
-              <p className="text-gray-600 font-opensans">
-                En el Marco de la Iniciativa Global contra la Desinformación Electoral
+            </div>
+            <p className="text-gray-700 leading-relaxed font-opensans">
+              Combatir la desinformación electoral mediante el trabajo colaborativo de organizaciones comprometidas con la integridad de los procesos democráticos en Bolivia.
+            </p>
+          </motion.div>
+
+          {/* Vision Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#00797B] to-[#005F61] rounded-lg flex items-center justify-center">
+                <IconEye className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-montserrat font-bold text-[#222426]">
+                Visión
+              </h3>
+            </div>
+            <p className="text-gray-700 leading-relaxed font-opensans">
+              Una Bolivia con elecciones transparentes, donde la información veraz fortalezca la democracia y la participación ciudadana informada sea la base de nuestro sistema electoral.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Objectives Section */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl lg:text-4xl font-montserrat font-bold text-[#222426] mb-4">
+              Nuestros objetivos
+            </h3>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Objective 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
+                  <IconUsers className="h-6 w-6 text-white" />
+                </div>
+                <h4 className="text-xl font-montserrat font-semibold text-[#222426]">
+                  Fortalecer la Colaboración
+                </h4>
+              </div>
+              <p className="text-gray-700 font-opensans leading-relaxed">
+                Establecer una coalición que reúna a instituciones públicas, sociedad civil, medios de comunicación y socios internacionales para contrarrestar la desinformación.
               </p>
             </motion.div>
 
-            <div className="space-y-8">
-              {/* Objective 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                viewport={{ once: true }}
-                className="group border-l-4 border-[#CBA135] pl-6 py-2 hover:border-red-800 transition-colors duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl flex items-center justify-center">
-                      <IconUsers className="h-6 w-6 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-montserrat font-semibold text-[#222426] mb-2 group-hover:text-red-800 transition-colors duration-300">
-                      Fortalecer la Colaboración
-                    </h4>
-                    <p className="text-gray-700 font-opensans leading-relaxed">
-                      Establecer una coalición que reúna a instituciones públicas, sociedad civil, medios de comunicación y socios internacionales para contrarrestar la desinformación.
-                    </p>
-                  </div>
+            {/* Objective 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-amber-600 to-orange-600 rounded-lg flex items-center justify-center">
+                  <IconBulb className="h-6 w-6 text-white" />
                 </div>
-              </motion.div>
+                <h4 className="text-xl font-montserrat font-semibold text-[#222426]">
+                  Desarrollo de Capacidades
+                </h4>
+              </div>
+              <p className="text-gray-700 font-opensans leading-relaxed">
+                Colaborar en iniciativas que fortalezcan la alfabetización mediática digital, aumenten la conciencia pública y aseguren la integridad de la información electoral.
+              </p>
+            </motion.div>
 
-              {/* Objective 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="group border-l-4 border-[#CBA135] pl-6 py-2 hover:border-red-800 transition-colors duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 bg-gradient-to-br from-amber-600 to-orange-600 rounded-xl flex items-center justify-center">
-                      <IconBulb className="h-6 w-6 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-montserrat font-semibold text-[#222426] mb-2 group-hover:text-red-800 transition-colors duration-300">
-                      Desarrollo de Capacidades
-                    </h4>
-                    <p className="text-gray-700 font-opensans leading-relaxed">
-                      Colaborar en iniciativas que fortalezcan la alfabetización mediática digital, aumenten la conciencia pública y aseguren la integridad de la información electoral.
-                    </p>
-                  </div>
+            {/* Objective 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
+                  <IconShield className="h-6 w-6 text-white" />
                 </div>
-              </motion.div>
-
-              {/* Objective 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                viewport={{ once: true }}
-                className="group border-l-4 border-[#CBA135] pl-6 py-2 hover:border-red-800 transition-colors duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-violet-600 rounded-xl flex items-center justify-center">
-                      <IconShield className="h-6 w-6 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-montserrat font-semibold text-[#222426] mb-2 group-hover:text-red-800 transition-colors duration-300">
-                      Integridad de la Información
-                    </h4>
-                    <p className="text-gray-700 font-opensans leading-relaxed">
-                      Mitigar el impacto de la desinformación y los discursos tóxicos, especialmente hacia las mujeres y poblaciones vulnerables.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+                <h4 className="text-xl font-montserrat font-semibold text-[#222426]">
+                  Integridad de la Información
+                </h4>
+              </div>
+              <p className="text-gray-700 font-opensans leading-relaxed">
+                Mitigar el impacto de la desinformación y los discursos tóxicos, especialmente hacia las mujeres y poblaciones vulnerables.
+              </p>
+            </motion.div>
           </div>
         </div>
 
