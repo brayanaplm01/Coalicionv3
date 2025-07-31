@@ -6,7 +6,11 @@ import { ThreeDMarqueeDemo } from "../ui/ThreeDMarquee";
 import { LinkPreview } from "@/app/components/ui/link-preview";
 import { IconChevronDown } from "@tabler/icons-react";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  onContactClick?: () => void;
+}
+
+export function HeroSection({ }: HeroSectionProps) {
   const scrollToNext = () => {
     const organizationsSection = document.getElementById("organizations");
     if (organizationsSection) {
@@ -20,6 +24,25 @@ export function HeroSection() {
     } else {
       // Fallback si no encuentra la sección
       window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+    }
+  };
+
+  const scrollToContact = () => {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      const navbarHeight = 80;
+      const elementPosition = footer.offsetTop - navbarHeight;
+      
+      window.scrollTo({ 
+        top: elementPosition, 
+        behavior: "smooth" 
+      });
+    } else {
+      // Fallback - scroll al final de la página
+      window.scrollTo({ 
+        top: document.body.scrollHeight, 
+        behavior: "smooth" 
+      });
     }
   };
  
@@ -68,6 +91,29 @@ export function HeroSection() {
                 <span className="font-bold text-[#CBA135] ">elecciones generales 2025.</span>
                 
               </LinkPreview>
+            </div>
+            
+            {/* Botón de Contacto */}
+            <div className="mt-8 sm:mt-10">
+              <button
+                onClick={scrollToContact}
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/20 hover:border-[#CBA135]/40 backdrop-blur-sm"
+              >
+                <span>Contacto</span>
+                <svg 
+                  className="ml-2 h-5 w-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
