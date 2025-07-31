@@ -172,14 +172,14 @@ export default function ActivitiesSection() {
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
           <motion.h2 
-            className="text-4xl sm:text-5xl lg:text-6xl font-montserrat font-regular mb-6"
+            className="text-4xl sm:text-5xl lg:text-5xl font-montserrat font-regular mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#222426]">Nuestras </span>
-            <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent">
+            <span className="text-[#222426] font-montserrat font-semibold">Nuestras </span>
+            <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat font-semibold">
               Actividades
             </span>
           </motion.h2>
@@ -293,7 +293,7 @@ export default function ActivitiesSection() {
             viewport={{ once: true, amount: 0.1 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl lg:text-4xl font-montserrat font-bold text-[#222426] mb-4">
+            <h3 className="text-3xl lg:text-5xl font-montserrat font-semibold text-[#222426] mb-4">
               Cronología de <span className="text-[#CBA135]">Actividades</span>
             </h3>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto font-opensans">

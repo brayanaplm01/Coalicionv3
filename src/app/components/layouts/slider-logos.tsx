@@ -82,13 +82,13 @@ export function SliderLogos() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-regular text-gray-900 mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Nuestra red de <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text">Aliados</span>
+            Nuestra red de <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text font-semibold">Aliados</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-gray-600 max-w-3xl mx-auto"

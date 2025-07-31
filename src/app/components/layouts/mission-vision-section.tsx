@@ -24,8 +24,8 @@ export default function MissionVisionSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#222426] font-montserrat">Nuestra </span>
-            <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat">
+            <span className="text-[#222426] font-montserrat text-4xl sm:text-5xl font-semibold">Nuestra </span>
+            <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat text-4xl sm:text-5xl font-semibold">
               Propuesta
             </span>
           </motion.h2>
@@ -93,7 +93,7 @@ export default function MissionVisionSection() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl lg:text-4xl font-montserrat font-bold text-[#222426] mb-4">
+            <h3 className="text-4xl sm:text-5xl font-montserrat font-semibold text-[#222426] mb-4">
               Nuestros objetivos
             </h3>
           </motion.div>

@@ -32,13 +32,13 @@ export function AboutSection() {
       <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
         {/* Header */}
         <motion.h2 
-          className="text-4xl sm:text-5xl font-montserrat font-regular text-gray-900 mb-6"
+          className="text-4xl sm:text-5xl font-montserrat font-semibold text-gray-900 mb-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          ¿Quiénes <span className="text-[#CBA135]">Somos</span>?
+          ¿Quiénes <span className="text-[#CBA135] font-semibold">Somos</span>?
         </motion.h2>
         
         {/* Red underline with gradient */}
