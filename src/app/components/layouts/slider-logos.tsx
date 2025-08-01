@@ -1,359 +1,242 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { IconChevronLeft, IconChevronRight, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
+import { motion } from 'motion/react';
 
 interface Logo {
   src: string;
   alt: string;
   name: string;
+  url: string;
 }
 
 const logos: Logo[] = [
-  { src: '/logos/ONU-mujeres.avif', alt: 'ONU Mujeres', name: 'ONU Mujeres' },
-  { src: '/logos/OEP.png', alt: 'OEP', name: 'OEP' },
-  { src: '/logos/pnud.webp', alt: 'pnud', name: 'pnud' },
-  { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas' },
-  { src: '/logos/LOGO-MUY-WASO.webp', alt: 'Muy Waso', name: 'Muy Waso' },
-  { src: '/logos/logo-ipicom.webp', alt: 'IPICOM', name: 'IPICOM' },
-  { src: '/logos/logo-guardiana.webp', alt: 'Guardiana', name: 'Guardiana' },
-  { src: '/logos/Logo-fespng.webp', alt: 'FES', name: 'FES' },
-  { src: '/logos/logo-coordinadora-de-la-mujer.jpg', alt: 'Coordinadora de la Mujer', name: 'Coordinadora de la Mujer' },
-  { src: '/logos/logo-cibeEr.webp', alt: 'CiberEr', name: 'CiberEr' },
-  { src: '/logos/logo-chequea.webp', alt: 'Chequea', name: 'Chequea' },
-  { src: '/logos/LOGO-bolivia.png', alt: 'Bolivia', name: 'Bolivia' },
-  { src: '/logos/ibf.webp', alt: 'IBF', name: 'IBF' },
-  { src: '/logos/fundacion-construir.webp', alt: 'Fundación Construir', name: 'Fundación Construir' },
-  { src: '/logos/DW-Academie.jpg', alt: 'DW Academie', name: 'DW Academie' },
-  { src: '/logos/aru.webp', alt: 'ARU', name: 'ARU' },
-  { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC' }
+  { src: '/logos/ONU-mujeres.avif', alt: 'ONU Mujeres', name: 'ONU Mujeres', url: 'https://www.unwomen.org/es' },
+  { src: '/logos/OEP.png', alt: 'OEP', name: 'OEP', url: 'https://www.oep.org.bo/' },
+  { src: '/logos/pnud.webp', alt: 'PNUD', name: 'PNUD', url: 'https://www.undp.org/es/bolivia' },
+  { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas', url: 'https://anp-bolivia.com/' },
+  { src: '/logos/LOGO-MUY-WASO.webp', alt: 'Muy Waso', name: 'Muy Waso', url: 'https://muywaso.com/' },
+  { src: '/logos/logo-ipicom.webp', alt: 'IPICOM', name: 'IPICOM', url: 'https://ipicom.umsa.bo/' },
+  { src: '/logos/logo-guardiana.webp', alt: 'Guardiana', name: 'Guardiana', url: 'https://guardiana.com.bo/' },
+  { src: '/logos/Logo-fespng.webp', alt: 'FES', name: 'FES', url: 'https://www.fes.de/' },
+  { src: '/logos/logo-coordinadora-de-la-mujer.jpg', alt: 'Coordinadora de la Mujer', name: 'Coordinadora de la Mujer', url: 'https://coordinadoradelamujer.org.bo/' },
+  { src: '/logos/logo-cibeEr.webp', alt: 'CiberEr', name: 'CiberEr', url: 'https://ciberwarmis.org/' },
+  { src: '/logos/logo-chequea.webp', alt: 'Chequea', name: 'Chequea', url: 'https://chequeabolivia.bo/' },
+  { src: '/logos/LOGO-bolivia.png', alt: 'Bolivia Verifica', name: 'Bolivia Verifica', url: 'https://boliviaverifica.bo/' },
+  { src: '/logos/ibf.webp', alt: 'IBF', name: 'IBF', url: 'https://www.internetbolivia.org/' },
+  { src: '/logos/fundacion-construir.webp', alt: 'Fundación Construir', name: 'Fundación Construir', url: 'https://fundacionconstruir.org/' },
+  { src: '/logos/DW-Academie.jpg', alt: 'DW Academie', name: 'DW Academie', url: 'https://www.dw.com/es/actualidad/s-30684' },
+  { src: '/logos/aru.webp', alt: 'ARU', name: 'ARU', url: 'https://www.aru.org.bo/' },
+  { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC', url: 'https://aboic.org/' }
 ];
 
 export function SliderLogos() {
-  const [currentIndex, setCurrentIndex] = useState(logos.length); // Empezamos en el conjunto del medio
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  
-  // Drag/Swipe state
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [startY, setStartY] = useState(0);
   const [translateX, setTranslateX] = useState(0);
-  const [dragStartIndex, setDragStartIndex] = useState(0);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  
-  // Para el carrusel continuo - triplicamos los logos
-  const totalLogos = logos.length;
-  const tripleLogos = [...logos, ...logos, ...logos];
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
-  // Ancho de cada logo
-  const logoWidth = 150; // Ajustado para mejor spacing
-
-  const goToSlide = useCallback((index: number) => {
-    setCurrentIndex(index);
-  }, []);
-
-  const goToPrevious = useCallback(() => {
-    setCurrentIndex((prev) => prev - 1); // Navegación de uno en uno
-  }, []);
-
-  const goToNext = useCallback(() => {
-    setCurrentIndex((prev) => prev + 1); // Navegación de uno en uno
-  }, []);
-
-  const togglePlayPause = useCallback(() => {
-    setIsPlaying(!isPlaying);
-  }, [isPlaying]);
-
-  // Drag/Swipe handlers
-  const handleDragStart = useCallback((e: React.MouseEvent | React.TouchEvent) => {
-    if (!sliderRef.current) return;
-    
-    setIsDragging(true);
-    setDragStartIndex(currentIndex);
-    setIsPlaying(false); // Pause autoplay during drag
-    
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-    
-    setStartX(clientX);
-    setStartY(clientY);
-    
-    if ('touches' in e) {
-      // Touch events
-      document.addEventListener('touchmove', handleDragMove as any);
-      document.addEventListener('touchend', handleDragEnd as any);
-    } else {
-      // Mouse events
-      document.addEventListener('mousemove', handleDragMove as any);
-      document.addEventListener('mouseup', handleDragEnd as any);
-      e.preventDefault();
-    }
-  }, [currentIndex]);
-
-  const handleDragMove = useCallback((e: MouseEvent | TouchEvent) => {
-    if (!isDragging || !sliderRef.current) return;
-    
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-    
-    const deltaX = clientX - startX;
-    const deltaY = clientY - startY;
-    
-    // Detect if this is a horizontal swipe (more horizontal than vertical)
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      e.preventDefault();
-      
-      // Sin resistencia para arrastre más directo
-      setTranslateX(deltaX);
-    }
-  }, [isDragging, startX, startY]);
-
-  const handleDragEnd = useCallback(() => {
-    if (!isDragging) return;
-    
-    setIsDragging(false);
-    
-    // Determine if we should change slide based on drag distance
-    const threshold = 30; // Threshold más bajo para que sea más fácil cambiar de logo
-    
-    if (Math.abs(translateX) > threshold) {
-      if (translateX > 0) {
-        // Dragged right - go to previous slide (solo uno para control más preciso)
-        setCurrentIndex((prev) => prev - 1);
-      } else {
-        // Dragged left - go to next slide (solo uno para control más preciso)
-        setCurrentIndex((prev) => prev + 1);
-      }
-    } else {
-      // Snap back to current slide
-      setCurrentIndex(dragStartIndex);
-    }
-    
-    setTranslateX(0);
-    setIsPlaying(true); // Resume autoplay
-    
-    // Clean up event listeners
-    document.removeEventListener('mousemove', handleDragMove as any);
-    document.removeEventListener('mouseup', handleDragEnd as any);
-    document.removeEventListener('touchmove', handleDragMove as any);
-    document.removeEventListener('touchend', handleDragEnd as any);
-  }, [isDragging, translateX, dragStartIndex, handleDragMove]);
-
-  // Keyboard navigation
+  // Auto-scroll functionality
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      switch (event.key) {
-        case 'ArrowLeft':
-          event.preventDefault();
-          goToPrevious();
-          break;
-        case 'ArrowRight':
-          event.preventDefault();
-          goToNext();
-          break;
-        case ' ':
-          event.preventDefault();
-          togglePlayPause();
-          break;
-        default:
-          break;
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goToPrevious, goToNext, togglePlayPause]);
-
-  // Auto-play functionality - scroll automático infinito y suave
-  useEffect(() => {
-    if (isPlaying && !isHovered && !isDragging) {
-      intervalRef.current = setInterval(() => {
-        setCurrentIndex((prev) => prev + 1);
-      }, 3000); // Movimiento cada 3 segundos para mejor visualización
-    } else {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    }
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [isPlaying, isHovered, isDragging]);
-
-  // Reset seamless para carrusel infinito
-  useEffect(() => {
-    // Cuando llegamos al final del segundo conjunto, saltamos al inicio del segundo conjunto
-    if (currentIndex >= totalLogos * 2) {
-      setTimeout(() => {
-        setCurrentIndex(totalLogos);
-      }, 0);
-    }
-    // Cuando vamos hacia atrás y llegamos al inicio, saltamos al final del segundo conjunto
-    else if (currentIndex < totalLogos) {
-      setTimeout(() => {
-        setCurrentIndex(totalLogos * 2 - 1);
-      }, 0);
-    }
-  }, [currentIndex, totalLogos]);
-
-  // Cleanup effect for drag events
-  useEffect(() => {
-    return () => {
-      // Clean up any remaining event listeners
-      document.removeEventListener('mousemove', handleDragMove as any);
-      document.removeEventListener('mouseup', handleDragEnd as any);
-      document.removeEventListener('touchmove', handleDragMove as any);
-      document.removeEventListener('touchend', handleDragEnd as any);
-    };
-  }, [handleDragMove, handleDragEnd]);
-
-  // Mouse wheel navigation
-  const handleWheel = useCallback((e: React.WheelEvent) => {
-    e.preventDefault();
+    if (!isAutoPlay) return;
     
-    // Throttle wheel events
-    if (isDragging) return;
+    const interval = setInterval(() => {
+      setTranslateX(prev => prev - 1); // Movimiento muy suave, 1px por vez
+    }, 50); // Cada 50ms para movimiento fluido
+
+    return () => clearInterval(interval);
+  }, [isAutoPlay]);
+
+  const handleLogoClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const moveLeft = () => {
+    setTranslateX(prev => prev + 300); // Mueve 300px a la izquierda
+    setIsAutoPlay(false); // Pausa auto-scroll
     
-    const delta = e.deltaY;
-    const threshold = 30; // Threshold más bajo para mejor respuesta
+    // Reanuda auto-scroll después de 4 segundos de inactividad
+    setTimeout(() => {
+      setIsAutoPlay(true);
+    }, 4000);
+  };
+
+  const moveRight = () => {
+    setTranslateX(prev => prev - 300); // Mueve 300px a la derecha
+    setIsAutoPlay(false); // Pausa auto-scroll
     
-    if (Math.abs(delta) > threshold) {
-      if (delta > 0) {
-        // Scroll down - next slides
-        setCurrentIndex((prev) => prev + 2);
-      } else {
-        // Scroll up - previous slides
-        setCurrentIndex((prev) => prev - 2);
-      }
+    // Reanuda auto-scroll después de 4 segundos de inactividad
+    setTimeout(() => {
+      setIsAutoPlay(true);
+    }, 4000);
+  };
+
+  // Touch handlers para móviles
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsAutoPlay(false); // Pausa auto-scroll al tocar
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      moveRight(); // Deslizar izquierda mueve el carousel hacia la derecha
     }
-  }, [isDragging]);
+    if (isRightSwipe) {
+      moveLeft(); // Deslizar derecha mueve el carousel hacia la izquierda
+    }
+
+    // Reanuda auto-scroll después del swipe
+    setTimeout(() => {
+      setIsAutoPlay(true);
+    }, 4000);
+  };
 
   return (
-    <div id="organizations" className="w-full py-16 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+    <motion.div 
+      id="organizations" 
+      className="w-full py-16 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-regular text-gray-900 mb-4">
-            Organizaciones <span className="bg-gradient-to-r from-red-800 to-amber-600 bg-clip-text text-transparent">Aliadas</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Trabajamos junto a 17 organizaciones comprometidas con la integridad electoral en Bolivia
-          </p>
+          <motion.h2 
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Nuestra red de <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text font-semibold">Aliados</span>
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 max-w-3xl mx-auto mb-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Organizaciones comprometidas con la integridad electoral en Bolivia
+          </motion.p>
+          {/* Indicador para móviles */}
+          <motion.p 
+            className="text-sm text-gray-500 md:hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+          
+          </motion.p>
         </div>
 
-        <div className="relative group">
-          {/* Botón Anterior */}
-          <button
-            onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 border border-gray-200"
-            aria-label="Logo anterior"
+        {/* Botones de navegación fuera del carousel - Solo en desktop */}
+        <div className="relative flex items-center justify-center">
+          {/* Botón Izquierdo - Más alejado - Solo en desktop */}
+          <motion.button
+            onClick={moveLeft}
+            className="absolute -left-16 sm:-left-20 lg:-left-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 flex items-center justify-center group hidden md:flex"
+            aria-label="Mover slider a la izquierda"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <IconChevronLeft className="w-5 h-5 text-gray-700" />
-          </button>
-
-          {/* Botón Siguiente */}
-          <button
-            onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 border border-gray-200"
-            aria-label="Logo siguiente"
+            <svg className="w-5 h-5 text-gray-600 group-hover:text-[#CBA135] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </motion.button>
+          
+          {/* Botón Derecho - Más alejado - Solo en desktop */}
+          <motion.button
+            onClick={moveRight}
+            className="absolute -right-16 sm:-right-20 lg:-right-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 flex items-center justify-center group hidden md:flex"
+            aria-label="Mover slider a la derecha"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <IconChevronRight className="w-5 h-5 text-gray-700" />
-          </button>
+            <svg className="w-5 h-5 text-gray-600 group-hover:text-[#CBA135] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </motion.button>
 
-          {/* Botón Play/Pause */}
-          <button
-            onClick={togglePlayPause}
-            className="absolute top-4 right-4 z-20 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 border border-gray-200"
-            aria-label={isPlaying ? "Pausar carousel" : "Reproducir carousel"}
-          >
-            {isPlaying ? (
-              <IconPlayerPause className="w-4 h-4 text-gray-700" />
-            ) : (
-              <IconPlayerPlay className="w-4 h-4 text-gray-700" />
-            )}
-          </button>
-
-          {/* Container del slider */}
-          <div 
-            ref={sliderRef}
-            className={`relative overflow-hidden select-none ${
-              isDragging 
-                ? 'cursor-grabbing' 
-                : 'cursor-grab'
-            }`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onMouseDown={handleDragStart}
-            onTouchStart={handleDragStart}
-            onWheel={handleWheel}
-            style={{ 
-              userSelect: 'none',
-              WebkitUserSelect: 'none',
-              touchAction: 'pan-y pinch-zoom'
-            }}
+          {/* Contenedor del carousel con touch events */}
+          <motion.div 
+            className="relative w-full touch-pan-y"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             {/* Gradientes laterales para fade effect */}
-            <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
             
-            <div 
-              className={`flex ${
-                isDragging ? '' : 'transition-transform duration-500 ease-out'
-              }`}
-              style={{
-                transform: `translateX(${-currentIndex * logoWidth + (isDragging ? translateX : 0)}px)`,
-                transitionDuration: isDragging ? '0ms' : '500ms' // Transición más suave para scroll automático
-              }}
+            <motion.div 
+              className="logos-track"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
             >
-              {/* Carrusel infinito con triple repetición de logos */}
-              {tripleLogos.map((logo, index) => (
-                <div key={`${logo.name}-${index}`} className="flex-none" style={{ width: `${logoWidth}px` }}>
-                  <div className="logo-container group cursor-pointer px-4">
+              <div 
+                className="logos-slider-infinite"
+                style={{ transform: `translateX(${translateX}px)` }}
+              >
+                {/* Triplicamos los logos para un efecto seamless perfecto */}
+                {[...logos, ...logos, ...logos].map((logo, index) => (
+                  <motion.div 
+                    key={`${logo.name}-${index}`} 
+                    className="logo-item"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: (index % logos.length) * 0.05 }}
+                    viewport={{ once: true }}
+                  >
                     <div 
-                      className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mx-auto transition-all duration-300"
-                      onMouseDown={(e) => e.stopPropagation()}
-                      onTouchStart={(e) => e.stopPropagation()}
+                      className="logo-container group cursor-pointer"
+                      onClick={() => handleLogoClick(logo.url)}
+                      title={`Visitar ${logo.name}`}
                     >
-                      <Image
-                        src={logo.src}
-                        alt={logo.alt}
-                        fill
-                        className="object-contain transition-all duration-500 ease-in-out filter grayscale group-hover:grayscale-0 group-hover:scale-110 pointer-events-none"
-                        sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 112px, 128px"
-                        draggable={false}
-                      />
+                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mx-auto">
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          fill
+                          className="object-contain transition-all duration-500 ease-in-out filter grayscale group-hover:grayscale-0 group-hover:scale-110"
+                          sizes="(max-width: 768px) 80px, (max-width: 1024px) 100px, 128px"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Indicadores de navegación */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {logos.slice(0, Math.min(logos.length, 8)).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index + totalLogos)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  Math.floor((currentIndex - totalLogos) % totalLogos) === index
-                    ? 'bg-red-800 w-6'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Ir a organización ${index + 1}`}
-              />
-            ))}
-          </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
-
-        {/* Estadísticas */}
-        
       </div>
-    </div>
+    </motion.div>
   );
 }

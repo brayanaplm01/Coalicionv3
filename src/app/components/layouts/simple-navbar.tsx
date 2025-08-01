@@ -6,11 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  
-  { name: "Quienes Somos", link: "#about", isContacto: false, isScroll: true },
-  { name: "Miembros", link: "#members", isContacto: false, isScroll: true },
-  { name: "Actividades", link: "#activities", isContacto: false, isScroll: true },
-  { name: "Contacto", link: "#", isContacto: true, isScroll: false },
+  { name: "Verificacion de Hechos", link: "", isContacto: false, isScroll: true },
+  { name: "Guias Electorales", link: "", isContacto: false, isScroll: true },
+  { name: "Reportes", link: "", isContacto: false, isScroll: true },
+  { name: "Materiales Educativos", link: "", isContacto: false, isScroll: true },
+  //{ name: "Contacto", link: "#", isContacto: true, isScroll: false },
 ];
 
 interface SimpleNavbarProps {
@@ -113,7 +113,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center transform hover:scale-105 transition-transform duration-200">
               <Image
-                src="/logo.webp"
+                src="/logo-3.webp"
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
                 width={240}
                 height={70}
@@ -132,9 +132,10 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 key={index}
                 href={item.link}
                 onClick={(e) => handleNavClick(e, item)}
-                className="group relative text-sm lg:text-base font-regular lg:font-regular transition-all duration-300 px-2 py-2 text-white hover:text-[#cba135] transform hover:scale-105"
+                className="group relative text-sm lg:text-base font-medium font-montserrat transition-all duration-300 px-2 py-2 text-white hover:text-[#cba135] transform hover:scale-105"
+                style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}
               >
-                <span className="relative z-10">{item.name}</span>
+                <span className="relative z-10 font-montserrat">{item.name}</span>
                 {/* Línea animada debajo */}
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#cba135] transition-all duration-300 group-hover:w-full"></div>
                 {/* Efecto de brillo sutil */}
@@ -182,13 +183,14 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
               key={index}
               href={item.link}
               onClick={(e) => handleNavClick(e, item)}
-              className={`group relative  flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative font-medium font-montserrat flex items-center justify-center w-full px-4 py-3 text-base text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
                 isMobileMenuOpen 
                   ? `animate-slideIn animation-delay-${index * 100}` 
                   : ''
               }`}
               style={{
-                animationDelay: `${index * 100}ms`
+                animationDelay: `${index * 100}ms`,
+                fontFamily: 'var(--font-montserrat), sans-serif'
               }}
             >
               <span className="relative z-10">{item.name}</span>

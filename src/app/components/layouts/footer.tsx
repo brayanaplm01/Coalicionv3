@@ -7,18 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = {
-  coalicion: [
-    { name: "Quiénes Somos", href: "#about" },
-    { name: "Organizaciones", href: "#organizations" },
-    { name: "Nuestro Trabajo", href: "#work" },
-    { name: "Transparencia", href: "#transparency" }
-  ],
-  recursos: [
-    { name: "Verificación de Hechos", href: "#verification" },
-    { name: "Guías Electorales", href: "#guides" },
-    { name: "Reportes", href: "#reports" },
-    { name: "Materiales Educativos", href: "#education" }
-  ],
   contacto: [
     { icon: <IconMail className="h-4 w-4" />, text: "info@coalicionbolivia.bo", href: "mailto:info@coalicionbolivia.bo" },
     { icon: <IconPhone className="h-4 w-4" />, text: "+591 77433 312", href: "tel:+59177433312" },
@@ -49,8 +37,8 @@ export function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16 sm:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="py-6 sm:py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             
             {/* Logo and Description */}
             <motion.div 
@@ -58,7 +46,7 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="lg:col-span-1"
+              className="flex flex-col justify-center"
             >
               <Link href="/" className="flex items-center mb-6 group">
                 <div className="relative">
@@ -71,85 +59,44 @@ export function Footer() {
                       alt="Coalición Logo"
                       width={380}
                       height={240}
-                      className="h-36 w-auto object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-300"
+                      className="h-24 w-auto object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-300"
                     />
                   </div>
                   
                 
                 </div>
               </Link>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              <p className="text-gray-300 text-sm leading-relaxed mb-6 font-opensans">
                 Coalición Nacional comprometida con la integridad electoral y la lucha contra la desinformación en Bolivia.
               </p>
-            </motion.div>
-
-            {/* Coalición Links */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-semibold text-white mb-6">Coalición</h3>
-              <ul className="space-y-3">
-                {footerLinks.coalicion.map((link, index) => (
-                  <li key={index}>
-                    <Link 
-                      href={link.href}
-                      className="text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm hover:translate-x-1 transform"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Recursos Links */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-semibold text-white mb-6">Recursos</h3>
-              <ul className="space-y-3">
-                {footerLinks.recursos.map((link, index) => (
-                  <li key={index}>
-                    <Link 
-                      href={link.href}
-                      className="text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm hover:translate-x-1 transform"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
 
             {/* Contact Info */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
+              className="flex flex-col justify-center lg:items-end"
             >
-              <h3 className="text-lg font-semibold text-white mb-6">Contacto</h3>
-              <ul className="space-y-4">
-                {footerLinks.contacto.map((contact, index) => (
-                  <li key={index}>
-                    <a 
-                      href={contact.href}
-                      className="flex items-center text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm group"
-                    >
-                      <span className="mr-3 text-red-500 group-hover:scale-110 transition-transform">
-                        {contact.icon}
-                      </span>
-                      {contact.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div className="lg:text-right">
+                <h3 className="text-lg font-montserrat font-semibold text-white mb-6">Contacto</h3>
+                <ul className="space-y-4">
+                  {footerLinks.contacto.map((contact, index) => (
+                    <li key={index}>
+                      <a 
+                        href={contact.href}
+                        className="flex items-center lg:justify-end text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm group"
+                      >
+                        <span className="mr-3 lg:order-2 lg:ml-3 lg:mr-0 text-red-500 group-hover:scale-110 transition-transform">
+                          {contact.icon}
+                        </span>
+                        <span className="lg:order-1">{contact.text}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               
             </motion.div>

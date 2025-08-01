@@ -6,7 +6,11 @@ import { ThreeDMarqueeDemo } from "../ui/ThreeDMarquee";
 import { LinkPreview } from "@/app/components/ui/link-preview";
 import { IconChevronDown } from "@tabler/icons-react";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  onContactClick?: () => void;
+}
+
+export function HeroSection({ }: HeroSectionProps) {
   const scrollToNext = () => {
     const organizationsSection = document.getElementById("organizations");
     if (organizationsSection) {
@@ -20,6 +24,25 @@ export function HeroSection() {
     } else {
       // Fallback si no encuentra la sección
       window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+    }
+  };
+
+  const scrollToContact = () => {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      const navbarHeight = 80;
+      const elementPosition = footer.offsetTop - navbarHeight;
+      
+      window.scrollTo({ 
+        top: elementPosition, 
+        behavior: "smooth" 
+      });
+    } else {
+      // Fallback - scroll al final de la página
+      window.scrollTo({ 
+        top: document.body.scrollHeight, 
+        behavior: "smooth" 
+      });
     }
   };
  
@@ -40,13 +63,13 @@ export function HeroSection() {
       <div className="relative hero-content-layer inset-0 flex items-center justify-center w-full h-full px-4 pt-[0px] sm:pt-16 lg:pt-0">
         <div className="flex items-center justify-center max-w-4xl mx-auto w-full">
           <div className="hero-content-card p-6 sm:p-8 rounded-xl text-center">
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-regular text-[#F8F5F3] mb-0 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#F8F5F3] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
               Juntos Contra la
             </h1>
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-regular text-[#CBA135] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#CBA135] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
               Desinformación Electoral
             </h1>
-            <div className="text-lg sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3] mb-0 sm:mb-4">
+            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3] mb-3 sm:mb-4">
               Coalición Nacional que reúne a {" "}
               <LinkPreview 
                 url="https://www.undp.org/"
@@ -56,7 +79,7 @@ export function HeroSection() {
               comprometidas con la integridad de la información electoral en
               Bolivia
             </div>
-            <div className="text-lg sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3]">
+            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3]">
               Trabajamos juntos para fortalecer la confianza ciudadana en los
               procesos electorales, combatiendo la desinformación y
               promoviendo una participación democrática informada de cara a
@@ -69,6 +92,29 @@ export function HeroSection() {
                 
               </LinkPreview>
             </div>
+            
+            {/* Botón de Contacto */}
+            <div className="mt-8 sm:mt-10">
+              <button
+                onClick={scrollToContact}
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/20 hover:border-[#CBA135]/40 backdrop-blur-sm"
+              >
+                <span>Contacto</span>
+                <svg 
+                  className="ml-2 h-5 w-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -79,8 +125,8 @@ export function HeroSection() {
             className="flex flex-col items-center animate-scrollBounce hover:scale-110 transition-transform duration-300 cursor-pointer group"
             aria-label="Hacer scroll hacia abajo"
           >
-            <span className="text-[#F5F5F5] text-sm mb-2 font-bold animate-scrollPulse group-hover:text-white transition-colors duration-300">
-              Desliza
+            <span className="text-[#F5F5F5] text-sm mb-2 font-bold animate-scrollPulse group-hover:text-white transition-colors duration-300 font-opensans">
+              
             </span>
             <IconChevronDown className="h-6 w-6 font-bold text-[#F5F5F5] animate-scrollPulse group-hover:text-white transition-colors duration-300" />
           </button>
