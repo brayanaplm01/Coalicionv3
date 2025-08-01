@@ -117,7 +117,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
                 width={240}
                 height={70}
-                className="h-10 sm:h-20 lg:h-18 w-auto object-contain"
+                className="h-10 sm:h-20 lg:h-16 w-auto object-contain"
               />
             </Link>
           </div>
@@ -132,9 +132,10 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 key={index}
                 href={item.link}
                 onClick={(e) => handleNavClick(e, item)}
-                className="group relative text-sm lg:text-base font-regular lg:font-regular transition-all duration-300 px-2 py-2 text-white hover:text-[#cba135] transform hover:scale-105"
+                className="group relative text-sm lg:text-base font-medium font-montserrat transition-all duration-300 px-2 py-2 text-white hover:text-[#cba135] transform hover:scale-105"
+                style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}
               >
-                <span className="relative z-10">{item.name}</span>
+                <span className="relative z-10 font-montserrat">{item.name}</span>
                 {/* Línea animada debajo */}
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#cba135] transition-all duration-300 group-hover:w-full"></div>
                 {/* Efecto de brillo sutil */}
@@ -182,13 +183,14 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
               key={index}
               href={item.link}
               onClick={(e) => handleNavClick(e, item)}
-              className={`group relative  flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative font-medium font-montserrat flex items-center justify-center w-full px-4 py-3 text-base text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
                 isMobileMenuOpen 
                   ? `animate-slideIn animation-delay-${index * 100}` 
                   : ''
               }`}
               style={{
-                animationDelay: `${index * 100}ms`
+                animationDelay: `${index * 100}ms`,
+                fontFamily: 'var(--font-montserrat), sans-serif'
               }}
             >
               <span className="relative z-10">{item.name}</span>

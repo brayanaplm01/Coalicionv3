@@ -60,14 +60,14 @@ export function AboutSection() {
         >
           {/* Card decorative elements */}
           <motion.div 
-            className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-[#CBA135]/20 to-red-400/20 rounded-full blur-lg group-hover:scale-125 transition-transform duration-500"
+            className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br rounded-full blur-lg group-hover:scale-125 transition-transform duration-500"
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
             viewport={{ once: true }}
           ></motion.div>
           <motion.div 
-            className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-tr from-red-400/20 to-[#CBA135]/20 rounded-full blur-md group-hover:scale-110 transition-transform duration-500"
+            className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-tr rounded-full blur-md group-hover:scale-110 transition-transform duration-500"
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -82,7 +82,7 @@ export function AboutSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              Somos una <span className="font-semibold text-red-600 bg-red-50 px-1 rounded">Coalición Nacional</span> formada por organizaciones de la 
+              Somos una <span className="font-semibold text-[#CBA135] px-1 rounded">Coalición Nacional</span> formada por organizaciones de la 
               sociedad civil, medios de comunicación, instituciones académicas 
               y organismos internacionales, unidos en la lucha contra la 
               desinformación electoral en Bolivia.
