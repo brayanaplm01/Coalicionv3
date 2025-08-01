@@ -113,11 +113,11 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center transform hover:scale-105 transition-transform duration-200">
               <Image
-                src="/logo.webp"
+                src="/logo-3.webp"
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
                 width={240}
                 height={70}
-                className="h-10 sm:h-20 lg:h-16 w-auto object-contain"
+                className="h-10 sm:h-20 lg:h-18  w-auto object-contain"
               />
             </Link>
           </div>

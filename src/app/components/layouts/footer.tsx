@@ -37,7 +37,7 @@ export function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16 sm:py-20">
+        <div className="py-6 sm:py-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             
             {/* Logo and Description */}
@@ -59,7 +59,7 @@ export function Footer() {
                       alt="Coalición Logo"
                       width={380}
                       height={240}
-                      className="h-36 w-auto object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-300"
+                      className="h-24 w-auto object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-300"
                     />
                   </div>
                   
