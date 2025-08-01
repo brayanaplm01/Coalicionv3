@@ -11,7 +11,26 @@ interface Logo {
 }
 
 const logos: Logo[] = [
-  { src: '/logos/ONU-mujeres.avif', alt: 'ONU Mujeres', name: 'ONU Mujeres' },
+  {              )}
+            </div>
+          </div>
+
+          {/* Indicadores de navegación */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {logos.slice(0, Math.min(logos.length, 8)).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index + totalLogos)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  Math.floor((currentIndex - totalLogos) % totalLogos) === index
+                    ? 'bg-red-800 w-6'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Ir a organización ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>: '/logos/ONU-mujeres.avif', alt: 'ONU Mujeres', name: 'ONU Mujeres' },
   { src: '/logos/OEP.png', alt: 'OEP', name: 'OEP' },
   { src: '/logos/pnud.webp', alt: 'pnud', name: 'pnud' },
   { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas' },
@@ -28,6 +47,7 @@ const logos: Logo[] = [
   { src: '/logos/DW-Academie.jpg', alt: 'DW Academie', name: 'DW Academie' },
   { src: '/logos/aru.webp', alt: 'ARU', name: 'ARU' },
   { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC' }
+  
 ];
 
 export function SliderLogos() {
@@ -167,12 +187,12 @@ export function SliderLogos() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [goToPrevious, goToNext, togglePlayPause]);
 
-  // Auto-play functionality - scroll automático infinito y suave
+  // Auto-play functionality - movimiento más pausado y controlado
   useEffect(() => {
     if (isPlaying && !isHovered && !isDragging) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prev) => prev + 1);
-      }, 3000); // Movimiento cada 3 segundos para mejor visualización
+      }, 2000); // Movimiento cada 2 segundos, más pausado
     } else {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -303,11 +323,11 @@ export function SliderLogos() {
             
             <div 
               className={`flex ${
-                isDragging ? '' : 'transition-transform duration-500 ease-out'
+                isDragging ? '' : 'transition-transform duration-75 ease-linear'
               }`}
               style={{
                 transform: `translateX(${-currentIndex * logoWidth + (isDragging ? translateX : 0)}px)`,
-                transitionDuration: isDragging ? '0ms' : '500ms' // Transición más suave para scroll automático
+                transitionDuration: isDragging ? '0ms' : '75ms' // Transición más rápida para movimiento fluido
               }}
             >
               {/* Carrusel infinito con triple repetición de logos */}
@@ -332,22 +352,6 @@ export function SliderLogos() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Indicadores de navegación */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {logos.slice(0, Math.min(logos.length, 8)).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index + totalLogos)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  Math.floor((currentIndex - totalLogos) % totalLogos) === index
-                    ? 'bg-red-800 w-6'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Ir a organización ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
 
