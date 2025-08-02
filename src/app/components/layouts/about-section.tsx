@@ -74,7 +74,7 @@ export function AboutSection() {
             viewport={{ once: true }}
           ></motion.div>
           
-          <div className="relative z-10">
+          <div className="relative text-justify z-10">
             <motion.p 
               className="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-opensans"
               initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ export function AboutSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              Somos una <span className="font-semibold text-[#CBA135] px-1 rounded">Coalición Nacional</span> formada por organizaciones de la 
+              Somos una <span className="font-semibold text-[#CBA135] px-1  rounded">Coalición Nacional</span> formada por organizaciones de la 
               sociedad civil, medios de comunicación, instituciones académicas 
               y organismos internacionales, unidos en la lucha contra la 
               desinformación electoral en Bolivia.
@@ -91,7 +91,7 @@ export function AboutSection() {
           
           {/* Bottom subtle border */}
           <motion.div 
-            className="mt-8 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+            className="mt-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
             transition={{ duration: 1, delay: 0.9 }}

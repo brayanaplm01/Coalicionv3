@@ -63,13 +63,13 @@ export function HeroSection({ }: HeroSectionProps) {
       <div className="relative hero-content-layer inset-0 flex items-center justify-center w-full h-full px-4 pt-[0px] sm:pt-16 lg:pt-0">
         <div className="flex items-center justify-center max-w-4xl mx-auto w-full">
           <div className="hero-content-card p-6 sm:p-8 rounded-xl text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#F8F5F3] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#F8F5F3] mb-1 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
               Juntos Contra la
             </h1>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#CBA135] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
               Desinformación Electoral
             </h1>
-            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3] mb-3 sm:mb-4">
+            <div className="text-md font-semibold text-justify sm:text-base md:text-lg lg:text-xl  text-[#F8F5F3] mb-1 sm:mb-4">
               Coalición Nacional que reúne a {" "}
               <LinkPreview 
                 url="https://www.undp.org/"
@@ -79,7 +79,7 @@ export function HeroSection({ }: HeroSectionProps) {
               comprometidas con la integridad de la información electoral en
               Bolivia
             </div>
-            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3]">
+            <div className="text-md text-justify sm:text-base md:text-lg lg:text-xl font-semibold text-[#F8F5F3]">
               Trabajamos juntos para fortalecer la confianza ciudadana en los
               procesos electorales, combatiendo la desinformación y
               promoviendo una participación democrática informada de cara a
