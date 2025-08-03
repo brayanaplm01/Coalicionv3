@@ -123,7 +123,7 @@ export function SliderLogos() {
             Nuestra red de <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text font-semibold">Aliados</span>
           </motion.h2>
           <motion.p 
-            className="text-lg text-gray-600 max-w-3xl mx-auto mb-2"
+            className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
