@@ -13,22 +13,22 @@ interface Logo {
 
 const logos: Logo[] = [
   { src: '/logos/ONU-mujeres.avif', alt: 'ONU Mujeres', name: 'ONU Mujeres', url: 'https://www.unwomen.org/es' },
-  { src: '/logos/OEP.png', alt: 'OEP', name: 'OEP', url: 'https://www.oep.org.bo/' },
+  { src: '/logos/OEP.png', alt: 'OEP', name: 'OEP', url: 'https://www.oep.org.bo' },
   { src: '/logos/pnud.webp', alt: 'PNUD', name: 'PNUD', url: 'https://www.undp.org/es/bolivia' },
-  { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas', url: 'https://anp-bolivia.com/' },
-  { src: '/logos/LOGO-MUY-WASO.webp', alt: 'Muy Waso', name: 'Muy Waso', url: 'https://muywaso.com/' },
-  { src: '/logos/logo-ipicom.webp', alt: 'IPICOM', name: 'IPICOM', url: 'https://ipicom.umsa.bo/' },
-  { src: '/logos/logo-guardiana.webp', alt: 'Guardiana', name: 'Guardiana', url: 'https://guardiana.com.bo/' },
-  { src: '/logos/Logo-fespng.webp', alt: 'FES', name: 'FES', url: 'https://www.fes.de/' },
-  { src: '/logos/logo-coordinadora-de-la-mujer.jpg', alt: 'Coordinadora de la Mujer', name: 'Coordinadora de la Mujer', url: 'https://coordinadoradelamujer.org.bo/' },
-  { src: '/logos/logo-cibeEr.webp', alt: 'CiberEr', name: 'CiberEr', url: 'https://ciberwarmis.org/' },
-  { src: '/logos/logo-chequea.webp', alt: 'Chequea', name: 'Chequea', url: 'https://chequeabolivia.bo/' },
-  { src: '/logos/LOGO-bolivia.png', alt: 'Bolivia Verifica', name: 'Bolivia Verifica', url: 'https://boliviaverifica.bo/' },
-  { src: '/logos/ibf.webp', alt: 'IBF', name: 'IBF', url: 'https://www.internetbolivia.org/' },
-  { src: '/logos/fundacion-construir.webp', alt: 'Fundación Construir', name: 'Fundación Construir', url: 'https://fundacionconstruir.org/' },
+  { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas', url: 'https://anp-bolivia.com' },
+  { src: '/logos/LOGO-MUY-WASO.webp', alt: 'Muy Waso', name: 'Muy Waso', url: 'https://muywaso.com' },
+  { src: '/logos/logo-ipicom.webp', alt: 'IPICOM', name: 'IPICOM', url: 'https://ipicom.umsa.bo' },
+  { src: '/logos/logo-guardiana.webp', alt: 'Guardiana', name: 'Guardiana', url: 'https://guardiana.com.bo' },
+  { src: '/logos/Logo-fespng.webp', alt: 'FES', name: 'FES', url: 'https://www.fes.de' },
+  { src: '/logos/logo-coordinadora-de-la-mujer.jpg', alt: 'Coordinadora de la Mujer', name: 'Coordinadora de la Mujer', url: 'https://www.coordinadoradelamujer.org.bo/web/' },
+  { src: '/logos/logo-cibeEr.webp', alt: 'CiberEr', name: 'CiberEr', url: 'https://ciberwarmis.org' },
+  { src: '/logos/logo-chequea.webp', alt: 'Chequea', name: 'Chequea', url: 'https://chequeabolivia.bo' },
+  { src: '/logos/LOGO-bolivia.png', alt: 'Bolivia Verifica', name: 'Bolivia Verifica', url: 'https://boliviaverifica.bo' },
+  { src: '/logos/ibf.webp', alt: 'IBF', name: 'IBF', url: 'https://www.internetbolivia.org' },
+  { src: '/logos/fundacion-construir.webp', alt: 'Fundación Construir', name: 'Fundación Construir', url: 'https://fundacionconstruir.org' },
   { src: '/logos/DW-Academie.jpg', alt: 'DW Academie', name: 'DW Academie', url: 'https://www.dw.com/es/actualidad/s-30684' },
-  { src: '/logos/aru.webp', alt: 'ARU', name: 'ARU', url: 'https://www.aru.org.bo/' },
-  { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC', url: 'https://aboic.org/' }
+  { src: '/logos/aru.webp', alt: 'ARU', name: 'ARU', url: 'https://www.aru.org.bo' },
+  { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC', url: 'https://aboic.org' }
 ];
 
 export function SliderLogos() {

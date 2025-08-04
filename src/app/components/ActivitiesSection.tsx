@@ -272,7 +272,7 @@ export default function ActivitiesSection() {
                   <div className="mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                     {activity.icon}
                   </div>
-                  <h3 className="text-lg sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-green-700 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-gray-900 transition-colors duration-300">
                     {activity.title}
                   </h3>
                   <p className="text-gray-600 text-md sm:text-md leading-relaxed">
