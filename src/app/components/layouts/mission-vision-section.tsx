@@ -53,7 +53,7 @@ export default function MissionVisionSection() {
               <div className="w-12 h-12 bg-gradient-to-br from-red-800 to-rose-700 rounded-lg flex items-center justify-center">
                 <IconTarget className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-montserrat font-bold text-[#222426]">
+              <h3 className="text-2xl font-montserrat font-semibold text-[#222426]">
                 Misión
               </h3>
             </div>
@@ -74,7 +74,7 @@ export default function MissionVisionSection() {
               <div className="w-12 h-12 bg-gradient-to-br from-[#00797B] to-[#005F61] rounded-lg flex items-center justify-center">
                 <IconEye className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-montserrat font-bold text-[#222426]">
+              <h3 className="text-2xl font-montserrat font-semibold text-[#222426]">
                 Visión
               </h3>
             </div>

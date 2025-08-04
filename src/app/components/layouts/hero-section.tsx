@@ -4,7 +4,7 @@ import React from "react";
 
 import { ThreeDMarqueeDemo } from "../ui/ThreeDMarquee";
 import { LinkPreview } from "@/app/components/ui/link-preview";
-import { IconChevronDown } from "@tabler/icons-react";
+
 
 interface HeroSectionProps {
   onContactClick?: () => void;
@@ -100,19 +100,6 @@ export function HeroSection({ }: HeroSectionProps) {
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/20 hover:border-[#CBA135]/40 backdrop-blur-sm"
               >
                 <span>Contacto</span>
-                <svg 
-                  className="ml-2 h-5 w-5" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
-                  />
-                </svg>
               </button>
             </div>
           </div>
@@ -128,7 +115,7 @@ export function HeroSection({ }: HeroSectionProps) {
             <span className="text-[#F5F5F5] text-sm mb-2 font-bold animate-scrollPulse group-hover:text-white transition-colors duration-300 font-opensans">
               
             </span>
-            <IconChevronDown className="h-6 w-6 font-bold text-[#F5F5F5] animate-scrollPulse group-hover:text-white transition-colors duration-300" />
+            
           </button>
         </div>
       </div>
