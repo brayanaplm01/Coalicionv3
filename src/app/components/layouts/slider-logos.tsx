@@ -148,7 +148,7 @@ export function SliderLogos() {
           {/* Botón Izquierdo - Más alejado - Solo en desktop */}
           <motion.button
             onClick={moveLeft}
-            className="absolute -left-16 sm:-left-20 lg:-left-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 flex items-center justify-center group hidden md:flex"
+            className="absolute -left-16 sm:-left-20 lg:-left-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 items-center justify-center group hidden md:flex"
             aria-label="Mover slider a la izquierda"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -165,7 +165,7 @@ export function SliderLogos() {
           {/* Botón Derecho - Más alejado - Solo en desktop */}
           <motion.button
             onClick={moveRight}
-            className="absolute -right-16 sm:-right-20 lg:-right-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 flex items-center justify-center group hidden md:flex"
+            className="absolute -right-16 sm:-right-20 lg:-right-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 items-center justify-center group hidden md:flex"
             aria-label="Mover slider a la derecha"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}

@@ -154,7 +154,7 @@ export default function ActivitiesSection() {
     offset: ["start 0.8", "end 0.2"]
   });
   
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "103%"]);
 
   return (
     <motion.section
