@@ -64,11 +64,11 @@ export function HeroSection({ }: HeroSectionProps) {
         <div className="flex items-center justify-center max-w-4xl mx-auto w-full">
           <div className="hero-content-card p-6 sm:p-8 rounded-xl text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#F8F5F3] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
-              Juntos Contra la
-            </h1>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#CBA135] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
+              Juntos Contra la <br /> <span className="text-3xl font-montserrat sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#CBA135] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
               Desinformación Electoral
+            </span>
             </h1>
+            
             <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3] mb-3 sm:mb-4">
               Coalición Nacional que reúne a {" "}
               <LinkPreview 
@@ -77,7 +77,7 @@ export function HeroSection({ }: HeroSectionProps) {
               > <span className="font-bold text-[#CBA135] ">17 organizaciones</span>
               </LinkPreview>{" "}
               comprometidas con la integridad de la información electoral en
-              Bolivia
+              Bolivia.
             </div>
             <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3]">
               Trabajamos juntos para fortalecer la confianza ciudadana en los
