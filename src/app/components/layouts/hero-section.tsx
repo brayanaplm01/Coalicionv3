@@ -70,7 +70,7 @@ export function HeroSection({ }: HeroSectionProps) {
               Desinformación Electoral
             </span>
             </h1>
-            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-regular text-[#F8F5F3] mb-3 sm:mb-4">
+            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#F8F5F3] mb-3 sm:mb-4">
               Coalición Nacional que reúne a {" "}
               <LinkPreview 
                 url="https://www.undp.org/"
