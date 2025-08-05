@@ -31,7 +31,7 @@ export default function MissionVisionSection() {
           </motion.h2>
           
           <motion.div 
-            className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto"
+            className="w-32 h-1 bg-gradient-to-r  from-red-800 to-rose-800 rounded-full mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 128 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -40,7 +40,7 @@ export default function MissionVisionSection() {
         </div>
 
         {/* Content Grid - Mission & Vision Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 text-justify gap-8 mb-20">
           {/* Mission Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -53,7 +53,7 @@ export default function MissionVisionSection() {
               <div className="w-12 h-12 bg-gradient-to-br from-red-800 to-rose-700 rounded-lg flex items-center justify-center">
                 <IconTarget className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-montserrat font-bold text-[#222426]">
+              <h3 className="text-2xl font-montserrat font-semibold text-[#222426]">
                 Misión
               </h3>
             </div>
@@ -74,7 +74,7 @@ export default function MissionVisionSection() {
               <div className="w-12 h-12 bg-gradient-to-br from-[#00797B] to-[#005F61] rounded-lg flex items-center justify-center">
                 <IconEye className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-montserrat font-bold text-[#222426]">
+              <h3 className="text-2xl font-montserrat font-semibold text-[#222426]">
                 Visión
               </h3>
             </div>
@@ -91,14 +91,14 @@ export default function MissionVisionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center  mb-12"
           >
             <h3 className="text-4xl sm:text-5xl font-montserrat font-semibold text-[#222426] mb-4">
               Nuestros objetivos
             </h3>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3  gap-8">
             {/* Objective 1 */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -115,7 +115,7 @@ export default function MissionVisionSection() {
                   Fortalecer la Colaboración
                 </h4>
               </div>
-              <p className="text-gray-700 font-opensans leading-relaxed">
+              <p className="text-gray-700 text-justify font-opensans leading-relaxed">
                 Establecer una coalición que reúna a instituciones públicas, sociedad civil, medios de comunicación y socios internacionales para contrarrestar la desinformación.
               </p>
             </motion.div>
@@ -136,7 +136,7 @@ export default function MissionVisionSection() {
                   Desarrollo de Capacidades
                 </h4>
               </div>
-              <p className="text-gray-700 font-opensans leading-relaxed">
+              <p className="text-gray-700 text-justify font-opensans leading-relaxed">
                 Colaborar en iniciativas que fortalezcan la alfabetización mediática digital, aumenten la conciencia pública y aseguren la integridad de la información electoral.
               </p>
             </motion.div>
@@ -157,7 +157,7 @@ export default function MissionVisionSection() {
                   Integridad de la Información
                 </h4>
               </div>
-              <p className="text-gray-700 font-opensans leading-relaxed">
+              <p className="text-gray-700 text-justify font-opensans leading-relaxed">
                 Mitigar el impacto de la desinformación y los discursos tóxicos, especialmente hacia las mujeres y poblaciones vulnerables.
               </p>
             </motion.div>

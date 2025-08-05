@@ -229,7 +229,7 @@ p, span, div:not(.font-montserrat), a, button:not(.font-montserrat) {
 .logos-slider-infinite {
   display: flex;
   width: calc(300% + 60px); /* Ancho triplicado para seamless loop perfecto */
-  animation: slide-infinite-seamless 35s linear infinite;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .logo-item {
@@ -243,17 +243,36 @@ p, span, div:not(.font-montserrat), a, button:not(.font-montserrat) {
 }
 
 .logo-container {
-  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 16px;
+  background: transparent;
+  transition: all 0.5s ease;
   position: relative;
+  border: 2px solid transparent;
 }
 
 .logo-container:hover {
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  border-color: rgba(255, 196, 77, 0.3);
 }
 
-/* Smooth transitions for slider transform */
-.slider-container {
-  transition: transform 0.5s ease-in-out;
+.logo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.logo-container:hover::before {
+  opacity: 1;
 }
 
 /* Infinite sliding animation seamless */
@@ -266,16 +285,60 @@ p, span, div:not(.font-montserrat), a, button:not(.font-montserrat) {
   }
 }
 
-/* Pause animation on hover */
-.logos-track:hover .logos-slider-infinite {
-  animation-play-state: paused;
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .logos-slider-infinite {
+    animation-duration: 45s;
+  }
+  
+  .logo-item {
+    margin: 0 15px;
+    min-width: 100px;
+  }
+  
+  .logo-container {
+    padding: 15px;
+  }
 }
 
-/* Responsive adjustments for interactive slider */
-@media (max-width: 640px) {
+@media (max-width: 480px) {
+  .logos-slider-infinite {
+    animation-duration: 35s;
+  }
+  
+  .logo-item {
+    margin: 0 10px;
+    min-width: 80px;
+  }
+  
   .logo-container {
     padding: 12px;
   }
+}
+
+/* Fade effect for smooth edges */
+.logos-track::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(249, 250, 251, 1), transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.logos-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(249, 250, 251, 1), transparent);
+  z-index: 10;
+  pointer-events: none;
 }
 
 

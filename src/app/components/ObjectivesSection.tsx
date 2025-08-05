@@ -62,7 +62,7 @@ export default function ObjectivesSection() {
           </motion.h2>
           
           <motion.p 
-            className="text-lg sm:text-xl text-[#222426] max-w-4xl mx-auto leading-relaxed mb-3 sm:mb-4 font-opensans"
+            className="text-lg sm:text-xl  text-[#222426] max-w-4xl mx-auto leading-relaxed mb-3 sm:mb-4 font-opensans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -81,7 +81,7 @@ export default function ObjectivesSection() {
         </div>
 
         {/* Main Objectives Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20">
+        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20">
           {objectives.map((objective, idx) => (
             <motion.div
               key={objective.title}
@@ -108,7 +108,7 @@ export default function ObjectivesSection() {
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                  <p className="text-gray-700  leading-relaxed text-sm sm:text-base">
                     {objective.description}
                   </p>
                   

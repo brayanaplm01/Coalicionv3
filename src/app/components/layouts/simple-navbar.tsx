@@ -96,7 +96,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-500 transition-all duration-500 ease-in-out ${
+      className={`fixed  top-0 left-0 right-0 z-500 transition-all duration-500 ease-in-out ${
         isScrolled
           ? "bg-[#7b1e3c]/80 backdrop-blur-md shadow-lg border-b border-white/10"
           : "bg-[#7b1e3c]/60 backdrop-blur-sm border-b border-white/5"
@@ -108,7 +108,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
       }}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-20 lg:h-24 py-1 sm:py-2">
+        <div className="flex items-center justify-between h-18 sm:h-20 lg:h-24 py-1 sm:py-2">
           {/* Logo izquierdo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center transform hover:scale-105 transition-transform duration-200">
@@ -117,7 +117,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 alt="FACTO - Coalición Nacional Contra la Desinformación Electoral"
                 width={240}
                 height={70}
-                className="h-10 sm:h-20 lg:h-18 w-auto object-contain"
+                className="h-12 sm:h-20 lg:h-18  w-auto object-contain"
               />
             </Link>
           </div>
@@ -126,7 +126,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
           <div className="flex-1"></div>
 
           {/* Menú desktop en el lado derecho */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-8">
+          <div className="hidden lg:flex  lg:items-center lg:space-x-8">
             {navigationItems.map((item, index) => (
               <Link
                 key={index}
@@ -152,9 +152,9 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
           >
             <div className="relative">
               {isMobileMenuOpen ? (
-                <IconX className="h-5 w-5 sm:h-6 sm:w-6 transition-all duration-300 rotate-180" />
+                <IconX className="h-7 w-7 sm:h-6 sm:w-6 transition-all duration-300 rotate-180" />
               ) : (
-                <IconMenu2 className="h-5 w-5 sm:h-6 sm:w-6 transition-all duration-300 rotate-0" />
+                <IconMenu2 className="h-7 w-7 sm:h-6 sm:w-6 transition-all duration-300 rotate-0" />
               )}
             </div>
           </button>
@@ -163,16 +163,16 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
 
       {/* Menú móvil */}
       <div
-        className={`lg:hidden relative transition-all duration-500 ease-in-out overflow-hidden ${
+        className={`lg:hidden  relative transition-all duration-500 ease-in-out overflow-hidden ${
           isMobileMenuOpen
-            ? "max-h-80 opacity-60  translate-y-0"
+            ? "max-h-80 opacity-60   translate-y-0"
             : "max-h-0 opacity-0  -translate-y-2 pointer-events-none"
         }`}
       >
         {/* Fondo blur inmediato */}
         <div 
-          className={`absolute inset-0 backdrop-blur-lg transition-opacity duration-200 ${
-            isMobileMenuOpen ? "opacity-100 bg-red-900" : "opacity-0 bg-transparent"
+          className={`absolute  inset-0 backdrop-blur-lg transition-opacity duration-200 ${
+            isMobileMenuOpen ? "opacity-100 ¡" : "opacity-0 bg-transparent"
           }`}
         />
         
@@ -183,7 +183,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
               key={index}
               href={item.link}
               onClick={(e) => handleNavClick(e, item)}
-              className={`group relative font-medium font-montserrat flex items-center justify-center w-full px-4 py-3 text-base text-white hover:text-red-300 transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative !border-b-1 font-medium font-montserrat flex items-center justify-center w-full px-4 py-3 text-base text-white hover:text-red-300 transition-all  duration-300 transform hover:scale-105 ${
                 isMobileMenuOpen 
                   ? `animate-slideIn animation-delay-${index * 100}` 
                   : ''
@@ -195,11 +195,11 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
             >
               <span className="relative z-10">{item.name}</span>
               {/* Línea animada lateral */}
-              <div className="absolute left-4 top-1/2 w-0 h-0.5 bg-gradient-to-r from-red-400 to-rose-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
+              <div className="absolute left-4  top-1/2 w-0 h-0.5 bg-gradient-to-r from-red-400 to-rose-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
               {/* Línea animada derecha */}
-              <div className="absolute right-4 top-1/2 w-0 h-0.5 bg-gradient-to-l from-red-400 to-rose-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
+              <div className="absolute right-4  top-1/2 w-0 h-0.5 bg-gradient-to-l from-red-400 to-rose-400 transition-all duration-300 group-hover:w-8 transform -translate-y-1/2"></div>
               {/* Efecto de brillo sutil */}
-              <div className="absolute inset-0 rounded-lg opacity-0 bg-gradient-to-r from-red-800/10 to-rose-800/10 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div className="absolute inset-0  rounded-lg opacity-0 bg-gradient-to-r from-red-800/10 to-rose-800/10 transition-opacity duration-300 group-hover:opacity-100"></div>
             </Link>
           ))}
         </div>

@@ -154,7 +154,7 @@ export default function ActivitiesSection() {
     offset: ["start 0.8", "end 0.2"]
   });
   
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "103%"]);
 
   return (
     <motion.section
@@ -224,13 +224,13 @@ export default function ActivitiesSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <p className="text-xl text-gray-600 leading-relaxed font-opensans">
+            <p className="text-xl text-justify text-gray-600 leading-relaxed font-opensans">
               Desarrollamos iniciativas integrales que incluyen talleres de capacitación, implementación de herramientas
               tecnológicas avanzadas, análisis exhaustivo de procesos electorales y creación de lineamientos comunicacionales estratégicos.
             </p>
             
             {/* Additional descriptive text */}
-            <div className="space-y-4">
+            <div className="space-y-4 text-justify">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-3 flex-shrink-0"></div>
                 <p className="text-gray-600 font-opensans">
@@ -272,10 +272,10 @@ export default function ActivitiesSection() {
                   <div className="mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                     {activity.icon}
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-green-700 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-gray-900 transition-colors duration-300">
                     {activity.title}
                   </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-gray-600 text-md sm:text-md leading-relaxed">
                     {activity.description}
                   </p>
                 </div>
@@ -323,7 +323,7 @@ export default function ActivitiesSection() {
                   className="relative"
                 >
                   {/* Timeline dot */}
-                  <div className={`absolute left-6 w-4 h-4 bg-gradient-to-br ${periodo.gradient} rounded-full border-4 border-white shadow-lg`}></div>
+                  <div className={`absolute left-6 w-5 h-5 bg-gradient-to-br ${periodo.gradient} rounded-full border-4 border-white shadow-lg`}></div>
                   
                   {/* Content */}
                   <div className="ml-20">

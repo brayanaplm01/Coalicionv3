@@ -12,108 +12,23 @@ interface Logo {
 }
 
 const logos: Logo[] = [
-  {
-    src: "/logos/ONU-mujeres.avif",
-    alt: "ONU Mujeres",
-    name: "ONU Mujeres",
-    url: "https://www.unwomen.org/es",
-  },
-  {
-    src: "/logos/OEP.png",
-    alt: "OEP",
-    name: "OEP",
-    url: "https://www.oep.org.bo/",
-  },
-  {
-    src: "/logos/pnud.webp",
-    alt: "PNUD",
-    name: "PNUD",
-    url: "https://www.undp.org/es/bolivia",
-  },
-  {
-    src: "/logos/logo-periodistas.webp",
-    alt: "Periodistas",
-    name: "Periodistas",
-    url: "https://anp-bolivia.com/",
-  },
-  {
-    src: "/logos/LOGO-MUY-WASO.webp",
-    alt: "Muy Waso",
-    name: "Muy Waso",
-    url: "https://muywaso.com/",
-  },
-  {
-    src: "/logos/logo-ipicom.webp",
-    alt: "IPICOM",
-    name: "IPICOM",
-    url: "https://ipicom.umsa.bo/",
-  },
-  {
-    src: "/logos/logo-guardiana.webp",
-    alt: "Guardiana",
-    name: "Guardiana",
-    url: "https://guardiana.com.bo/",
-  },
-  {
-    src: "/logos/Logo-fespng.webp",
-    alt: "FES",
-    name: "FES",
-    url: "https://www.fes.de/",
-  },
-  {
-    src: "/logos/logo-coordinadora-de-la-mujer.jpg",
-    alt: "Coordinadora de la Mujer",
-    name: "Coordinadora de la Mujer",
-    url: "https://coordinadoradelamujer.org.bo/",
-  },
-  {
-    src: "/logos/logo-cibeEr.webp",
-    alt: "CiberEr",
-    name: "CiberEr",
-    url: "https://ciberwarmis.org/",
-  },
-  {
-    src: "/logos/logo-chequea.webp",
-    alt: "Chequea",
-    name: "Chequea",
-    url: "https://chequeabolivia.bo/",
-  },
-  {
-    src: "/logos/LOGO-bolivia.png",
-    alt: "Bolivia Verifica",
-    name: "Bolivia Verifica",
-    url: "https://boliviaverifica.bo/",
-  },
-  {
-    src: "/logos/ibf.webp",
-    alt: "IBF",
-    name: "IBF",
-    url: "https://www.internetbolivia.org/",
-  },
-  {
-    src: "/logos/fundacion-construir.webp",
-    alt: "Fundación Construir",
-    name: "Fundación Construir",
-    url: "https://fundacionconstruir.org/",
-  },
-  {
-    src: "/logos/DW-Academie.jpg",
-    alt: "DW Academie",
-    name: "DW Academie",
-    url: "https://www.dw.com/es/actualidad/s-30684",
-  },
-  {
-    src: "/logos/aru.webp",
-    alt: "ARU",
-    name: "ARU",
-    url: "https://www.aru.org.bo/",
-  },
-  {
-    src: "/logos/aboic.png",
-    alt: "ABOIC",
-    name: "ABOIC",
-    url: "https://aboic.org/",
-  },
+  { src: '/logos/ONU-mujeres.avif', alt: 'ONU Mujeres', name: 'ONU Mujeres', url: 'https://www.unwomen.org/es' },
+  { src: '/logos/OEP.png', alt: 'OEP', name: 'OEP', url: 'https://www.oep.org.bo/' },
+  { src: '/logos/pnud.webp', alt: 'PNUD', name: 'PNUD', url: 'https://www.undp.org/es/bolivia' },
+  { src: '/logos/logo-periodistas.webp', alt: 'Periodistas', name: 'Periodistas', url: 'https://anp-bolivia.com/' },
+  { src: '/logos/LOGO-MUY-WASO.webp', alt: 'Muy Waso', name: 'Muy Waso', url: 'https://muywaso.com/' },
+  { src: '/logos/logo-ipicom.webp', alt: 'IPICOM', name: 'IPICOM', url: 'https://ipicom.umsa.bo/' },
+  { src: '/logos/logo-guardiana.webp', alt: 'Guardiana', name: 'Guardiana', url: 'https://guardiana.com.bo/' },
+  { src: '/logos/Logo-fespng.webp', alt: 'FES', name: 'FES', url: 'https://www.fes.de/' },
+  { src: '/logos/logo-coordinadora-de-la-mujer.jpg', alt: 'Coordinadora de la Mujer', name: 'Coordinadora de la Mujer', url: 'https://coordinadoradelamujer.org.bo/' },
+  { src: '/logos/logo-cibeEr.webp', alt: 'CiberEr', name: 'CiberEr', url: 'https://ciberwarmis.org/' },
+  { src: '/logos/logo-chequea.webp', alt: 'Chequea', name: 'Chequea', url: 'https://chequeabolivia.bo/' },
+  { src: '/logos/LOGO-bolivia.png', alt: 'Bolivia Verifica', name: 'Bolivia Verifica', url: 'https://boliviaverifica.bo/' },
+  { src: '/logos/ibf.webp', alt: 'IBF', name: 'IBF', url: 'https://www.internetbolivia.org/' },
+  { src: '/logos/fundacion-construir.webp', alt: 'Fundación Construir', name: 'Fundación Construir', url: 'https://fundacionconstruir.org/' },
+  { src: '/logos/DW-Academie.jpg', alt: 'DW Academie', name: 'DW Academie', url: 'https://www.dw.com/es/actualidad/s-30684' },
+  { src: '/logos/aru.webp', alt: 'ARU', name: 'ARU', url: 'https://www.aru.org.bo/' },
+  { src: '/logos/aboic.png', alt: 'ABOIC', name: 'ABOIC', url: 'https://aboic.org/' }
 ];
 
 export function SliderLogos() {
@@ -210,7 +125,7 @@ export function SliderLogos() {
               Aliados
             </span>
           </motion.h2>
-          <motion.p
+          <motion.p 
             className="text-lg text-gray-600 max-w-3xl mx-auto mb-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -234,7 +149,7 @@ export function SliderLogos() {
           {/* Botón Izquierdo - Más alejado - Solo en desktop */}
           <motion.button
             onClick={moveLeft}
-            className="absolute -left-16 sm:-left-20 lg:-left-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 flex items-center justify-center group hidden md:flex"
+            className="absolute -left-16 sm:-left-20 lg:-left-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 items-center justify-center group hidden md:flex"
             aria-label="Mover slider a la izquierda"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -261,7 +176,7 @@ export function SliderLogos() {
           {/* Botón Derecho - Más alejado - Solo en desktop */}
           <motion.button
             onClick={moveRight}
-            className="absolute -right-16 sm:-right-20 lg:-right-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 flex items-center justify-center group hidden md:flex"
+            className="absolute -right-16 sm:-right-20 lg:-right-24 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-white hover:border-[#CBA135]/30 hover:shadow-xl transition-all duration-300 items-center justify-center group hidden md:flex"
             aria-label="Mover slider a la derecha"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -295,7 +210,7 @@ export function SliderLogos() {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
-          >
+          >       
             {/* Gradientes laterales para fade effect */}
             <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
             <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>

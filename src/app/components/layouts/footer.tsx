@@ -55,7 +55,7 @@ export function Footer() {
                   {/* Container del logo con fondo */}
                   <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-red-400/30 transition-all duration-300 group-hover:bg-white/15">
                     <Image
-                      src="/logo.webp"
+                      src="/logo-3.webp"
                       alt="Coalición Logo"
                       width={380}
                       height={240}
