@@ -43,7 +43,7 @@ export function AboutSection() {
         
         {/* Red underline with gradient */}
         <motion.div 
-          className="w-32 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600 mx-auto mb-12 rounded-full shadow-sm"
+          className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-12  shadow-sm"
           initial={{ width: 0 }}
           whileInView={{ width: 128 }}
           transition={{ duration: 1, delay: 0.3 }}

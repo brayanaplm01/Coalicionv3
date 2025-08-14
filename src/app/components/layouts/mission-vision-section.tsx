@@ -94,9 +94,17 @@ export default function MissionVisionSection() {
             className="text-center  mb-12"
           >
             <h3 className="text-4xl sm:text-5xl font-montserrat font-semibold text-[#222426] mb-4">
-              Nuestros objetivos
+              Nuestros <span className="font-montserrat text-[#CBA135]">Objetivos</span>
             </h3>
           </motion.div>
+           {/* Red underline with gradient */}
+                   <motion.div 
+                     className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-12  shadow-sm"
+                     initial={{ width: 0 }}
+                     whileInView={{ width: 128 }}
+                     transition={{ duration: 1, delay: 0.3 }}
+                     viewport={{ once: true }}
+                   ></motion.div>
 
           <div className="grid lg:grid-cols-3  gap-8">
             {/* Objective 1 */}

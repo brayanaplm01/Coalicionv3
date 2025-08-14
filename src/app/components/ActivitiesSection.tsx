@@ -296,6 +296,14 @@ export default function ActivitiesSection() {
             <h3 className="text-3xl lg:text-5xl font-montserrat font-semibold text-[#222426] mb-4">
               Cronología de <span className="text-[#CBA135]">Actividades</span>
             </h3>
+            {/* Red underline with gradient */}
+                    <motion.div 
+                      className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-12  shadow-sm"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: 128 }}
+                      transition={{ duration: 1, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    ></motion.div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto font-opensans">
               Seguimiento detallado de nuestras actividades y logros en la lucha contra la desinformación
             </p>

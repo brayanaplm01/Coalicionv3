@@ -56,7 +56,14 @@ export function FAQSection() {
           >
             Preguntas <span className=" font-montserrat text-[#CBA135] font-semibol">Frecuentes</span>
           </motion.h2>
-          
+          {/* Red underline with gradient */}
+                  <motion.div 
+                    className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-12  shadow-sm"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 128 }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                    viewport={{ once: true }}
+                  ></motion.div>
           <motion.p 
             className="text-lg text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
