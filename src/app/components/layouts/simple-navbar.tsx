@@ -10,6 +10,7 @@ const navigationItems = [
   { name: "Guias Electorales", link: "", isContacto: false, isScroll: true },
   { name: "Reportes", link: "", isContacto: false, isScroll: true },
   { name: "Materiales Educativos", link: "", isContacto: false, isScroll: true },
+  { name: "FAQ ", link: "#faq", isContacto: false, isScroll: true },
   //{ name: "Contacto", link: "#", isContacto: true, isScroll: false },
 ];
 
