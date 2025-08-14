@@ -7,6 +7,7 @@ import { AboutSection } from "./components/layouts/about-section";
 import MissionVisionSection from "./components/layouts/mission-vision-section";
 import { Footer } from "./components/layouts/footer";
 import SimpleNavbar from "./components/layouts/simple-navbar";
+import { FAQSection } from "./components/layouts/FAQ";
 // import MembersSection from "./components/MembersSection";
 import ActivitiesSection from "./components/ActivitiesSection";
 import ContactoModal from "./components/ContactoModal";
@@ -40,6 +41,9 @@ export default function Home() {
         
         {/* Activities Section */}
         <ActivitiesSection />
+
+        {/* FAQ Section */}
+        <FAQSection />
 
         {/* Footer */}
         <Footer />
