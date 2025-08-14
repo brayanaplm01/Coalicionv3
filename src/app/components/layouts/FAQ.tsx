@@ -175,7 +175,7 @@ export function FAQSection() {
                       transition={{ duration: 0.3 }}
                       className="border-t border-gray-100"
                     >
-                      <div className="px-6 py-4 text-gray-600 leading-relaxed">
+                      <div className="px-6 py-4 text-justify text-gray-600 leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>
