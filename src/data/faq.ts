@@ -33,7 +33,7 @@ export const faqData: FAQItem[] = [
   {
     id: 5,
     question: "¿Qué es el acta de escrutinio?",
-    answer: "Es el documento más importante de este proceso porque aquí se registran los resultados obtenidos en la mesa de sufragio. La primera copia del acta se entregará a la o el operador del Sirepre, la segunda copia a la o el notario electoral, otra a la o el presidente de la mesa, y las otras a las y los delegados de la organizaciones políticas y alianzas políticas.",
+    answer: "Es el documento más importante de este proceso porque aquí se registran los resultados obtenidos en la mesa de sufragio. La primera copia del acta se entregará a la o el operador del Sirepe, la segunda copia a la o el notario electoral, otra a la o el presidente de la mesa, y las otras a las y los delegados de la organizaciones políticas y alianzas políticas.",
     category: "Documentación"
   },
   {
@@ -62,26 +62,26 @@ export const faqData: FAQItem[] = [
   },
   {
     id: 10,
-    question: "¿Qué es el Sirepre?",
-    answer: "El Sirepre articula tecnología, logística, recursos humanos y comunicación para difundir resultados electorales preliminares la misma noche de la elección, pero solo con fines informativos y de transparencia.",
+    question: "¿Qué es el Sirepe?",
+    answer: "El Sirepe articula tecnología, logística, recursos humanos y comunicación para difundir resultados electorales preliminares la misma noche de la elección, pero solo con fines informativos y de transparencia.",
     category: "Tecnología"
   },
   {
     id: 11,
     question: "¿Qué son los resultados electorales preliminares?",
-    answer: "Son datos electorales no vinculantes ni definitivos, que reúnen los resultados de las actas de mesa de sufragio y que se transmiten mediante el Sistema de Resultados Electorales Preliminares (Sirepre). Su único propósito es informar a la ciudadanía, a las organizaciones políticas y a los medios de comunicación. En ningún caso sustituirán al cómputo oficial.",
+    answer: "Son datos electorales no vinculantes ni definitivos, que reúnen los resultados de las actas de mesa de sufragio y que se transmiten mediante el Sistema de Resultados Electorales Preliminares (Sirepe). Su único propósito es informar a la ciudadanía, a las organizaciones políticas y a los medios de comunicación. En ningún caso sustituirán al cómputo oficial.",
     category: "Resultados"
   },
   {
     id: 12,
-    question: "¿Cuál es el alcance del Sirepre?",
-    answer: "El Sirepre cubre casi todos los recintos electorales del territorio nacional, salvo algunos donde no existe conexión ni acceso al internet; pero su alcance es suficiente para cumplir la función puramente informativa para la que fue diseñado. Los resultados de la votación en el exterior provendrán únicamente del cómputo oficial.",
+    question: "¿Cuál es el alcance del Sirepe?",
+    answer: "El Sirepe cubre casi todos los recintos electorales del territorio nacional, salvo algunos donde no existe conexión ni acceso al internet; pero su alcance es suficiente para cumplir la función puramente informativa para la que fue diseñado. Los resultados de la votación en el exterior provendrán únicamente del cómputo oficial.",
     category: "Tecnología"
   },
   {
     id: 13,
-    question: "¿Cómo funciona el Sirepre?",
-    answer: "Los operadores envían, desde los recintos electorales, imágenes y datos de las actas de las mesas asignadas. El procedimiento es el siguiente: 1. El operador del Sirepre toma una fotografía nítida y completa del acta electoral original. 2. Registra en la aplicación móvil Sirepre los datos de votación (tal como están en el acta). 3. La fotografía y los datos del acta se transmiten al Centro de Procesamiento de Datos (CPD) mediante una red segura y utilizando cifrado de extremo a extremo. 4. En el CPD se siguen varios pasos para la verificación de la calidad de las imágenes y de la transcripción. 5. Una vez cumplidos estos pasos se realiza la publicación de los resultados preliminares.",
+    question: "¿Cómo funciona el Sirepe?",
+    answer: "Los operadores envían, desde los recintos electorales, imágenes y datos de las actas de las mesas asignadas. El procedimiento es el siguiente: 1. El operador del Sirepe toma una fotografía nítida y completa del acta electoral original. 2. Registra en la aplicación móvil Sirepe los datos de votación (tal como están en el acta). 3. La fotografía y los datos del acta se transmiten al Centro de Procesamiento de Datos (CPD) mediante una red segura y utilizando cifrado de extremo a extremo. 4. En el CPD se siguen varios pasos para la verificación de la calidad de las imágenes y de la transcripción. 5. Una vez cumplidos estos pasos se realiza la publicación de los resultados preliminares.",
     category: "Tecnología"
   },
   {
@@ -146,8 +146,8 @@ export const faqData: FAQItem[] = [
   },
   {
     id: 24,
-    question: "¿Qué faltas electorales existen para personas particulares y cuáles son sus sanciones?",
-    answer: "No votar el día de la elección o no exhibir el certificado de sufragio o de impedimento. Sanción: Multa por el equivalente de 10 % de un salario mínimo, caso contrario se aplicará el impedimento por 90 días para acceder a cargos públicos, efectuar trámites bancarios y obtener pasaporte. Quedan eximidas de esta sanción las personas que no votaron: Por caso fortuito o fuerza mayor comprobada documentalmente, Por enfermedad, acreditada por certificado médico de una entidad de salud, Por ser mayores de setenta (70) años, Por estar ausentes del territorio nacional el día de la votación. Incumplir resoluciones electorales, Obstaculizar por cualquier medio la representación que deban hacer ciudadanos inhabilitados ante la autoridad competente para su habilitación, Omisión su inscripción en el Padrón Electoral o inscribirse con datos incompletos, Circular en vehículos motorizados, sin la autorización respectiva. Sanción: Multa por el equivalente de entre 5 % y 20 % de un salario mínimo. Realizar cualquier acción sin el consentimiento de la persona, para revelar o difundir su voto, violando la protección del secreto del voto, Obstaculizar el ejercicio del control social, Incitar o realizar manifestaciones, reuniones o propaganda política en las proximidades de la mesa de sufragio o fuera de los plazos establecidos, Consumir bebidas alcohólicas en los plazos prohibidos por ley. Sanción: Multa por el equivalente a entre 21 % y 35 % de un salario mínimo. Vender o distribuir bebidas alcohólicas en los plazos prohibidos por ley. Sanción: Multa por el equivalente de entre 47 % y 60 % de un salario mínimo. Difundir resultados de estudios de opinión para fines electorales sin habilitación previa del Tribunal Electoral que corresponda, fuera de plazo o sin cumplir los criterios técnicos y metodológicos definidos por reglamento. Sanción: Multa por el equivalente de entre 47 % y 60 % de un salario mínimo. Portar armas de cualquier tipo, el día de elección. Sanción: Multa por el equivalente de entre 47 % y 60 % de un salario mínimo. De acuerdo a la Ley No 400, de 18/09/2013, en caso de configurar delito remisión al Ministerio Público, para el inicio del proceso penal.",
+    question: "¿Qué sanciones o multas hay por no votar?",
+    answer: "Los ciudadanos que no voten el día de la elección o no exhiban el certificado de sufragio como único documento que acredita haber cumplido con la obligación del voto dentro de los noventa días siguientes a la elección, serán sancionados con una multa equivalente al 20% (Bs 550) del salario mínimo, caso contrario se aplicará el impedimento por 90 días para acceder a cargos públicos, efectuar trámites bancarios y obtener pasaporte. Quedan eximidos de esta sanción: las personas que no pudieron votar por caso fortuito o fuerza mayor comprobada documentalmente; las personas mayores de setenta (70) años; y las personas que acrediten haber estado ausentes del territorio nacional al momento de la votación.",
     category: "Proceso Electoral"
   },
   {
@@ -155,6 +155,72 @@ export const faqData: FAQItem[] = [
     question: "¿Cuáles son las causales de la nulidad de actas electorales?",
     answer: "Se consideran causales de nulidad de un acta electoral las siguientes situaciones: a. La ausencia de las firmas y huellas dactilares de por lo menos tres Jurados Electorales legalmente designados. Se admitirá la impresión dactilar, sin firma, de una o un solo jurado. b. El uso de formularios de Actas no aprobados por la autoridad electoral competente. c. El funcionamiento de la mesa de sufragio en lugar distinto al señalado por la autoridad electoral competente. d. El funcionamiento de la mesa de sufragio en día distinto del fijado para el verificativo de la elección. e. El cómputo de votos emitidos en papeletas distintas a las proporcionadas por la autoridad electoral competente. f. El uso de papeletas de sufragio de distinta circunscripción uninominal o especial. g. La existencia de elementos que contradigan los datos contenidos en el Acta Electoral, aunque no se hubiere asentado la observación en el Acta. h. La existencia de datos asentados en el Acta Electoral que sean contradictorios o inconsistentes entre sí, aunque no se hubiere asentado la observación en el Acta. i. La existencia de diferencias en los datos del Acta Electoral original y sus copias, aunque no se hubiere asentado la observación en el Acta. j. La existencia de alteración de datos, borrones o tachaduras en el Acta Electoral, que no hayan sido señaladas en las observaciones de la propia Acta. k. La violación de la integridad del sobre de seguridad o el extravío del Acta original, cuando no pueda ser reemplazada por dos copias auténticas e iguales. l. La consignación de un número de votos en el Acta Electoral que supere la cantidad de personas inscritas en la mesa. Durante el proceso de valoración de la existencia de causales de nulidad, el Tribunal Electoral Departamental podrá revisar todo el material electoral contenido en los sobres de seguridad y, si fuera necesario, recurrir a las Notarías o Notarios y a las Juradas o Jurados de la mesa de sufragio correspondiente para solicitar aclaraciones. Declarada la nulidad, se repetirá el acto de votación en la mesa de sufragio correspondiente, con el mismo padrón y con nuevos jurados electorales, el segundo domingo siguiente de realizada la elección.",
     category: "Documentación"
+  },
+  {
+    id: 26,
+    question: "¿Cuándo es la posesión de las nuevas autoridades?",
+    answer: "Sábado 8 de noviembre de 2025.",
+    category: "Proceso Electoral"
+  },
+  {
+    id: 27,
+    question: "¿Dónde consulto mi recinto electoral y mesa de sufragio?",
+    answer: "https://yoparticipo.oep.org.bo/auth/signin",
+    category: "Proceso Electoral"
+  },
+  {
+    id: 28,
+    question: "¿El sistema TREP funcionará en estas elecciones?",
+    answer: "Ahora el TREP (Transmisión de Resultado Electorales Preliminares) esta bajo el nombre de SIREPE (Sistema de Resultados Preliminares). Y si dará resultados preliminares el día de las elecciones.",
+    category: "Tecnología"
+  },
+  {
+    id: 29,
+    question: "¿Qué documentos son válidos para emitir mi voto?",
+    answer: "La cédula de identidad original vigente y en formato físico es el único documento válido para ejercer el derecho al voto en estas elecciones generales. El Tribunal Supremo Electoral (TSE) informa que, de acuerdo con la normativa vigente y su reglamentación, el único documento válido para ejercer el derecho al sufragio es la cédula de identidad original y en formato físico. Se recuerda a todas las personas habilitadas que no se aceptarán fotocopias, documentos digitales ni ningún otro tipo de identificación el día de la votación.",
+    category: "Votación"
+  },
+  {
+    id: 30,
+    question: "¿En qué horario puedo emitir mi voto?",
+    answer: "El horario de votación es de ocho (8) horas continuas, a partir de la apertura de la mesa para que los ciudadanos hagan efectivo su voto. La mesa de sufragio iniciará con la jornada electoral a las 08:00, y como máximo hasta las 9 de la mañana. El horario de votación podrá extenderse cuando existan ciudadanas y ciudadanos esperando en la fila y que aún no hayan votado, en ese caso se desarrollará hasta que la o el último ciudadano de la fila emita su voto.",
+    category: "Votación"
+  },
+  {
+    id: 31,
+    question: "¿Tengo derecho a día libre si soy jurado electoral?",
+    answer: "Si, el jurado electoral tendrá una jornada laboral libre el lunes siguiente.",
+    category: "Proceso Electoral"
+  },
+  {
+    id: 32,
+    question: "¿El voto rural vale doble en relación al urbano?",
+    answer: "En la normativa se determina el criterio de la proporcionalidad poblacional para la delimitación de circunscripciones uninominales. Al mejorar la aplicación de este criterio, se reduce la posibilidad o la percepción de que el voto rural valga mas que el área urbana o viceversa.",
+    category: "Sistema Electoral"
+  },
+  {
+    id: 33,
+    question: "¿Dónde y cómo puedo obtener un certificado de impedimento si no pude asistir a sufragar?",
+    answer: "El día de la votación, cada Tribunal Electoral Departamental instalará en diferentes recintos electorales urbanos y en las oficinas del propio Tribunal módulos automatizados para la expedición y entrega de certificados de impedimento de sufragio.",
+    category: "Documentación"
+  },
+  {
+    id: 34,
+    question: "¿Qué prohibiciones hay el día de las elecciones?",
+    answer: "Prohibición de propaganda electoral: Desde las 00:00 del jueves 14 de agosto hasta las 18:00 del domingo 17 queda prohibida toda manifestación pública de apoyo o rechazo a candidaturas, en cualquier formato o medio. Restricción de consumo de alcohol: Desde las 00:00 del viernes 15 hasta las 12:00 del lunes 18 de agosto no se podrá vender ni consumir bebidas alcohólicas en domicilios, tiendas, restaurantes, hoteles, cantinas u otros establecimientos públicos o privados. Prohibición de portar armas: Durante toda la jornada electoral del domingo 17 queda prohibido portar armas de fuego, armas blancas o cualquier objeto que represente un peligro para la seguridad ciudadana. Esta disposición no incluye a las Fuerzas Armadas ni a la Policía, que estarán a cargo del resguardo del orden. Suspensión de reuniones y espectáculos: Desde las 00:00 hasta las 24:00 del día de las elecciones no se podrán realizar actos públicos, reuniones o espectáculos de ninguna índole. Prohibición de traslado de electores: Durante el día de la elección queda prohibido trasladar votantes de un recinto electoral a otro, por cualquier medio de transporte. Cualquier caso detectado será remitido al Ministerio Público, en aplicación del artículo 238, inciso i) de la Ley del Régimen Electoral (Ley 026). Restricción vehicular: Se restringe la circulación de vehículos motorizados, sean particulares, oficiales o de transporte público, durante toda la jornada electoral. Solo podrán transitar aquellos que cuenten con autorización expresa del TSE o de los Tribunales Electorales Departamentales. Están exentos los vehículos de las fuerzas del orden involucrados en tareas de seguridad y custodia electoral, además de ambulancias, vehículos de emergencia y de la prensa.",
+    category: "Proceso Electoral"
+  },
+  {
+    id: 35,
+    question: "¿Qué es el conteo rápido?",
+    answer: "El recuento de escrutinio o conteo rápido consiste en obtener los resultados finales de las mesas de votación de la misma muestra de electores consultados en la encuesta en boca de urna. El nivel de muestra es amplio y se da a nivel nacional, brindando información recogida del acta electoral publicada al final del escrutinio en cada recinto electoral. Se toman en cuenta los resultados tomados de las actas, antes de que estas sean trasladadas a los tribunales electorales departamentales. El margen de error es más pequeño, pues se basa en resultados oficiales.",
+    category: "Conteo"
+  },
+  {
+    id: 36,
+    question: "¿Qué significa en boca de urna?",
+    answer: "Consiste en preguntar sobre el voto realizado a una muestra de electores luego que estos han sufragado. El nivel de muestra es grande, pero hay un margen importante de error, pues el encuestado puede mentir al declarar por qué candidato votó. La normativa nacional indica que debe tenerse el 95% de la muestra registrada en recuento de escrutinio, condición que las empresas de estudio de opinión no pudieron cumplir.",
+    category: "Conteo"
   }
 ];
 
