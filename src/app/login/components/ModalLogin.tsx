@@ -315,7 +315,7 @@ export function ModalLogin({
                 <div className="flex items-center justify-center space-x-3">
                   <div className="relative w-8 h-8">
                     <Image
-                      src="/inicial/recurso1.webp"
+                      src="/inicial/Recurso1.webp"
                       alt="Coalición Logo"
                       fill
                       className="object-contain"

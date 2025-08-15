@@ -120,7 +120,7 @@ export function FormLogin({ onLogin }: FormLoginProps) {
           <div className="flex justify-center mb-6">
             <div className="relative ">
               <Image
-                src="/inicial/recurso1.webp"
+                src="/inicial/Recurso1.webp"
                 alt="Coalición Logo"
            width={150}
            height={40}
