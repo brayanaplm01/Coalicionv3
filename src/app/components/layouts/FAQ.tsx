@@ -90,7 +90,7 @@ export function FAQSection() {
               placeholder="Buscar preguntas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-800/20 focus:border-red-800 transition-all duration-300 placeholder:text-black/60"
+              className="w-full pl-12 pr-4 py-3 text-black bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-800/20 focus:border-red-800 transition-all duration-300 placeholder:text-black/60"
             />
           </div>
         </motion.div>
