@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FormLogin } from './components/FormLogin';
 
-export default function LoginPage() {
+// Componente que maneja los parámetros de búsqueda
+function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -50,7 +51,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen">
+    <>
       {/* Mostrar mensaje de error si existe */}
       {errorMessage && (
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded-lg shadow-lg max-w-md">
@@ -65,6 +66,20 @@ export default function LoginPage() {
       )}
       
       <FormLogin onLogin={handleLogin} />
+    </>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <main className="min-h-screen">
+      <Suspense fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#CBA135]"></div>
+        </div>
+      }>
+        <LoginContent />
+      </Suspense>
     </main>
   );
 }
