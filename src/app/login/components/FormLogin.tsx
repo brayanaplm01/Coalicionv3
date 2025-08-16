@@ -80,11 +80,13 @@ export function FormLogin({ onLogin }: FormLoginProps) {
       
       // Verificar credenciales de prueba
       if (formData.email === testCredentials.email && formData.password === testCredentials.password) {
+        setModalType('success');
+        setShowModal(true);
+        
+        // Llamar a la función onLogin que maneja la redirección
         if (onLogin) {
           onLogin(formData.email, formData.password);
         }
-        setModalType('success');
-        setShowModal(true);
       } else {
         setErrors({
           email: 'Credenciales incorrectas',
@@ -95,6 +97,8 @@ export function FormLogin({ onLogin }: FormLoginProps) {
       }
     } catch (error) {
       console.error('Error en login:', error);
+      setModalType('error');
+      setShowModal(true);
     } finally {
       setIsLoading(false);
     }

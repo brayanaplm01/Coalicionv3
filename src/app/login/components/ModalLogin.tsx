@@ -266,6 +266,9 @@ export function ModalLogin({
                             transition={{ duration: 0.1 }}
                           />
                         </div>
+                        <p className="text-blue-700 text-xs mt-2 text-center">
+                          Serás redirigido automáticamente al dashboard...
+                        </p>
                       </div>
                     </motion.div>
                   </>

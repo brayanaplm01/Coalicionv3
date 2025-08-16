@@ -8,9 +8,9 @@ import Link from "next/link";
 const navigationItems = [
   { name: "Verificacion de Hechos", link: "", isContacto: false, isScroll: true },
   { name: "Guias Electorales", link: "", isContacto: false, isScroll: true },
-  { name: "Reportes", link: "", isContacto: false, isScroll: true },
+  { name: "Reportes", link: "/reportes", isContacto: false, isScroll: false },
   { name: "Materiales Educativos", link: "", isContacto: false, isScroll: true },
-  { name: "FAQ ", link: "#faq", isContacto: false, isScroll: true },
+  { name: "Publicaciones", link: "/publicaciones", isContacto: false, isScroll: false },
   //{ name: "Contacto", link: "#", isContacto: true, isScroll: false },
 ];
 
@@ -50,11 +50,11 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
   };
 
   const handleNavClick = (e: React.MouseEvent, item: typeof navigationItems[0]) => {
-    e.preventDefault();
-    
     if (item.isContacto && onContactClick) {
+      e.preventDefault();
       onContactClick();
     } else if (item.isScroll) {
+      e.preventDefault();
       if (item.link === "#home") {
         scrollToTop();
       } else {
@@ -62,6 +62,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
         scrollToSection(sectionId);
       }
     }
+    // For regular links (like /reportes), let the default Link behavior handle it
     
     closeMobileMenu();
   };

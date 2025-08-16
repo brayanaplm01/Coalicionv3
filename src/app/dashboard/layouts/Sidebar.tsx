@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Sidebar, SidebarBody, SidebarLink } from "@/app/components/ui/sidebar";
 import {
   IconArrowLeft,
@@ -15,6 +16,22 @@ interface SidebarLayoutProps {
 }
 
 export function SidebarDemo({ children }: SidebarLayoutProps = {}) {
+  const router = useRouter();
+  
+  // Función para manejar el logout
+  const handleLogout = () => {
+    // Limpiar la sesión del localStorage
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userEmail');
+    
+    // Eliminar cookies de sesión
+    document.cookie = 'isLoggedIn=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    document.cookie = 'coalicion_session_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    
+    // Redirigir a la página principal
+    router.push('/');
+  };
+
   const links = [
     {
       label: "Dashboard",
@@ -23,15 +40,8 @@ export function SidebarDemo({ children }: SidebarLayoutProps = {}) {
         <IconBrandTabler className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
-    
-    {
-      label: "Logout",
-      href: "#",
-      icon: (
-        <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
-      ),
-    },
   ];
+  
   const [open, setOpen] = useState(false);
   return (
     <div
@@ -48,6 +58,23 @@ export function SidebarDemo({ children }: SidebarLayoutProps = {}) {
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
+              
+              {/* Botón de Logout personalizado */}
+              <button
+                onClick={handleLogout}
+                className="flex items-center justify-start gap-2 group/sidebar py-2 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-md px-2 transition-colors"
+              >
+                <IconArrowLeft className="h-5 w-5 shrink-0" />
+                <motion.span
+                  animate={{
+                    display: open ? "inline-block" : "none",
+                    opacity: open ? 1 : 0,
+                  }}
+                  className="!m-0 inline-block whitespace-pre !p-0 text-sm transition duration-150 group-hover/sidebar:translate-x-1"
+                >
+                  Logout
+                </motion.span>
+              </button>
             </div>
           </div>
           <div>
