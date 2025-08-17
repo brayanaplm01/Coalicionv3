@@ -152,7 +152,7 @@ export function FormPublications({
       const method = isEditing ? 'PUT' : 'POST';
       
       const body = isEditing 
-        ? { ...formData, originalTitle: initialData?.title }
+        ? { id: initialData?.id, ...formData }
         : formData;
 
       const response = await fetch(endpoint, {

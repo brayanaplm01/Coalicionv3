@@ -9,6 +9,11 @@ const publicationsPath = join(process.cwd(), 'src', 'data', 'publications.ts');
 // Variable en memoria para mantener las publicaciones actualizadas
 let publicationsInMemory: Publication[] = [...currentPublications];
 
+// Función para generar un ID único
+function generateId(): string {
+  return 'pub_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+}
+
 // Función para leer las publicaciones actuales
 async function readPublications(): Promise<Publication[]> {
   return publicationsInMemory;
@@ -80,17 +85,9 @@ export async function POST(request: NextRequest) {
 
     const publications = await readPublications();
     
-    // Verificar que no exista una publicación con el mismo título
-    const existingPublication = publications.find(pub => pub.title === title);
-    if (existingPublication) {
-      return NextResponse.json({
-        success: false,
-        error: 'Ya existe una publicación con ese título'
-      }, { status: 400 });
-    }
-
-    // Crear nueva publicación
+    // Crear nueva publicación con ID único
     const newPublication: Publication = {
+      id: generateId(),
       image,
       title,
       subtitle,
@@ -120,12 +117,12 @@ export async function POST(request: NextRequest) {
 export async function PUT(request: NextRequest) {
   try {
     const body = await request.json();
-    const { originalTitle, ...updatedData }: { originalTitle: string } & Publication = body;
+    const { id, ...updatedData }: { id: string } & Publication = body;
 
-    if (!originalTitle) {
+    if (!id) {
       return NextResponse.json({
         success: false,
-        error: 'Se requiere el título original para actualizar'
+        error: 'Se requiere el ID de la publicación para actualizar'
       }, { status: 400 });
     }
 
@@ -151,8 +148,8 @@ export async function PUT(request: NextRequest) {
 
     const publications = await readPublications();
     
-    // Encontrar la publicación a actualizar
-    const publicationIndex = publications.findIndex(pub => pub.title === originalTitle);
+    // Encontrar la publicación a actualizar por ID
+    const publicationIndex = publications.findIndex(pub => pub.id === id);
     if (publicationIndex === -1) {
       return NextResponse.json({
         success: false,
@@ -160,19 +157,9 @@ export async function PUT(request: NextRequest) {
       }, { status: 404 });
     }
 
-    // Verificar que el nuevo título no esté en uso (si cambió)
-    if (updatedData.title !== originalTitle) {
-      const existingPublication = publications.find(pub => pub.title === updatedData.title);
-      if (existingPublication) {
-        return NextResponse.json({
-          success: false,
-          error: 'Ya existe una publicación con ese título'
-        }, { status: 400 });
-      }
-    }
-
-    // Actualizar la publicación
+    // Actualizar la publicación manteniendo el ID original
     publications[publicationIndex] = {
+      id: id, // Mantener el ID original
       image: updatedData.image,
       title: updatedData.title,
       subtitle: updatedData.subtitle,
@@ -201,19 +188,19 @@ export async function PUT(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const title = searchParams.get('title');
+    const id = searchParams.get('id');
 
-    if (!title) {
+    if (!id) {
       return NextResponse.json({
         success: false,
-        error: 'Se requiere el título de la publicación a eliminar'
+        error: 'Se requiere el ID de la publicación a eliminar'
       }, { status: 400 });
     }
 
     const publications = await readPublications();
     
-    // Encontrar la publicación a eliminar
-    const publicationIndex = publications.findIndex(pub => pub.title === title);
+    // Encontrar la publicación a eliminar por ID
+    const publicationIndex = publications.findIndex(pub => pub.id === id);
     if (publicationIndex === -1) {
       return NextResponse.json({
         success: false,
