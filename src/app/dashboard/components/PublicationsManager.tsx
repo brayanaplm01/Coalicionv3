@@ -41,7 +41,7 @@ export function PublicationsManager() {
   const handleDeletePublication = async (publicationToDelete: Publication) => {
     if (window.confirm("¿Estás seguro de que quieres eliminar esta publicación?")) {
       try {
-        const response = await fetch(`/api/publications?title=${encodeURIComponent(publicationToDelete.title)}`, {
+        const response = await fetch(`/api/publications?id=${encodeURIComponent(publicationToDelete.id || '')}`, {
           method: 'DELETE',
         });
 
