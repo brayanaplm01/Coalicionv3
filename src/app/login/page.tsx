@@ -64,11 +64,9 @@ function LoginContent() {
           router.push(validUser.redirectTo);
         }, 2000);
       } else {
-        // Para usuario externo - redirigir directamente sin cookies locales
+        // Para usuario externo - redirigir en la misma ventana
         setTimeout(() => {
-          window.open(validUser.redirectTo, '_blank', 'noopener,noreferrer');
-          // Opcional: También puedes redirigir en la misma ventana con:
-          // window.location.href = validUser.redirectTo;
+          window.location.href = validUser.redirectTo;
         }, 2000);
       }
       
