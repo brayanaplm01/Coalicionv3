@@ -28,25 +28,55 @@ function LoginContent() {
     // Aquí puedes agregar la lógica de autenticación
     console.log('Login attempt:', { email, password });
     
-    // Credenciales correctas - redirigir al dashboard
-    const testCredentials = {
-      email: 'admin@coalicion.bo',
-      password: 'coalicion2025'
-    };
+    // Credenciales para diferentes dashboards
+    const credentials = [
+      {
+        email: 'dashboard@coalicion.bo',
+        password: 'dashboard2025',
+        redirectTo: '/dashboard', // Dashboard interno
+        userType: 'local'
+      },
+      {
+        email: 'admin@coalicion.bo',
+        password: 'coalicion2025',
+        redirectTo: 'https://dashboard-disinfo-production.up.railway.app/',
+        userType: 'external'
+      }
+    ];
 
-    if (email === testCredentials.email && password === testCredentials.password) {
-      // Guardar estado de autenticación en localStorage y cookies
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('userEmail', email);
+    // Buscar credenciales válidas
+    const validUser = credentials.find(
+      cred => cred.email === email && cred.password === password
+    );
+
+    if (validUser) {
+      if (validUser.userType === 'local') {
+        // Para usuario local - guardar estado de autenticación
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userEmail', email);
+        
+        // Establecer cookies para el middleware
+        document.cookie = 'isLoggedIn=true; path=/; max-age=86400'; // 24 horas
+        document.cookie = 'coalicion_session_token=coalicion_session_token; path=/; max-age=86400';
+        
+        // Redirigir al dashboard interno después de un breve delay
+        setTimeout(() => {
+          router.push(validUser.redirectTo);
+        }, 2000);
+      } else {
+        // Para usuario externo - redirigir directamente sin cookies locales
+        setTimeout(() => {
+          window.open(validUser.redirectTo, '_blank', 'noopener,noreferrer');
+          // Opcional: También puedes redirigir en la misma ventana con:
+          // window.location.href = validUser.redirectTo;
+        }, 2000);
+      }
       
-      // Establecer cookies para el middleware
-      document.cookie = 'isLoggedIn=true; path=/; max-age=86400'; // 24 horas
-      document.cookie = 'coalicion_session_token=coalicion_session_token; path=/; max-age=86400';
-      
-      // Redirigir al dashboard después de un breve delay para mostrar el modal
-      setTimeout(() => {
-        router.push('/dashboard');
-      }, 2000);
+      // Si las credenciales son válidas, retornar true para mostrar modal de éxito
+      return true;
+    } else {
+      // Si las credenciales no son válidas, retornar false para mostrar modal de error
+      return false;
     }
   };
 

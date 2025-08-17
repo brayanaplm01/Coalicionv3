@@ -26,11 +26,19 @@ export function FormLogin({ onLogin }: FormLoginProps) {
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState<'success' | 'error'>('success');
 
-  // Credenciales de prueba
-  const testCredentials = {
-    email: 'admin@coalicion.bo',
-    password: 'coalicion2025'
-  };
+  // Credenciales de prueba - múltiples usuarios
+  const testCredentials = [
+    {
+      email: 'dashboard@coalicion.bo',
+      password: 'dashboard2025',
+      name: 'Dashboard Local'
+    },
+    {
+      email: 'admin@coalicion.bo',
+      password: 'coalicion2025',
+      name: 'Admin Desinformación'
+    }
+  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -79,7 +87,11 @@ export function FormLogin({ onLogin }: FormLoginProps) {
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       // Verificar credenciales de prueba
-      if (formData.email === testCredentials.email && formData.password === testCredentials.password) {
+      const validUser = testCredentials.find(
+        cred => cred.email === formData.email && cred.password === formData.password
+      );
+      
+      if (validUser) {
         setModalType('success');
         setShowModal(true);
         
