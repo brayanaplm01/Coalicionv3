@@ -3,7 +3,7 @@
 import React from "react";
 
 import { ThreeDMarqueeDemo } from "../ui/ThreeDMarquee";
-import { LinkPreview } from "@/app/components/ui/link-preview";
+
 
 
 interface HeroSectionProps {
@@ -24,25 +24,6 @@ export function HeroSection({ }: HeroSectionProps) {
     } else {
       // Fallback si no encuentra la sección
       window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-    }
-  };
-
-  const scrollToContact = () => {
-    const footer = document.querySelector('footer');
-    if (footer) {
-      const navbarHeight = 80;
-      const elementPosition = footer.offsetTop - navbarHeight;
-      
-      window.scrollTo({ 
-        top: elementPosition, 
-        behavior: "smooth" 
-      });
-    } else {
-      // Fallback - scroll al final de la página
-      window.scrollTo({ 
-        top: document.body.scrollHeight, 
-        behavior: "smooth" 
-      });
     }
   };
  
@@ -71,36 +52,30 @@ export function HeroSection({ }: HeroSectionProps) {
             </span>
             </h1>
             <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#F8F5F3] mb-3 sm:mb-4">
-              Coalición Nacional que reúne a {" "}
-              <LinkPreview 
-                url="https://www.undp.org/"
-                className="font-bold text-amber-300 "
-              > <span className="font-bold text-[#CBA135] ">17 organizaciones</span>
-              </LinkPreview>{" "}
-              comprometidas con la integridad de la información electoral en
-              Bolivia.
-            </div>
-            <div className="text-md text-justify sm:text-base md:text-lg lg:text-xl font-semibold text-[#F8F5F3]">
-              Trabajamos juntos para fortalecer la confianza ciudadana en los
-              procesos electorales, combatiendo la desinformación y
-              promoviendo una participación democrática informada de cara a
-              las{" "}
-              <LinkPreview
-                url="https://chequeatuvoto.chequeabolivia.bo/"
-                className="font-bold text-[#FFC44D]"
-              >
-                <span className="font-bold text-[#CBA135] ">elecciones generales 2025.</span>
-                
-              </LinkPreview>
+              Defendemos la democracia, participación ciudadana informada y nuestros derechos en las elecciones
             </div>
             
-            {/* Botón de Contacto */}
-            <div className="mt-8 sm:mt-10">
+            {/* Botones de Información */}
+            <div className="mt-8 sm:mt-10 flex flex-col lg:flex-row gap-3 lg:gap-4 justify-center items-center max-w-5xl mx-auto">
               <button
-                onClick={scrollToContact}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/20 hover:border-[#CBA135]/40 backdrop-blur-sm"
+                onClick={() => {/* No redirecciona por ahora */}}
+                className="w-full lg:w-auto inline-flex items-center justify-center px-4 lg:px-6 py-3 bg-gradient-to-r from-[#CBA135]/70 to-[#B8941F]/70 text-white font-semibold text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/30 hover:border-[#CBA135]/50 backdrop-blur-md hover:from-[#CBA135]/80 hover:to-[#B8941F]/80"
               >
-                <span>Contacto</span>
+                <span className="font-montserrat text-center">1. ¿Qué es la desinformación?</span>
+              </button>
+              
+              <button
+                onClick={() => {/* No redirecciona por ahora */}}
+                className="w-full lg:w-auto inline-flex items-center justify-center px-4 lg:px-6 py-3 bg-gradient-to-r from-red-700/70 to-red-600/70 text-white font-semibold text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-red-700/30 hover:border-red-700/50 backdrop-blur-md hover:from-red-700/80 hover:to-red-600/80"
+              >
+                <span className="font-montserrat text-center">2. El problema de la desinformación</span>
+              </button>
+              
+              <button
+                onClick={() => {/* No redirecciona por ahora */}}
+                className="w-full lg:w-auto inline-flex items-center justify-center px-4 lg:px-6 py-3 bg-gradient-to-r from-emerald-600/70 to-teal-600/70 text-white font-semibold text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-emerald-600/30 hover:border-emerald-600/50 backdrop-blur-md hover:from-emerald-600/80 hover:to-teal-600/80"
+              >
+                <span className="font-montserrat text-center">3. Combatiendo la desinformación</span>
               </button>
             </div>
           </div>

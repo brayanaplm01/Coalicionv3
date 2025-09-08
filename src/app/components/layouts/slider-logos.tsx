@@ -120,10 +120,8 @@ export function SliderLogos() {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Nuestra red de{" "}
-            <span className="bg-gradient-to-r text-[#CBA135] bg-clip-text font-semibold">
-              Aliados
-            </span>
+            Miembros
+          
           </motion.h2>
           {/* Red underline with gradient */}
                   <motion.div 

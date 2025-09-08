@@ -3,6 +3,9 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { Publication } from "@/data/publications";
 
+// Tipo para el formulario sin el ID (se genera automáticamente)
+type PublicationFormData = Omit<Publication, 'id'>;
+
 interface FormPublicationsProps {
   onSubmit: (publication: Publication) => void;
   initialData?: Publication;
@@ -14,7 +17,7 @@ export function FormPublications({
   initialData, 
   isEditing = false 
 }: FormPublicationsProps) {
-  const [formData, setFormData] = useState<Publication>({
+  const [formData, setFormData] = useState<PublicationFormData>({
     image: initialData?.image || "",
     title: initialData?.title || "",
     subtitle: initialData?.subtitle || "",
@@ -22,7 +25,7 @@ export function FormPublications({
     url: initialData?.url || "",
   });
 
-  const [errors, setErrors] = useState<Partial<Publication>>({});
+  const [errors, setErrors] = useState<Partial<PublicationFormData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadMethod, setUploadMethod] = useState<'file' | 'url'>('file');
@@ -38,7 +41,7 @@ export function FormPublications({
     }));
     
     // Limpiar error del campo cuando el usuario empiece a escribir
-    if (errors[name as keyof Publication]) {
+    if (errors[name as keyof PublicationFormData]) {
       setErrors(prev => ({
         ...prev,
         [name]: ""
@@ -106,7 +109,7 @@ export function FormPublications({
   };
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<Publication> = {};
+    const newErrors: Partial<PublicationFormData> = {};
 
     if (!formData.title.trim()) {
       newErrors.title = "El título es obligatorio";

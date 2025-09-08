@@ -1,16 +1,44 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
-import { IconChevronUp } from "@tabler/icons-react";
+import { IconChevronUp, IconMail } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
 
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !email.includes("@")) {
+      setMessage("Por favor ingresa un correo válido");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setMessage("");
+
+    // Simular envío (aquí puedes integrar con tu backend)
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setMessage("¡Suscripción exitosa! Gracias por unirte.");
+      setEmail("");
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      setMessage("Error al suscribirse. Intenta nuevamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -73,7 +101,44 @@ export function Footer() {
               viewport={{ once: true }}
               className="flex flex-col justify-center lg:items-end"
             >
-              
+              <div className="space-y-4 lg:text-right">
+                <h3 className="text-xl font-semibold text-white">Suscríbete</h3>
+                <p className="text-gray-300 text-sm max-w-md">
+                  Mantente informado con las últimas noticias y actualizaciones de la Coalición.
+                </p>
+                
+                <form onSubmit={handleSubscribe} className="space-y-3 max-w-md lg:ml-auto">
+                  <div className="relative">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Correo electrónico"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-[#CBA135] focus:bg-white/20 transition-all duration-300"
+                      required
+                    />
+                    <IconMail className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-300" />
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-[#CBA135] to-yellow-500 text-white font-semibold rounded-lg hover:from-yellow-500 hover:to-[#CBA135] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+                  >
+                    {isSubmitting ? "Suscribiendo..." : "Suscribirse"}
+                  </button>
+                </form>
+                
+                {message && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`text-sm ${message.includes("exitosa") ? "text-green-400" : "text-red-400"}`}
+                  >
+                    {message}
+                  </motion.p>
+                )}
+              </div>
 
               
             </motion.div>

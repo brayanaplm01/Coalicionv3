@@ -31,7 +31,7 @@ export default function MissionVisionSection() {
   return (
     <motion.section
       id="mission-vision"
-      className="py-20 lg:py-32 bg-[#7b1e3c] relative overflow-hidden"
+      className="py-20 lg:py-32 bg-white relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -90,7 +90,7 @@ export default function MissionVisionSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-white font-montserrat">Nuestra </span>
+            <span className="text-[#222426] font-montserrat">Nuestra </span>
             <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat font-bold">
               Propuesta
             </span>
@@ -105,7 +105,7 @@ export default function MissionVisionSection() {
           />
           
           <motion.p
-            className="text-xl text-gray-300 mt-6 max-w-3xl mx-auto font-opensans"
+            className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto font-opensans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -175,7 +175,7 @@ export default function MissionVisionSection() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-4xl sm:text-5xl font-montserrat font-bold text-white mb-4">
+            <h3 className="text-4xl sm:text-5xl font-montserrat font-bold text-[#222426] mb-4">
               Nuestros{" "}
               <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat">
                 Objetivos
@@ -285,7 +285,7 @@ export default function MissionVisionSection() {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="text-white font-opensans font-semibold text-lg">
+            <span className="text-[#222426] font-opensans font-semibold text-lg">
               Compromiso con la Democracia Boliviana
             </span>
             <motion.div 
