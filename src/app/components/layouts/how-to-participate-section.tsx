@@ -4,10 +4,10 @@ import React from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 
-export function AboutSection() {
+export function HowToParticipateSection() {
   return (
     <motion.section 
-      id="about" 
+      id="how-to-participate" 
       className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -39,12 +39,12 @@ export function AboutSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Indicadores
+          Cómo participar de la <span className="text-[#CBA135] font-semibold">Red</span>
         </motion.h2>
         
         {/* Red underline with gradient */}
         <motion.div 
-          className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-12  shadow-sm"
+          className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-12 shadow-sm"
           initial={{ width: 0 }}
           whileInView={{ width: 128 }}
           transition={{ duration: 1, delay: 0.3 }}
@@ -75,10 +75,8 @@ export function AboutSection() {
             viewport={{ once: true }}
           ></motion.div>
           
-          {/* Content Grid - Image Only */}
+          {/* Image Content */}
           <div className="relative z-10 flex justify-center">
-            
-            {/* Image */}
             <motion.div
               className="flex justify-center"
               initial={{ opacity: 0, y: 20 }}
@@ -89,15 +87,20 @@ export function AboutSection() {
               <div className="relative group cursor-pointer">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#CBA135]/20 to-red-500/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
                 <Image
-                  src="/page/dashboard.webp"
-                  alt="Dashboard de la Coalición Nacional"
-                  width={850}
-                  height={920}
+                  src="/uploads/1755362228266_Servicio-3.webp"
+                  alt="Cómo participar de la red - Coalición Nacional"
+                  width={300}
+                  height={500}
                   className="relative rounded-xl shadow-lg group-hover:shadow-xl transform group-hover:scale-105 transition-all duration-300 object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.src !== "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2Y0ZjRmNCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuMzVlbSI+SW1hZ2VuIG5vIGRpc3BvbmlibGU8L3RleHQ+PC9zdmc+") {
+                      target.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2Y0ZjRmNCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuMzVlbSI+SW1hZ2VuIG5vIGRpc3BvbmlibGU8L3RleHQ+PC9zdmc+";
+                    }
+                  }}
                 />
               </div>
             </motion.div>
-
           </div>
           
           {/* Bottom subtle border */}

@@ -1,5 +1,5 @@
 export interface Publication {
-  id?: string;
+  id: number;
   image: string;
   title: string;
   subtitle: string;
@@ -19,9 +19,17 @@ export const publications: Publication[] = [
   {
     "id": "pub_2",
     "image": "/uploads/img2.jpg",
-    "title": "Título de la segunda publicación",
+    "title": "segunda publicación",
     "subtitle": "Aquí va un subtítulo más.",
     "handle": "@muywaso",
     "url": "https://www.facebook.com/100064127318311/posts/1168600968620803/?rdid=LsywSDKuyKCUu2t7#"
+  },
+  {
+    "id": "pub_1757368021656_i7j5wxe3j",
+    "image": "/uploads/1757367979111_1755366707021_carlos-muza-hpjSkU2UYSU-unsplash.jpg",
+    "title": "tercera publicacion",
+    "subtitle": "noticia relacionada a la politica",
+    "handle": "@chequeabolivia",
+    "url": "https://chequeabolivia.bo/"
   }
 ];

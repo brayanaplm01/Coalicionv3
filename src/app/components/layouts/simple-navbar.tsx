@@ -6,12 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  { name: "Verificacion de Hechos", link: "", isContacto: false, isScroll: true },
-  { name: "Guias Electorales", link: "", isContacto: false, isScroll: true },
-  { name: "Reportes", link: "/reportes", isContacto: false, isScroll: false },
-  { name: "Materiales Educativos", link: "", isContacto: false, isScroll: true },
-  { name: "Publicaciones", link: "/publicaciones", isContacto: false, isScroll: false },
-  //{ name: "Contacto", link: "#", isContacto: true, isScroll: false },
+  { name: "Quiénes Somos", link: "#about", isContacto: false, isScroll: true },
+  { name: "Recursos", link: "#", isContacto: false, isScroll: false },
+  { name: "Actúa", link: "#", isContacto: false, isScroll: false },
 ];
 
 interface SimpleNavbarProps {
@@ -128,7 +125,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
           <div className="flex-1"></div>
 
           {/* Menú desktop en el lado derecho */}
-          <div className="hidden lg:flex  lg:items-center lg:space-x-8">
+          <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navigationItems.map((item, index) => (
               <Link
                 key={index}
@@ -144,6 +141,14 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 
               </Link>
             ))}
+            
+            {/* Botón Verifica Desinformación */}
+            <button
+              className="ml-4 px-6 py-2.5 bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white font-semibold font-montserrat text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/20 hover:border-[#CBA135]/40 backdrop-blur-sm"
+              onClick={() => {/* No redirecciona por ahora */}}
+            >
+              Verifica Desinformación
+            </button>
           </div>
 
           {/* Botón hamburguesa para móvil */}
@@ -167,7 +172,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
       <div
         className={`lg:hidden  relative transition-all duration-500 ease-in-out overflow-hidden ${
           isMobileMenuOpen
-            ? "max-h-80 opacity-60   translate-y-0"
+            ? "max-h-96 opacity-60   translate-y-0"
             : "max-h-0 opacity-0  -translate-y-2 pointer-events-none"
         }`}
       >
@@ -204,6 +209,24 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
               <div className="absolute inset-0  rounded-lg opacity-0 bg-gradient-to-r from-red-800/10 to-rose-800/10 transition-opacity duration-300 group-hover:opacity-100"></div>
             </Link>
           ))}
+          
+          {/* Botón Verifica Desinformación para móvil */}
+          <div className="pt-4 border-t border-white/20">
+            <button
+              className={`w-full px-6 py-3 bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white font-semibold font-montserrat text-base rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/20 ${
+                isMobileMenuOpen 
+                  ? `animate-slideIn animation-delay-${navigationItems.length * 100}` 
+                  : ''
+              }`}
+              style={{
+                animationDelay: `${navigationItems.length * 100}ms`,
+                fontFamily: 'var(--font-montserrat), sans-serif'
+              }}
+              onClick={() => {/* No redirecciona por ahora */}}
+            >
+              Verifica Desinformación
+            </button>
+          </div>
         </div>
       </div>
     </nav>
