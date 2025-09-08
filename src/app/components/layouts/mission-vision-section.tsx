@@ -84,7 +84,7 @@ export default function MissionVisionSection() {
         {/* Enhanced Main Title */}
         <div className="text-center mb-16 lg:mb-20">
           <motion.h2 
-            className="text-5xl sm:text-6xl lg:text-7xl font-montserrat font-bold mb-8"
+            className="text-5xl sm:text-6xl lg:text-5xl font-montserrat font-bold mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
