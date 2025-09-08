@@ -1,5 +1,5 @@
 export interface Publication {
-  id: number;
+  id: string;
   image: string;
   title: string;
   subtitle: string;

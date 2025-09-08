@@ -1,63 +1,142 @@
 import { motion } from "motion/react";
 import { IconTarget, IconEye, IconUsers, IconBulb, IconShield } from "@tabler/icons-react";
+import { useEffect, useState } from "react";
+
+// Predefined positions to avoid hydration mismatch
+const particlePositions = [
+  { left: 15, top: 25 },
+  { left: 75, top: 35 },
+  { left: 40, top: 60 },
+  { left: 85, top: 20 },
+  { left: 25, top: 80 },
+  { left: 60, top: 15 },
+  { left: 35, top: 45 },
+  { left: 90, top: 70 },
+  { left: 10, top: 55 },
+  { left: 65, top: 85 },
+  { left: 45, top: 30 },
+  { left: 80, top: 50 },
+  { left: 20, top: 70 },
+  { left: 55, top: 40 },
+  { left: 70, top: 25 }
+];
 
 export default function MissionVisionSection() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <motion.section
       id="mission-vision"
-      className="py-20 lg:py-28 bg-white relative overflow-hidden"
+      className="py-20 lg:py-32 bg-white relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50/30 via-transparent to-slate-50/30"></div>
+      {/* Enhanced background pattern */}
+      <div className="absolute inset-0">
+        <motion.div 
+          className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-[#CBA135]/20 to-red-400/20 rounded-full blur-3xl"
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-red-400/15 to-[#CBA135]/15 rounded-full blur-3xl"
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, delay: 0.4 }}
+          viewport={{ once: true }}
+        />
+        
+        {/* Floating elements - Only render after mount to avoid hydration issues */}
+        {mounted && (
+          <div className="absolute inset-0">
+            {particlePositions.map((position, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-[#CBA135]/40 rounded-full"
+                style={{
+                  left: `${position.left}%`,
+                  top: `${position.top}%`,
+                }}
+                animate={{
+                  y: [-10, 10, -10],
+                  opacity: [0.2, 0.6, 0.2],
+                }}
+                transition={{
+                  duration: 3 + (i % 3),
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                }}
+              />
+            ))}
+          </div>
+        )}
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Main Title */}
+        {/* Enhanced Main Title */}
         <div className="text-center mb-16 lg:mb-20">
           <motion.h2 
-            className="text-4xl sm:text-5xl lg:text-6xl font-montserrat font-regular mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl font-montserrat font-bold mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#222426] font-montserrat text-4xl sm:text-5xl font-semibold">Nuestra </span>
-            <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat text-4xl sm:text-5xl font-semibold">
+            <span className="text-[#222426] font-montserrat">Nuestra </span>
+            <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat font-bold">
               Propuesta
             </span>
           </motion.h2>
           
           <motion.div 
-            className="w-32 h-1 bg-gradient-to-r  from-red-800 to-rose-800 rounded-full mx-auto"
+            className="w-40 h-1.5 bg-gradient-to-r from-red-800 via-rose-600 to-red-800 rounded-full mx-auto shadow-lg"
             initial={{ width: 0 }}
-            whileInView={{ width: 128 }}
+            whileInView={{ width: 160 }}
             transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
           />
+          
+          <motion.p
+            className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto font-opensans"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Descubre los pilares fundamentales que guían nuestro trabajo hacia una democracia más transparente
+          </motion.p>
         </div>
 
-        {/* Content Grid - Mission & Vision Cards */}
-        <div className="grid md:grid-cols-2 text-justify gap-8 mb-20">
+        {/* Enhanced Content Grid - Mission & Vision Cards */}
+        <div className="grid md:grid-cols-2 text-justify gap-8 lg:gap-12 mb-20">
           {/* Mission Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="bg-white/95 backdrop-blur-sm rounded-2xl border border-white/20 p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 group"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-800 to-rose-700 rounded-lg flex items-center justify-center">
-                <IconTarget className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-montserrat font-semibold text-[#222426]">
+              <motion.div 
+                className="w-14 h-14 bg-gradient-to-br from-red-800 to-rose-700 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                whileHover={{ rotate: 5 }}
+              >
+                <IconTarget className="h-7 w-7 text-white" />
+              </motion.div>
+              <h3 className="text-3xl font-montserrat font-bold text-[#222426]">
                 Misión
               </h3>
             </div>
-            <p className="text-gray-700 leading-relaxed font-opensans">
+            <p className="text-gray-700 leading-relaxed font-opensans text-lg">
               Combatir la desinformación electoral mediante el trabajo colaborativo de organizaciones comprometidas con la integridad de los procesos democráticos en Bolivia.
             </p>
           </motion.div>
@@ -68,58 +147,68 @@ export default function MissionVisionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="bg-white/95 backdrop-blur-sm rounded-2xl border border-white/20 p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 group"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#00797B] to-[#005F61] rounded-lg flex items-center justify-center">
-                <IconEye className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-montserrat font-semibold text-[#222426]">
+              <motion.div 
+                className="w-14 h-14 bg-gradient-to-br from-[#00797B] to-[#005F61] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                whileHover={{ rotate: -5 }}
+              >
+                <IconEye className="h-7 w-7 text-white" />
+              </motion.div>
+              <h3 className="text-3xl font-montserrat font-bold text-[#222426]">
                 Visión
               </h3>
             </div>
-            <p className="text-gray-700 leading-relaxed font-opensans">
+            <p className="text-gray-700 leading-relaxed font-opensans text-lg">
               Una Bolivia con elecciones transparentes, donde la información veraz fortalezca la democracia y la participación ciudadana informada sea la base de nuestro sistema electoral.
             </p>
           </motion.div>
         </div>
 
-        {/* Objectives Section */}
+        {/* Enhanced Objectives Section */}
         <div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-center  mb-12"
+            className="text-center mb-12"
           >
-            <h3 className="text-4xl sm:text-5xl font-montserrat font-semibold text-[#222426] mb-4">
-              Nuestros <span className="font-montserrat text-[#CBA135]">Objetivos</span>
+            <h3 className="text-4xl sm:text-5xl font-montserrat font-bold text-[#222426] mb-4">
+              Nuestros{" "}
+              <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent font-montserrat">
+                Objetivos
+              </span>
             </h3>
           </motion.div>
-           {/* Red underline with gradient */}
-                   <motion.div 
-                     className="w-32 h-1 bg-gradient-to-r from-red-800 to-rose-800 rounded-full mx-auto mb-12  shadow-sm"
-                     initial={{ width: 0 }}
-                     whileInView={{ width: 128 }}
-                     transition={{ duration: 1, delay: 0.3 }}
-                     viewport={{ once: true }}
-                   ></motion.div>
+          
+          {/* Enhanced red underline with gradient */}
+          <motion.div 
+            className="w-40 h-1.5 bg-gradient-to-r from-red-800 via-rose-600 to-red-800 rounded-full mx-auto mb-16 shadow-lg"
+            initial={{ width: 0 }}
+            whileInView={{ width: 160 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true }}
+          />
 
-          <div className="grid lg:grid-cols-3  gap-8">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
             {/* Objective 1 */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-white/20 p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 group"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
-                  <IconUsers className="h-6 w-6 text-white" />
-                </div>
-                <h4 className="text-xl font-montserrat font-semibold text-[#222426]">
+                <motion.div 
+                  className="w-14 h-14 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ rotate: 5 }}
+                >
+                  <IconUsers className="h-7 w-7 text-white" />
+                </motion.div>
+                <h4 className="text-xl font-montserrat font-bold text-[#222426]">
                   Fortalecer la Colaboración
                 </h4>
               </div>
@@ -134,13 +223,16 @@ export default function MissionVisionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-white/20 p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 group"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-amber-600 to-orange-600 rounded-lg flex items-center justify-center">
-                  <IconBulb className="h-6 w-6 text-white" />
-                </div>
-                <h4 className="text-xl font-montserrat font-semibold text-[#222426]">
+                <motion.div 
+                  className="w-14 h-14 bg-gradient-to-br from-amber-600 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ rotate: -5 }}
+                >
+                  <IconBulb className="h-7 w-7 text-white" />
+                </motion.div>
+                <h4 className="text-xl font-montserrat font-bold text-[#222426]">
                   Desarrollo de Capacidades
                 </h4>
               </div>
@@ -155,13 +247,16 @@ export default function MissionVisionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-white/95 backdrop-blur-sm rounded-2xl border border-white/20 p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 group"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
-                  <IconShield className="h-6 w-6 text-white" />
-                </div>
-                <h4 className="text-xl font-montserrat font-semibold text-[#222426]">
+                <motion.div 
+                  className="w-14 h-14 bg-gradient-to-br from-purple-600 to-violet-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ rotate: 5 }}
+                >
+                  <IconShield className="h-7 w-7 text-white" />
+                </motion.div>
+                <h4 className="text-xl font-montserrat font-bold text-[#222426]">
                   Integridad de la Información
                 </h4>
               </div>
@@ -172,7 +267,7 @@ export default function MissionVisionSection() {
           </div>
         </div>
 
-        {/* Bottom decorative element */}
+        {/* Enhanced bottom decorative element */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -180,13 +275,25 @@ export default function MissionVisionSection() {
           viewport={{ once: true }}
           className="text-center mt-16 lg:mt-20"
         >
-          <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-gray-50 to-slate-50 rounded-full border border-gray-200">
-            <div className="w-3 h-3 bg-[#CBA135] rounded-full animate-pulse"></div>
-            <span className="text-gray-600 font-opensans font-medium">
+          <motion.div 
+            className="inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-white/10 to-gray-100/10 backdrop-blur-sm rounded-full border border-white/20 shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div 
+              className="w-4 h-4 bg-[#CBA135] rounded-full shadow-lg"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+            <span className="text-[#222426] font-opensans font-semibold text-lg">
               Compromiso con la Democracia Boliviana
             </span>
-            <div className="w-3 h-3 bg-red-800 rounded-full animate-pulse"></div>
-          </div>
+            <motion.div 
+              className="w-4 h-4 bg-red-500 rounded-full shadow-lg"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+            />
+          </motion.div>
         </motion.div>
       </div>
     </motion.section>
