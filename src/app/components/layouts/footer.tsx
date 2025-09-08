@@ -2,17 +2,11 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { IconMail, IconPhone, IconMapPin, IconChevronUp } from "@tabler/icons-react";
+import { IconChevronUp } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const footerLinks = {
-  contacto: [
-    { icon: <IconMail className="h-4 w-4" />, text: "info@coalicionbolivia.bo", href: "mailto:info@coalicionbolivia.bo" },
-    { icon: <IconPhone className="h-4 w-4" />, text: "+591 77433 312", href: "tel:+59177433312" },
-    { icon: <IconMapPin className="h-4 w-4" />, text: "Bolivia", href: "#" }
-  ]
-};
+
 
 export function Footer() {
   const scrollToTop = () => {
@@ -79,24 +73,7 @@ export function Footer() {
               viewport={{ once: true }}
               className="flex flex-col justify-center lg:items-end"
             >
-              <div className="lg:text-right">
-                <h3 className="text-lg font-montserrat font-semibold text-white mb-6">Contacto</h3>
-                <ul className="space-y-4">
-                  {footerLinks.contacto.map((contact, index) => (
-                    <li key={index}>
-                      <a 
-                        href={contact.href}
-                        className="flex items-center lg:justify-end text-gray-300 hover:text-red-400 transition-colors duration-300 text-sm group"
-                      >
-                        <span className="mr-3 lg:order-2 lg:ml-3 lg:mr-0 text-red-500 group-hover:scale-110 transition-transform">
-                          {contact.icon}
-                        </span>
-                        <span className="lg:order-1">{contact.text}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              
 
               
             </motion.div>
