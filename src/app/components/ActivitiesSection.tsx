@@ -224,7 +224,7 @@ export default function ActivitiesSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <p className="text-xl text-justify text-gray-600 leading-relaxed font-opensans">
+            <p className="text-lg text-justify text-gray-600 leading-relaxed font-opensans">
               Desarrollamos iniciativas integrales que incluyen talleres de capacitación, implementación de herramientas
               tecnológicas avanzadas, análisis exhaustivo de procesos electorales y creación de lineamientos comunicacionales estratégicos.
             </p>
