@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { HeroSection } from "./components/layouts/hero-section";
 import { SliderLogos } from "./components/layouts/slider-logos";
-import { AboutSection } from "./components/layouts/about-section";
-import MissionVisionSection from "./components/layouts/mission-vision-section";
 import { Footer } from "./components/layouts/footer";
 import SimpleNavbar from "./components/layouts/simple-navbar";
 import { FAQSection } from "./components/layouts/FAQ";
@@ -26,12 +24,6 @@ export default function Home() {
         <div id="home" className="-mt-20 sm:-mt-14 lg:-mt-28">
           <HeroSection />
         </div>
-        
-        {/* Mission, Vision & Objectives Section - Nuestra Propuesta */}
-        <MissionVisionSection />
-        
-        {/* About Section - Quiénes Somos */}
-        <AboutSection />
         
         {/* Slider Logos Section - Organizaciones Aliadas */}
         <SliderLogos />
