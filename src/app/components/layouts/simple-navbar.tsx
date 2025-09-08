@@ -6,9 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  { name: "Quiénes Somos", link: "#about", isContacto: false, isScroll: true },
-  { name: "Recursos", link: "#", isContacto: false, isScroll: false },
-  { name: "Actúa", link: "#", isContacto: false, isScroll: false },
+  { name: "Verificacion de Hechos", link: "", isContacto: false, isScroll: true },
+  { name: "Guias Electorales", link: "", isContacto: false, isScroll: true },
+  { name: "Reportes", link: "/reportes", isContacto: false, isScroll: false },
+  { name: "Materiales Educativos", link: "", isContacto: false, isScroll: true },
+  { name: "Publicaciones", link: "/publicaciones", isContacto: false, isScroll: false },
+  //{ name: "Contacto", link: "#", isContacto: true, isScroll: false },
 ];
 
 interface SimpleNavbarProps {
