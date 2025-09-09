@@ -78,10 +78,10 @@ export function IndicadoresRapidos() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-montserrat font-bold mb-6">
-            <span className="text-[#222426]">Panel de </span>
+          <h2 className="text-4xl sm:text-5xl lg:text-5xl font-montserrat font-semibold mb-6">
+            <span className="text-[#222426]">Indicadores </span>
             <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] bg-clip-text text-transparent">
-              Control
+              Rapidos
             </span>
           </h2>
           
