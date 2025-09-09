@@ -48,8 +48,7 @@ export default function Home() {
         {/* Members Section */}
         {/* <MembersSection /> */}
         
-        {/* Activities Section */}
-        <ActivitiesSection />
+       
 
         {/* FAQ Section */}
         <FAQSection />
