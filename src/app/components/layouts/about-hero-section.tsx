@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { IconUsers, IconTarget, IconHeart } from "@tabler/icons-react";
+
 
 // Predefined positions to avoid hydration mismatch
 const particlePositions = [

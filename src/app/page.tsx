@@ -3,9 +3,7 @@
 import { useState } from "react";
 import { HeroSection } from "./components/layouts/hero-section";
 import { SliderLogos } from "./components/layouts/slider-logos";
-import { QuienesSomosSection } from "./components/layouts/quienes-somos-section";
-import { AboutSection } from "./components/layouts/about-section";
-import MissionVisionSection from "./components/layouts/mission-vision-section";
+import { IndicadoresRapidos } from "./components/layouts/indicadores-rapidos";
 import { LatestNewsSection } from "./components/layouts/latest-news-section";
 import { HowToParticipateSection } from "./components/layouts/how-to-participate-section";
 import { PublicacionesCoalicionSeccion } from "./components/layouts/publicaciones-coalicion-seccion";
@@ -31,17 +29,12 @@ export default function Home() {
           <HeroSection />
         </div>
         
-        {/* Mission, Vision & Objectives Section - Nuestra Propuesta */}
-        <MissionVisionSection />
-        
-        {/* About Section - Quiénes Somos */}
-        <QuienesSomosSection />
-        
-        {/* Indicadores Section */}
-        <AboutSection />
         
         {/* Latest News Section - Últimas Noticias */}
         <LatestNewsSection />
+        
+        {/* Indicadores Rápidos - Dashboard */}
+        <IndicadoresRapidos />
         
         {/* Slider Logos Section - Organizaciones Aliadas */}
         <SliderLogos />
