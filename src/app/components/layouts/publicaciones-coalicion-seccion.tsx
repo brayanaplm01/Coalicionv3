@@ -12,21 +12,24 @@ export function PublicacionesCoalicionSeccion() {
       imagen: "/uploads/coalicionp1.webp",
       titulo: "Candidatos electos a la Asamblea Legislativa",
       descripcion: "Conocer a los candidatos electos por departamento y circunscripción.",
-      fecha: "2025"
+      fecha: "2025",
+      url: "http://candidatos2025.labtecnosocial.org/"
     },
     {
       id: 2,
       imagen: "/uploads/coalicionp2.webp",
       titulo: "Segundo reporte sobre rumores y desinformación electoral",
       descripcion: "Análisis interactivo del panorama electoral de Bolivia.",
-      fecha: "Julio 2025"
+      fecha: "Julio 2025",
+      url: "https://articles.chequeabolivia.bo/reports/julio25/index.html"
     },
     {
       id: 3,
       imagen: "/uploads/coalicionp3.webp",
       titulo: "Ataques, encuestas falsas e IA: radiografía de la desinformación en la primera vuelta de las elecciones 2025",
       descripcion: "Entre el 1 de enero y el 18 de agosto de 2025, Bolivia Verifica identificó 442 contenidos.",
-      fecha: "Septiembre 2025"
+      fecha: "Septiembre 2025",
+      url: "https://boliviaverificaelecciones.bo/ataques-encuestas-falsas-e-ia-radiografia-de-la-desinformacion-en-la-primera-vuelta-de-las-elecciones-2025/"
     }
   ];
 
@@ -88,6 +91,7 @@ export function PublicacionesCoalicionSeccion() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
               viewport={{ once: true }}
+              onClick={() => window.open(publicacion.url, '_blank')}
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -126,10 +130,16 @@ export function PublicacionesCoalicionSeccion() {
                 </p>
                 
                 {/* Read more link */}
-                <div className="flex items-center text-[#CBA135] font-semibold font-montserrat text-sm hover:text-[#B8941F] transition-colors duration-300">
+                <div 
+                  className="flex items-center text-[#CBA135] font-semibold font-montserrat text-sm hover:text-[#B8941F] transition-colors duration-300"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(publicacion.url, '_blank');
+                  }}
+                >
                   <span>Leer más</span>
                   <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </div>
               </div>
