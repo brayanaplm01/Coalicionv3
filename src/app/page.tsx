@@ -11,8 +11,7 @@ import { PublicacionesCoalicionSeccion } from "./components/layouts/publicacione
 import { Footer } from "./components/layouts/footer";
 import SimpleNavbar from "./components/layouts/simple-navbar";
 import { FAQSection } from "./components/layouts/FAQ";
-// import MembersSection from "./components/MembersSection";
-import ActivitiesSection from "./components/ActivitiesSection";
+
 import ContactoModal from "./components/ContactoModal";
 
 export default function Home() {
@@ -48,8 +47,7 @@ export default function Home() {
         {/* Members Section */}
         {/* <MembersSection /> */}
         
-        {/* Activities Section */}
-        <ActivitiesSection />
+       
 
         {/* FAQ Section */}
         <FAQSection />

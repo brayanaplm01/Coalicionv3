@@ -26,8 +26,8 @@ const modalData = [
   },
   {
     id: 3,
-    title: "Combatiendo la desinformación",
-    description: "Nuestra coalición trabaja en múltiples frentes: verificación de hechos, educación mediática, fortalecimiento de capacidades institucionales, promoción de la transparencia informativa y colaboración con medios de comunicación. Buscamos crear una ciudadanía más crítica y mejor informada, capaz de identificar y rechazar la desinformación electoral.",
+    title: "Mitigando la desinformación",
+    description: "Empieza por informarte antes de compartir: verifica origen, fecha y contexto de cada contenido, contrasta con fuentes oficiales y consulta a organizaciones de verificación. Si algo te genera dudas, no lo difundas; guarda evidencias (capturas y enlaces) y denúncialo por nuestros canales y en la plataforma donde lo viste. Participa en nuestros talleres y usa el chatbot de BoliviaVerifica y ChequeaBolivia para aclarar rumores. Cada clic responsable fortalece tu derecho a decidir.",
     icon: "🛡️",
     color: "bg-gradient-to-r from-emerald-600 to-teal-600"
   }
@@ -114,7 +114,7 @@ export function HeroSection({ }: HeroSectionProps) {
                 onClick={() => openModal(3)}
                 className="w-full lg:w-auto inline-flex items-center justify-center px-4 lg:px-6 py-3 bg-gradient-to-r from-emerald-600/50 to-teal-600/50 text-white font-semibold text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-emerald-600/30 hover:border-emerald-600/50 backdrop-blur-md hover:from-emerald-600/80 hover:to-teal-600/80"
               >
-                <span className="font-montserrat text-center">3. Combatiendo la desinformación</span>
+                <span className="font-montserrat text-center">3. Mitigando la desinformación</span>
               </button>
             </div>
           </div>
