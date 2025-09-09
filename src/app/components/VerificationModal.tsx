@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { IconX } from '@tabler/icons-react'
 
@@ -11,6 +11,20 @@ interface VerificationModalProps {
 
 export default function VerificationModal({ isOpen, onClose }: VerificationModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [shouldRender, setShouldRender] = useState(false)
+
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRender(true)
+      // Pequeño delay para que el DOM se actualice antes de la animación
+      setTimeout(() => setIsAnimating(true), 10)
+    } else {
+      setIsAnimating(false)
+      // Esperar a que termine la animación antes de desmontar
+      setTimeout(() => setShouldRender(false), 300)
+    }
+  }, [isOpen])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -38,18 +52,26 @@ export default function VerificationModal({ isOpen, onClose }: VerificationModal
     }
   }, [isOpen, onClose])
 
-  if (!isOpen) return null
+  if (!shouldRender) return null
 
   return (
     <>
       {/* Overlay */}
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300" />
+      <div 
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 ${
+          isAnimating ? 'opacity-100' : 'opacity-0'
+        }`} 
+      />
       
       {/* Modal */}
       <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
         <div
           ref={modalRef}
-          className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100 opacity-100"
+          className={`bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 ease-out ${
+            isAnimating 
+              ? 'translate-y-0 opacity-100 scale-100' 
+              : '-translate-y-8 opacity-0 scale-95'
+          }`}
         >
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200">
