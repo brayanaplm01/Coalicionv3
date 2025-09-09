@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigationItems = [
-  { name: "Quiénes Somos", link: "/about-us", isContacto: false, isScroll: false },
+  { name: "Sobre Nosotros", link: "/about-us", isContacto: false, isScroll: false },
   { name: "Recursos", link: "/recursos", isContacto: false, isScroll: false },
   { name: "Actúa", link: "/actua", isContacto: false, isScroll: false },
 
