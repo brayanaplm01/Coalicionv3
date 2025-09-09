@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { HeroSection } from "./components/layouts/hero-section";
 import { SliderLogos } from "./components/layouts/slider-logos";
-import { IndicadoresRapidos } from "./components/layouts/indicadores-rapidos";
+
+
 import { LatestNewsSection } from "./components/layouts/latest-news-section";
 import { HowToParticipateSection } from "./components/layouts/how-to-participate-section";
 import { PublicacionesCoalicionSeccion } from "./components/layouts/publicaciones-coalicion-seccion";
@@ -32,9 +33,6 @@ export default function Home() {
         
         {/* Latest News Section - Últimas Noticias */}
         <LatestNewsSection />
-        
-        {/* Indicadores Rápidos - Dashboard */}
-        <IndicadoresRapidos />
         
         {/* Slider Logos Section - Organizaciones Aliadas */}
         <SliderLogos />

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AboutHeroSection } from "../components/layouts/about-hero-section";
-import { AboutSection } from "../components/layouts/about-section";
+import { IndicadoresSection } from "../components/layouts/indicadores-section";
 import MissionVisionSection from "../components/layouts/mission-vision-section";
 import { Footer } from "../components/layouts/footer";
 import SimpleNavbar from "../components/layouts/simple-navbar";
@@ -21,8 +21,8 @@ export default function AboutUs() {
         {/* Hero Section */}
         <AboutHeroSection />
 
-        {/* About Section - Quiénes Somos */}
-        <AboutSection />
+        {/* About Section - Indicadores */}
+        <IndicadoresSection />
 
         {/* Mission, Vision & Objectives Section - Nuestra Propuesta */}
         <MissionVisionSection />

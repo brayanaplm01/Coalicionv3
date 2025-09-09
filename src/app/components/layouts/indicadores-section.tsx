@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 
-export function AboutSection() {
+export function IndicadoresSection() {
   return (
     <motion.section 
       id="quienes-somos" 
