@@ -39,7 +39,7 @@ export function HowToParticipateSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Cómo participar de la <span className="text-[#CBA135] font-semibold">Red</span>
+          Cómo participar de la <span className="text-[#CBA135] font-semibold">Coalición</span>
         </motion.h2>
         
         {/* Red underline with gradient */}

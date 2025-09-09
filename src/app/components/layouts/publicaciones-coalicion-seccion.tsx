@@ -9,24 +9,24 @@ export function PublicacionesCoalicionSeccion() {
   const publicaciones = [
     {
       id: 1,
-      imagen: "/uploads/1755366707021_carlos-muza-hpjSkU2UYSU-unsplash.jpg",
-      titulo: "Desinformación Electoral",
-      descripcion: "Análisis completo sobre las tendencias de desinformación.",
-      fecha: "Enero 2025"
+      imagen: "/uploads/coalicionp1.webp",
+      titulo: "Candidatos electos a la Asamblea Legislativa",
+      descripcion: "Conocer a los candidatos electos por departamento y circunscripción.",
+      fecha: "2025"
     },
     {
       id: 2,
-      imagen: "/uploads/1755366800661_carlos-muza-hpjSkU2UYSU-unsplash.jpg",
-      titulo: "Guía de Verificación de Hechos",
-      descripcion: "Manual práctico para identificar y verificar información electoral en medios digitales.",
-      fecha: "Febrero 2025"
+      imagen: "/uploads/coalicionp2.webp",
+      titulo: "Segundo reporte sobre rumores y desinformación electoral",
+      descripcion: "Análisis interactivo del panorama electoral de Bolivia.",
+      fecha: "Julio 2025"
     },
     {
       id: 3,
-      imagen: "/uploads/img1.jpg",
-      titulo: "Reporte de Actividades 2024",
-      descripcion: "Resumen de las principales actividades y logros de la coalición durante el año 2024.",
-      fecha: "Diciembre 2024"
+      imagen: "/uploads/coalicionp3.webp",
+      titulo: "Ataques, encuestas falsas e IA: radiografía de la desinformación en la primera vuelta de las elecciones 2025",
+      descripcion: "Entre el 1 de enero y el 18 de agosto de 2025, Bolivia Verifica identificó 442 contenidos.",
+      fecha: "Septiembre 2025"
     }
   ];
 

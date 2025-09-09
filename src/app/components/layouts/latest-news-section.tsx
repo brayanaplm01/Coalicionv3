@@ -51,7 +51,7 @@ export function LatestNewsSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl font-montserrat font-semibold text-gray-900 mb-6">
-            Últimas <span className="text-[#CBA135] font-semibold">Noticias</span>
+            Tendencias <span className="text-[#CBA135] font-semibold">Electorales</span>
           </h2>
           
           {/* Red underline with gradient */}
