@@ -84,14 +84,14 @@ export function HeroSection({ }: HeroSectionProps) {
         <div className="flex items-center justify-center max-w-4xl mx-auto w-full">
           <div className="hero-content-card p-6 sm:p-8 rounded-xl text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#F8F5F3] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
-              Juntos Contra la
+             Elecciones informadas, 
             <br />
             <span className="text-3xl font-montserrat sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#CBA135] mb-4 sm:mb-6 bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/90 to-white/70 text-center">
-              Desinformación Electoral
+              democracia más fuerte
             </span>
             </h1>
             <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#F8F5F3] mb-3 sm:mb-4">
-              Defendemos la democracia, participación ciudadana informada y nuestros derechos en las elecciones
+              Unimos esfuerzos por datos claros, derechos protegidos y elecciones íntegras.
             </div>
             
             {/* Botones de Información */}

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
+
 // Predefined positions to avoid hydration mismatch
 const particlePositions = [
   { left: 10, top: 20 },
