@@ -2,6 +2,8 @@ import React from "react";
 import SimpleNavbar from "../components/layouts/simple-navbar";
 import { Footer } from "../components/layouts/footer";
 import { RecursosHeroSection } from "./components/RecursosHeroSection";
+import { AgendaElectoralSection } from "./components/AgendaElectoralSection";
+import { MaterialDescargableSection } from "./components/MaterialDescargableSection";
 import { GuiasElectoralesSection } from "./components/GuiasElectoralesSection";
 import { VerificacionHechosSection } from "./components/VerificacionHechosSection";
 import { PublicacionesSection } from "./components/PublicacionesSection";
@@ -14,6 +16,8 @@ export default function RecursosPage() {
       <SimpleNavbar />
       <main>
         <RecursosHeroSection />
+        <AgendaElectoralSection />
+        <MaterialDescargableSection />
         <GuiasElectoralesSection />
         <VerificacionHechosSection />
         <PublicacionesSection />

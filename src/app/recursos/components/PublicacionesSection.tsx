@@ -220,14 +220,8 @@ export function PublicacionesSection() {
               viewport={{ once: true }}
               layout
             >
-              {/* Featured Badge */}
-              {publicacion.featured && (
-                <div className="absolute -top-3 left-6">
-                  <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white px-3 py-1 rounded-full text-xs font-semibold">
-                    Destacado
-                  </span>
-                </div>
-              )}
+             
+             
 
               {/* Header */}
               <div className="flex items-center justify-between mb-4">

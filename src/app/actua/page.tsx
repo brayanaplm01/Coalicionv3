@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { ReportsSection } from "./components/reports";
-import { AgendaElectoralSection } from "./components/agenda-electoral";
-import { MaterialDescargableSection } from "./components/material-descargable";
 import { Footer } from "../components/layouts/footer";
 import SimpleNavbar from "../components/layouts/simple-navbar";
 import ContactoModal from "../components/ContactoModal";
@@ -20,12 +18,6 @@ export default function ActuaPage() {
       <main className="pt-20 lg:pt-28">
         {/* Reporta un Caso Section */}
         <ReportsSection />
-
-        {/* Agenda Electoral Section */}
-        <AgendaElectoralSection />
-
-        {/* Material Descargable Section */}
-        <MaterialDescargableSection />
 
         {/* Footer */}
         <Footer />

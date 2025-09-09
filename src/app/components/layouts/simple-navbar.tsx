@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import VerificationModal from "../VerificationModal";
 
 const navigationItems = [
   { name: "Sobre Nosotros", link: "/about-us", isContacto: false, isScroll: false },
@@ -20,6 +21,7 @@ interface SimpleNavbarProps {
 export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -95,6 +97,14 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
     setIsMobileMenuOpen(false);
   };
 
+  const openVerificationModal = () => {
+    setIsVerificationModalOpen(true);
+  };
+
+  const closeVerificationModal = () => {
+    setIsVerificationModalOpen(false);
+  };
+
   return (
     <nav
       className={`fixed  top-0 left-0 right-0 z-500 transition-all duration-500 ease-in-out ${
@@ -147,7 +157,7 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
             {/* Botón Verifica Desinformación */}
             <button
               className="ml-4 px-6 py-2.5 bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white font-semibold font-montserrat text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/20 hover:border-[#CBA135]/40 backdrop-blur-sm"
-              onClick={() => {/* No redirecciona por ahora */}}
+              onClick={openVerificationModal}
             >
               Verifica Desinformación
             </button>
@@ -224,13 +234,19 @@ export default function SimpleNavbar({ onContactClick }: SimpleNavbarProps) {
                 animationDelay: `${navigationItems.length * 100}ms`,
                 fontFamily: 'var(--font-montserrat), sans-serif'
               }}
-              onClick={() => {/* No redirecciona por ahora */}}
+              onClick={openVerificationModal}
             >
               Verifica Desinformación
             </button>
           </div>
         </div>
       </div>
+
+      {/* Modal de Verificación */}
+      <VerificationModal 
+        isOpen={isVerificationModalOpen} 
+        onClose={closeVerificationModal} 
+      />
     </nav>
   );
 }

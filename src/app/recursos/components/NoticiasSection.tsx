@@ -230,20 +230,19 @@ export function NoticiasSection() {
             return (
               <motion.div
                 key={noticia.id}
-                className={`bg-white rounded-2xl border-2 p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group ${
+                className={`bg-white rounded-2xl border-2 p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group relative ${
                   noticia.featured ? "border-[#CBA135]" : "border-gray-200"
                 }`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                layout
               >
                 {/* Featured Badge */}
                 {noticia.featured && (
-                  <div className="absolute -top-3 left-6">
-                    <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      Destacado
+                  <div className="absolute -top-3 left-6 z-10">
+                    <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg border-2 border-white">
+                      ⭐ Destacado
                     </span>
                   </div>
                 )}

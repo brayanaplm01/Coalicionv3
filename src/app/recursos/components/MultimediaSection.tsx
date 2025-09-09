@@ -24,13 +24,13 @@ interface MultimediaItem {
 const multimediaItems: MultimediaItem[] = [
   {
     id: 1,
-    title: "Infografía: Cómo Detectar Noticias Falsas",
+    title: "Democracia y Desinformación: ¿Qué es y cómo funciona la desinformación?",
     description: "Guía visual paso a paso para identificar y verificar información falsa en redes sociales.",
     type: "infografia",
     category: "educativo",
-    thumbnail: "/images/infografia-noticias-falsas.jpg",
-    downloadUrl: "/downloads/infografia-detectar-fake-news.png",
-    format: "PNG",
+    thumbnail: "/resources/resource-1.jpg",
+    downloadUrl: "https://internetbolivia.org/wp-content/uploads/2025/07/Cartilla_QueEsLaDesinformacion.pdf ",
+    format: "PDF",
     size: "2.3 MB",
     tags: ["Verificación", "Tutorial", "Redes Sociales"],
     featured: true
@@ -244,14 +244,7 @@ export function MultimediaSection() {
                 viewport={{ once: true }}
                 layout
               >
-                {/* Featured Badge */}
-                {item.featured && (
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="bg-gradient-to-r from-[#CBA135] to-[#B8941F] text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      Destacado
-                    </span>
-                  </div>
-                )}
+               
 
                 {/* Thumbnail */}
                 <div className="relative h-48 bg-gray-200">
