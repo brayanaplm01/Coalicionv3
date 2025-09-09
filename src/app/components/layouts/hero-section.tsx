@@ -13,14 +13,14 @@ const modalData = [
   {
     id: 1,
     title: "¿Qué es la desinformación?",
-    description: "La desinformación es información falsa o engañosa creada y difundida deliberadamente para confundir, manipular o influir en la opinión pública. En el contexto electoral, puede afectar la percepción de los votantes sobre candidatos, procesos electorales o instituciones democráticas, poniendo en riesgo la integridad de las elecciones y la confianza ciudadana en el sistema democrático.",
+    description: "La desinformación es un fenómeno complejo que puede adoptar distintas definiciones, pero en esencia se basa en el engaño intencional. La definición más abarcadora dice que la desinformación es contenido falso o engañoso que fue colocado fuera de contexto a propósito, manipulado o completamente forjado con el interés de engañar al público y que sea diseminado para obtener ganancia económica o que pueda causar daños públicos, como fraudes electorales, o riesgo de la estabilidad democrática.",
     icon: "🤔",
     color: "bg-gradient-to-r from-[#CBA135] to-[#B8941F]"
   },
   {
     id: 2,
-    title: "El problema de la desinformación",
-    description: "La desinformación electoral representa una amenaza grave para la democracia. Puede erosionar la confianza en las instituciones, polarizar a la sociedad, influir indebidamente en el voto ciudadano y generar dudas sobre la legitimidad de los resultados electorales. En Bolivia, esto puede afectar la participación ciudadana informada y la estabilidad democrática del país.",
+    title: "Efectos negativos de la desinformacion",
+    description: "los efectos nocivos de la desinformación se dan sobre todo alrededor de la polarización, estos efectos son: la creciente confusión, es decir, el “no poder creer en nada”, la desunión, la pérdida de confianza en instituciones democráticas, la estigmatización de poblaciones vulnerable, la intolerancia, radicalización y la constante sospecha de personas que piensan de manera diferente",
     icon: "⚠️",
     color: "bg-gradient-to-r from-red-700 to-red-600"
   },
