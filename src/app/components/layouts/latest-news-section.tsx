@@ -10,6 +10,12 @@ export function LatestNewsSection() {
   // Obtener las últimas 3 publicaciones
   const latestPublications = publications.slice(0, 3);
 
+  // Función para truncar texto
+  const truncateText = (text: string, maxLength: number): string => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength).trim() + "...";
+  };
+
   const handleCardClick = (url?: string) => {
     if (url) {
       window.open(url, "_blank", "noopener,noreferrer");
@@ -69,7 +75,7 @@ export function LatestNewsSection() {
           {latestPublications.map((publication, index) => (
             <motion.article
               key={publication.id || index}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group"
+              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group flex flex-col h-full min-h-[450px]"
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
@@ -96,22 +102,22 @@ export function LatestNewsSection() {
               </div>
               
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 {/* Handle/Source */}
                 {publication.handle && (
-                  <span className="inline-block px-3 py-1 bg-[#CBA135]/10 text-[#CBA135] text-xs font-semibold font-montserrat rounded-full mb-3">
+                  <span className="inline-block px-3 py-1 bg-[#CBA135]/10 text-[#CBA135] text-xs font-semibold font-montserrat rounded-full mb-3 w-fit">
                     {publication.handle}
                   </span>
                 )}
                 
                 {/* Title */}
-                <h3 className="text-xl font-montserrat font-semibold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#CBA135] transition-colors duration-300">
-                  {publication.title}
+                <h3 className="text-xl font-montserrat font-semibold text-gray-900 mb-3 group-hover:text-[#CBA135] transition-colors duration-300 flex-shrink-0">
+                  {truncateText(publication.title, 80)}
                 </h3>
                 
                 {/* Subtitle */}
-                <p className="text-gray-600 font-opensans text-sm line-clamp-3 leading-relaxed">
-                  {publication.subtitle}
+                <p className="text-gray-600 font-opensans text-sm leading-relaxed flex-grow">
+                  {truncateText(publication.subtitle, 150)}
                 </p>
               </div>
               

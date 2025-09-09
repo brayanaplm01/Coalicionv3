@@ -5,6 +5,12 @@ import { motion } from "motion/react";
 import Image from "next/image";
 
 export function PublicacionesCoalicionSeccion() {
+  // Función para truncar texto
+  const truncateText = (text: string, maxLength: number): string => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength).trim() + "...";
+  };
+
   // Datos de las publicaciones con imágenes de uploads
   const publicaciones = [
     {
@@ -86,7 +92,7 @@ export function PublicacionesCoalicionSeccion() {
           {publicaciones.map((publicacion, index) => (
             <motion.article
               key={publicacion.id}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group"
+              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group flex flex-col h-full min-h-[450px]"
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
@@ -118,20 +124,20 @@ export function PublicacionesCoalicionSeccion() {
               </div>
               
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 {/* Title */}
-                <h3 className="text-xl font-montserrat font-semibold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#CBA135] transition-colors duration-300">
-                  {publicacion.titulo}
+                <h3 className="text-xl font-montserrat font-semibold text-gray-900 mb-3 group-hover:text-[#CBA135] transition-colors duration-300 flex-shrink-0">
+                  {truncateText(publicacion.titulo, 80)}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-gray-600 font-opensans text-sm line-clamp-3 leading-relaxed mb-4">
-                  {publicacion.descripcion}
+                <p className="text-gray-600 font-opensans text-sm leading-relaxed mb-4 flex-grow">
+                  {truncateText(publicacion.descripcion, 150)}
                 </p>
                 
                 {/* Read more link */}
                 <div 
-                  className="flex items-center text-[#CBA135] font-semibold font-montserrat text-sm hover:text-[#B8941F] transition-colors duration-300"
+                  className="flex items-center text-[#CBA135] font-semibold font-montserrat text-sm hover:text-[#B8941F] transition-colors duration-300 mt-auto"
                   onClick={(e) => {
                     e.stopPropagation();
                     window.open(publicacion.url, '_blank');

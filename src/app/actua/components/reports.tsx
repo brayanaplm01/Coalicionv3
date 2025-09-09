@@ -250,7 +250,7 @@ export function ReportsSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CBA135] focus:border-transparent transition-all duration-200 font-opensans"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CBA135] focus:border-transparent transition-all duration-200 font-opensans placeholder:text-gray-400"
                     placeholder="tu@email.com"
                   />
                 </div>
@@ -271,7 +271,7 @@ export function ReportsSection() {
                           value={enlace}
                           onChange={(e) => handleEnlaceChange(index, e.target.value)}
                           required={index === 0}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CBA135] focus:border-transparent transition-all duration-200 font-opensans"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CBA135] focus:border-transparent transition-all duration-200 font-opensans placeholder:text-gray-400"
                           placeholder={`Enlace ${index + 1}: https://ejemplo.com/contenido-falso`}
                         />
                       </div>
