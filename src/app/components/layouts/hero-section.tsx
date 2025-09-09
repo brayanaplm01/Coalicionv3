@@ -1,16 +1,55 @@
 "use client";
 
-import React from "react";
-
+import React, { useState } from "react";
 import { ThreeDMarqueeDemo } from "../ui/ThreeDMarquee";
-
-
+import { InfoModal } from "../ui/InfoModal";
 
 interface HeroSectionProps {
   onContactClick?: () => void;
 }
 
+// Datos de los modales
+const modalData = [
+  {
+    id: 1,
+    title: "¿Qué es la desinformación?",
+    description: "La desinformación es información falsa o engañosa creada y difundida deliberadamente para confundir, manipular o influir en la opinión pública. En el contexto electoral, puede afectar la percepción de los votantes sobre candidatos, procesos electorales o instituciones democráticas, poniendo en riesgo la integridad de las elecciones y la confianza ciudadana en el sistema democrático.",
+    icon: "🤔",
+    color: "bg-gradient-to-r from-[#CBA135] to-[#B8941F]"
+  },
+  {
+    id: 2,
+    title: "El problema de la desinformación",
+    description: "La desinformación electoral representa una amenaza grave para la democracia. Puede erosionar la confianza en las instituciones, polarizar a la sociedad, influir indebidamente en el voto ciudadano y generar dudas sobre la legitimidad de los resultados electorales. En Bolivia, esto puede afectar la participación ciudadana informada y la estabilidad democrática del país.",
+    icon: "⚠️",
+    color: "bg-gradient-to-r from-red-700 to-red-600"
+  },
+  {
+    id: 3,
+    title: "Combatiendo la desinformación",
+    description: "Nuestra coalición trabaja en múltiples frentes: verificación de hechos, educación mediática, fortalecimiento de capacidades institucionales, promoción de la transparencia informativa y colaboración con medios de comunicación. Buscamos crear una ciudadanía más crítica y mejor informada, capaz de identificar y rechazar la desinformación electoral.",
+    icon: "🛡️",
+    color: "bg-gradient-to-r from-emerald-600 to-teal-600"
+  }
+];
+
 export function HeroSection({ }: HeroSectionProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedModal, setSelectedModal] = useState<typeof modalData[0] | null>(null);
+
+  const openModal = (modalId: number) => {
+    const modal = modalData.find(m => m.id === modalId);
+    if (modal) {
+      setSelectedModal(modal);
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedModal(null);
+  };
+
   const scrollToNext = () => {
     const organizationsSection = document.getElementById("organizations");
     if (organizationsSection) {
@@ -58,21 +97,21 @@ export function HeroSection({ }: HeroSectionProps) {
             {/* Botones de Información */}
             <div className="mt-8 sm:mt-10 flex flex-col lg:flex-row gap-3 lg:gap-4 justify-center items-center max-w-5xl mx-auto">
               <button
-                onClick={() => {/* No redirecciona por ahora */}}
+                onClick={() => openModal(1)}
                 className="w-full lg:w-auto inline-flex items-center justify-center px-4 lg:px-6 py-3 bg-gradient-to-r from-[#CBA135]/50 to-[#B8941F]/50 text-white font-semibold text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-[#CBA135]/30 hover:border-[#CBA135]/50 backdrop-blur-md hover:from-[#CBA135]/80 hover:to-[#B8941F]/80"
               >
                 <span className="font-montserrat text-center">1. ¿Qué es la desinformación?</span>
               </button>
               
               <button
-                onClick={() => {/* No redirecciona por ahora */}}
+                onClick={() => openModal(2)}
                 className="w-full lg:w-auto inline-flex items-center justify-center px-4 lg:px-6 py-3 bg-gradient-to-r from-red-700/50 to-red-600/50 text-white font-semibold text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-red-700/30 hover:border-red-700/50 backdrop-blur-md hover:from-red-700/80 hover:to-red-600/80"
               >
                 <span className="font-montserrat text-center">2. El problema de la desinformación</span>
               </button>
               
               <button
-                onClick={() => {/* No redirecciona por ahora */}}
+                onClick={() => openModal(3)}
                 className="w-full lg:w-auto inline-flex items-center justify-center px-4 lg:px-6 py-3 bg-gradient-to-r from-emerald-600/50 to-teal-600/50 text-white font-semibold text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-emerald-600/30 hover:border-emerald-600/50 backdrop-blur-md hover:from-emerald-600/80 hover:to-teal-600/80"
               >
                 <span className="font-montserrat text-center">3. Combatiendo la desinformación</span>
@@ -95,6 +134,13 @@ export function HeroSection({ }: HeroSectionProps) {
           </button>
         </div>
       </div>
+
+      {/* Modal */}
+      <InfoModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        modalInfo={selectedModal}
+      />
     </div>
   );
 }
