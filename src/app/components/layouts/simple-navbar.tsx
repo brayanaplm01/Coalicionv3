@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const navigationItems = [
   { name: "Quiénes Somos", link: "/about-us", isContacto: false, isScroll: false },
-  { name: "Recursos", link: "/recursos", isContacto: false, isScroll: false },
+  { name: "Recursos", link: "/recursos", isContacto: false, isScroll: true },
   { name: "Actúa", link: "/actua", isContacto: false, isScroll: false },
 
   //{ name: "Contacto", link: "#", isContacto: true, isScroll: false },
