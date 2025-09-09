@@ -25,11 +25,11 @@ export function PublicacionesCoalicionSeccion() {
     },
     {
       id: 3,
-      imagen: "/uploads/coalicionp3.webp",
-      titulo: "Ataques, encuestas falsas e IA: radiografía de la desinformación en la primera vuelta de las elecciones 2025",
-      descripcion: "Entre el 1 de enero y el 18 de agosto de 2025, Bolivia Verifica identificó 442 contenidos.",
-      fecha: "Septiembre 2025",
-      url: "https://boliviaverificaelecciones.bo/ataques-encuestas-falsas-e-ia-radiografia-de-la-desinformacion-en-la-primera-vuelta-de-las-elecciones-2025/"
+      imagen: "/uploads/coalicionp4.webp",
+      titulo: "La credibilidad del proceso electoral y el voto nulo, focos de la desinformación en el “Día D”",
+      descripcion: "Bolivia votó y definió un balotaje. La jornada se desarrolló con normalidad en las urnas, pero con un alto nivel de desinformación en las redes.",
+      fecha: "Agosto 2025",
+      url: "https://boliviaverificaelecciones.bo/la-credibilidad-del-proceso-electoral-y-el-voto-nulo-focos-de-la-desinformacion-en-el-dia-d"
     }
   ];
 
