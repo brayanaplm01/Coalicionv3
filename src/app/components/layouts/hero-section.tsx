@@ -107,7 +107,7 @@ export function HeroSection({ }: HeroSectionProps) {
                 onClick={() => openModal(2)}
                 className="w-full lg:w-auto inline-flex items-center justify-center px-4 lg:px-6 py-3 bg-gradient-to-r from-red-700/50 to-red-600/50 text-white font-semibold text-sm lg:text-base rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-red-700/30 hover:border-red-700/50 backdrop-blur-md hover:from-red-700/80 hover:to-red-600/80"
               >
-                <span className="font-montserrat text-center">2. El problema de la desinformación</span>
+                <span className="font-montserrat text-center">2. Efectos negativos de la desinformación</span>
               </button>
               
               <button

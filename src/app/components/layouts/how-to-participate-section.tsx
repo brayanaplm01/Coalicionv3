@@ -53,7 +53,7 @@ export function HowToParticipateSection() {
         
         {/* Content Card with enhanced styling */}
         <motion.div 
-          className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 lg:p-12 border border-white/50 hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] group"
+          className="relative bg-white/100  rounded-2xl p-8 lg:p-12 transition-all duration-500 hover:scale-[1.02] group"
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -85,12 +85,12 @@ export function HowToParticipateSection() {
               viewport={{ once: true }}
             >
               <div className="relative group cursor-pointer">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#CBA135]/20 to-red-500/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
                 <Image
-                  src="/uploads/1755362228266_Servicio-3.webp"
+                  src="/inicial/Recurso1.webp"
                   alt="Cómo participar de la red - Coalición Nacional"
-                  width={300}
-                  height={500}
+                  width={500}
+                  height={650}
                   className="relative rounded-xl shadow-lg group-hover:shadow-xl transform group-hover:scale-105 transition-all duration-300 object-cover"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
