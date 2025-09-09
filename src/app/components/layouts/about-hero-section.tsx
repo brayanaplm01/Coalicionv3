@@ -118,69 +118,7 @@ export function AboutHeroSection() {
         </motion.p>
 
         {/* Stats Cards */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          {/* Card 1 */}
-          <motion.div
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -5 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <div className="w-12 h-12 bg-gradient-to-br from-[#CBA135] to-[#B8941F] rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconUsers className="h-6 w-6 text-white" />
-            </div>
-            <h3 className="text-white font-montserrat font-semibold text-lg mb-2">
-              Trabajo Colaborativo
-            </h3>
-            <p className="text-gray-300 text-sm font-opensans">
-              Organizaciones unidas por un objetivo común
-            </p>
-          </motion.div>
-
-          {/* Card 2 */}
-          <motion.div
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -5 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-          >
-            <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-rose-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconTarget className="h-6 w-6 text-white" />
-            </div>
-            <h3 className="text-white font-montserrat font-semibold text-lg mb-2">
-              Combate a la Desinformación
-            </h3>
-            <p className="text-gray-300 text-sm font-opensans">
-              Protegiendo la integridad electoral
-            </p>
-          </motion.div>
-
-          {/* Card 3 */}
-          <motion.div
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -5 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-          >
-            <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconHeart className="h-6 w-6 text-white" />
-            </div>
-            <h3 className="text-white font-montserrat font-semibold text-lg mb-2">
-              Compromiso Democrático
-            </h3>
-            <p className="text-gray-300 text-sm font-opensans">
-              Fortaleciendo la democracia boliviana
-            </p>
-          </motion.div>
-        </motion.div>
+        
 
         
       </div>
