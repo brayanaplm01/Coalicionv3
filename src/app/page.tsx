@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { HeroSection } from "./components/layouts/hero-section";
 import { SliderLogos } from "./components/layouts/slider-logos";
-import { QuienesSomosSection } from "./components/layouts/quienes-somos-section";
-import { AboutSection } from "./components/layouts/about-section";
+import { IndicadoresSection } from "./components/layouts/indicadores-section";
 import MissionVisionSection from "./components/layouts/mission-vision-section";
 import { LatestNewsSection } from "./components/layouts/latest-news-section";
 import { HowToParticipateSection } from "./components/layouts/how-to-participate-section";
@@ -34,11 +33,8 @@ export default function Home() {
         {/* Mission, Vision & Objectives Section - Nuestra Propuesta */}
         <MissionVisionSection />
         
-        {/* About Section - Quiénes Somos */}
-        <QuienesSomosSection />
-        
         {/* Indicadores Section */}
-        <AboutSection />
+        <IndicadoresSection />
         
         {/* Latest News Section - Últimas Noticias */}
         <LatestNewsSection />
