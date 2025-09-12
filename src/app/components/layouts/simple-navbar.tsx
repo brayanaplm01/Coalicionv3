@@ -7,8 +7,8 @@ import Link from "next/link";
 import VerificationModal from "../VerificationModal";
 
 const navigationItems = [
+  { name: "Institucional", link: "/institucional", isContacto: false, isScroll: false },
   { name: "Sobre Nosotros", link: "/about-us", isContacto: false, isScroll: false },
-  { name: "Recursos", link: "/recursos", isContacto: false, isScroll: false },
   { name: "Actúa", link: "/actua", isContacto: false, isScroll: false },
 
   //{ name: "Contacto", link: "#", isContacto: true, isScroll: false },

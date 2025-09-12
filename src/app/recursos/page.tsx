@@ -1,30 +1,22 @@
-import React from "react";
-import SimpleNavbar from "../components/layouts/simple-navbar";
-import { Footer } from "../components/layouts/footer";
-import { RecursosHeroSection } from "./components/RecursosHeroSection";
-import { AgendaElectoralSection } from "./components/AgendaElectoralSection";
-import { MaterialDescargableSection } from "./components/MaterialDescargableSection";
-import { GuiasElectoralesSection } from "./components/GuiasElectoralesSection";
-import { VerificacionHechosSection } from "./components/VerificacionHechosSection";
-import { PublicacionesSection } from "./components/PublicacionesSection";
-import { MultimediaSection } from "./components/MultimediaSection";
-import { NoticiasSection } from "./components/NoticiasSection";
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function RecursosPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirigir a la página principal donde ahora están los recursos
+    router.replace("/");
+  }, [router]);
+
   return (
-    <div className="min-h-screen bg-white">
-      <SimpleNavbar />
-      <main>
-        <RecursosHeroSection />
-        <AgendaElectoralSection />
-        <MaterialDescargableSection />
-        <GuiasElectoralesSection />
-        <VerificacionHechosSection />
-        <PublicacionesSection />
-        <MultimediaSection />
-        <NoticiasSection />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#CBA135] mx-auto mb-4"></div>
+        <p className="text-gray-600">Redirigiendo a recursos...</p>
+      </div>
     </div>
   );
 }
